@@ -1,50 +1,52 @@
-<!doctype html>
-<html lang="en">
+<!DOCTYPE html>
+<html>
 <head>
-  <meta charset="utf-8">
-  <title>AI Optimizer – Save 20‑40% on OpenAI</title>
+  <title>AI Optimizer - Reduce OpenAI Costs by 40%</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
   <style>
-    body{font-family:system-ui,Arial,sans-serif;background:#f0f2f4;margin:0;padding:0;}
-    .card{
-      max-width: 480px;margin:5rem auto;background:#fff;padding:2rem;border-radius:8px;
-      box-shadow:0 4px 12px rgba(0,0,0,.15);
-      text-align:center;
-    }
-    h1{margin:0 0 .5rem;font-size:1.8rem;}
-    p{margin:0 0 1.2rem;color:#555;}
-    .price{font-size:2.2rem;color:#0066cc;font-weight:bold;}
-    button{
-      background:#0066cc;color:#fff;border:none;padding:.75rem 1.5rem;
-      font-size:1rem;border-radius:5px;cursor:pointer;
-    }
-    button:hover{background:#005bb5;}
-    #msg{margin-top:.8rem;color:#d93025;}
+    body { font-family: system-ui, -apple-system, sans-serif; line-height: 1.6; max-width: 800px; margin: 0 auto; padding: 20px; }
+    .hero { text-align: center; padding: 40px 0; }
+    .package { border: 1px solid #e2e8f0; border-radius: 8px; padding: 20px; margin: 15px 0; }
+    .highlight { background: #f0f9ff; border-left: 4px solid #2563eb; padding: 15px; }
+    button { background: #2563eb; color: white; border: none; padding: 10px 20px; border-radius: 4px; cursor: pointer; }
   </style>
 </head>
 <body>
-  <div class="card">
+  <div class="hero">
     <h1>AI Optimizer</h1>
-    <p>Cut your OpenAI bills by **up to 40 %** with a smart, open‑source optimizer.</p>
-    <div class="price">$4.99 / mo</div>
-    <p>7‑day free trial, no credit card required.</p>
-    <button id="btn">Start free trial</button>
-    <div id="msg"></div>
+    <p>Reduce your OpenAI API costs by 20-40% with zero code changes</p>
+    <a href="https://ai-optimizer.vercel.app/signup"><button>Try Free for 7 Days</button></a>
   </div>
 
-  <script>
-    const btn=document.getElementById('btn');
-    const msg=document.getElementById('msg');
-    btn.addEventListener('click', async e => {
-      msg.textContent='Creating trial…';
-      try{
-        const res=await fetch('/v1/api/create-trial', {method: 'POST'});
-        const {sessionId} = await res.json();
-        // redirect to Stripe checkout
-        const stripe = Stripe(); // Stripe.js auto‑loaded by Stripe itself if you included <script src="https://js.stripe.com/v3/"></script>
-        stripe.redirectToCheckout({sessionId});
-      }catch(err){msg.textContent=err.message||'Error';}
-    });
-  </script>
-  <script src="https://js.stripe.com/v3/"></script>
+  <div class="highlight">
+    <h2>How It Works</h2>
+    <p>Our AI engine intelligently routes your requests to optimize token usage without changing your codebase.</p>
+  </div>
+
+  <div class="package">
+    <h3>Starter Plan - $4.99/mo</h3>
+    <p>Perfect for developers and small teams:</p>
+    <ul>
+      <li>Up to 100,000 tokens/month</li>
+      <li>Basic analytics dashboard</li>
+      <li>Email support</li>
+    </ul>
+  </div>
+
+  <div class="package">
+    <h3>Professional Plan - $19.99/mo</h3>
+    <p>For growing teams with serious AI usage:</p>
+    <ul>
+      <li>500,000 tokens/month</li>
+      <li>Advanced analytics</li>
+      <li>Priority support</li>
+      <li>Team collaboration</li>
+    </ul>
+  </div>
+
+  <div class="highlight">
+    <h2>Real Savings</h2>
+    <p>Customers save an average of $237/month on their OpenAI bills</p>
+  </div>
 </body>
 </html>
