@@ -7,12 +7,11 @@
   <link href="styles.css" rel="stylesheet">
 </head>
 <body>
-  <!-- HERO SECTION (FIXED) -->
+  <!-- HERO SECTION -->
   <header class="hero">
     <div class="container">
-      <h1>AI API Optimizer</h1>
+      <h1>AI API Optimizer 💰</h1>
       <p>Reduce your OpenAI API costs by 20-40% with zero code changes</p>
-      <!-- CORRECTED HERO BUTTON -->
       <a href="https://saas-optimizer.fly.dev/v1/api/create-trial" class="cta-button">
         Start 14-Day Trial - Card Required
       </a>
@@ -25,27 +24,75 @@
       <h2>How It Works</h2>
       <div class="feature-grid">
         <div class="feature-card">
-          <h3>Automatic Cost Reduction</h3>
-          <p>Optimizes every API call without changing your code</p>
+          <h3>🚀 Smart Caching</h3>
+          <p>Identical requests hit cache, not the API. 5-minute TTL means instant responses for repeated queries.</p>
         </div>
-        <!-- Additional features -->
+        <div class="feature-card">
+          <h3>🎯 Cost Routing</h3>
+          <p>Auto-switches to cheapest model. Simple tasks use gpt-4o-mini (97% cheaper than gpt-4).</p>
+        </div>
+        <div class="feature-card">
+          <h3>📊 Real Analytics</h3>
+          <p>Dashboard shows exact savings. Track usage, costs, and optimization impact in real-time.</p>
+        </div>
+        <div class="feature-card">
+          <h3>⚡ Rate Limiting</h3>
+          <p>100 req/min global, 30 req/min for API endpoints. Protects your budget from runaway costs.</p>
+        </div>
+        <div class="feature-card">
+          <h3>🔒 Input Validation</h3>
+          <p>Validates all requests before processing. Catches errors early, saves API credits.</p>
+        </div>
+        <div class="feature-card">
+          <h3>🔌 Drop-in Proxy</h3>
+          <p>Replace your OpenAI base URL. Works with existing code — zero refactoring needed.</p>
+        </div>
       </div>
     </div>
   </section>
 
-  <!-- PRICING SECTION (FIXED) -->
+  <!-- SAVINGS CALCULATOR -->
+  <section class="features" style="background: var(--gradient); color: white;">
+    <div class="container">
+      <h2 style="color: white;">Real Savings Examples</h2>
+      <div class="feature-grid">
+        <div class="feature-card" style="background: rgba(255,255,255,0.1);">
+          <h3 style="color: white;">Simple Query</h3>
+          <p style="color: white; font-size: 2rem; font-weight: 800;">$0.0001</p>
+          <p style="color: white; opacity: 0.9;">vs $0.03 with gpt-4</p>
+          <p style="color: var(--secondary); font-weight: 700; margin-top: 10px;">300x cheaper</p>
+        </div>
+        <div class="feature-card" style="background: rgba(255,255,255,0.1);">
+          <h3 style="color: white;">Medium Query</h3>
+          <p style="color: white; font-size: 2rem; font-weight: 800;">$0.005</p>
+          <p style="color: white; opacity: 0.9;">vs $0.03 with gpt-4</p>
+          <p style="color: var(--secondary); font-weight: 700; margin-top: 10px;">6x cheaper</p>
+        </div>
+        <div class="feature-card" style="background: rgba(255,255,255,0.1);">
+          <h3 style="color: white;">At Scale</h3>
+          <p style="color: white; font-size: 2rem; font-weight: 800;">20-40%</p>
+          <p style="color: white; opacity: 0.9;">total cost reduction</p>
+          <p style="color: var(--secondary); font-weight: 700; margin-top: 10px;">bottom line impact</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PRICING SECTION -->
   <section id="pricing" class="pricing-section">
     <div class="container">
       <h2>Simple Pricing</h2>
       <div class="pricing-card">
         <h3>Starter</h3>
-        <div class="price">$4.99</div>
+        <div class="price">$4.99<span>/month</span></div>
         <ul>
-          <li>85,000 tokens included</li>
-          <li>20% AI cost savings</li>
-          <li>10x faster API responses</li>
+          <li>✅ 85,000 tokens included</li>
+          <li>✅ 20-40% AI cost savings</li>
+          <li>✅ 10x faster API responses</li>
+          <li>✅ Real-time analytics dashboard</li>
+          <li>✅ Smart model routing</li>
+          <li>✅ Automatic caching</li>
         </ul>
-        <!-- CORRECTED PRICING BUTTON -->
         <a href="https://saas-optimizer.fly.dev/v1/api/create-trial" class="cta-button">
           Start 14-Day Trial - Card Required
         </a>
@@ -63,4 +110,3 @@
   </footer>
 </body>
 </html>
-EOF
