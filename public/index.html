@@ -3,65 +3,238 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>AI Optimizer - Local OpenAI API Caching Proxy</title>
-  <meta name="description" content="AI Optimizer is a local caching proxy for OpenAI API workflows. Reduce repeated request waste, keep your existing setup, and start a 14-day trial.">
-  <meta name="keywords" content="OpenAI API cost reduction, OpenAI caching proxy, OpenAI local proxy, OpenAI CLI caching, OpenClaw OpenAI API, AI Optimizer">
-  <meta name="google-site-verification" content="oFZ_U3agn_kfzEWoebV6MaD3TMXUiwccprlCClJsL7k" />
-  <meta name="msvalidate.01" content="FDC4CA8E9F2ADDF1252E0E151260449D" />
-  <meta property="og:title" content="AI Optimizer - Local OpenAI API Caching Proxy">
-  <meta property="og:description" content="Reduce repeated OpenAI API waste with one local caching proxy.">
-  <meta property="og:type" content="website">
-  <meta property="og:url" content="https://ai-optimizer-landing.vercel.app/">
-  <meta name="twitter:card" content="summary_large_image">
-  <link rel="canonical" href="https://ai-optimizer-landing.vercel.app/">
-  <link href="styles.css" rel="stylesheet">
-
-  <script src="https://cdn.vercel-insights.com/v1/script.js" defer></script>
-  <script>
-    window.va = window.va || function() { (window.va.q = window.va.q || []).push(arguments); };
-    document.addEventListener('DOMContentLoaded', function() {
-      va('event', 'pageview');
-    });
-  </script>
-
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "SoftwareApplication",
-    "name": "AI Optimizer",
-    "applicationCategory": "DeveloperApplication",
-    "operatingSystem": "Windows, macOS, Linux",
-    "offers": {
-      "@type": "Offer",
-      "price": "4.99",
-      "priceCurrency": "USD",
-      "priceValidUntil": "2027-03-27"
-    },
-    "description": "Local caching proxy for OpenAI API workflows.",
-    "url": "https://ai-optimizer-landing.vercel.app/"
-  }
-  </script>
+  <meta name="google-site-verification" content="google7547b5f4614aaa24">
+  <meta name="msvalidate.01" content="FDC4CA8E9F2ADDF1252E0E151260449D">
+  <title>AI Optimizer - Demo Homepage V2</title>
+  <style>
+    :root {
+      --primary: #2563eb;
+      --primary-dark: #1d4ed8;
+      --accent: #7c3aed;
+      --success: #10b981;
+      --text: #0f172a;
+      --muted: #475569;
+      --bg: #f8fafc;
+      --surface: #ffffff;
+      --border: #e2e8f0;
+      --gradient: linear-gradient(135deg, #0f172a 0%, #1d4ed8 55%, #7c3aed 100%);
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+    }
+    .container {
+      width: min(1120px, calc(100% - 32px));
+      margin: 0 auto;
+    }
+    .hero {
+      background: var(--gradient);
+      color: white;
+      padding: 84px 0 70px;
+    }
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.2fr 0.8fr;
+      gap: 28px;
+      align-items: center;
+    }
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 7px 12px;
+      border: 1px solid rgba(255,255,255,0.16);
+      border-radius: 999px;
+      font-size: 0.88rem;
+      font-weight: 700;
+      background: rgba(255,255,255,0.08);
+      margin-bottom: 18px;
+    }
+    h1, h2, h3 { margin: 0 0 14px; line-height: 1.12; }
+    h1 { font-size: clamp(2.35rem, 5vw, 4.35rem); font-weight: 850; }
+    h2 { font-size: clamp(1.7rem, 3vw, 2.5rem); text-align: center; }
+    .lead {
+      max-width: 720px;
+      font-size: 1.18rem;
+      color: rgba(255,255,255,0.93);
+      margin-bottom: 24px;
+    }
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-bottom: 18px;
+    }
+    .button {
+      display: inline-block;
+      text-decoration: none;
+      border-radius: 12px;
+      padding: 14px 22px;
+      font-weight: 800;
+      transition: transform .15s ease, opacity .15s ease;
+    }
+    .button:hover { transform: translateY(-1px); opacity: .97; }
+    .button-primary { background: white; color: var(--primary-dark); }
+    .button-secondary {
+      color: white;
+      border: 1px solid rgba(255,255,255,0.28);
+      background: rgba(255,255,255,0.08);
+    }
+    .hero-meta {
+      color: rgba(255,255,255,0.8);
+      font-size: 0.95rem;
+    }
+    .hero-card {
+      background: rgba(255,255,255,0.08);
+      border: 1px solid rgba(255,255,255,0.15);
+      border-radius: 20px;
+      padding: 24px;
+      backdrop-filter: blur(10px);
+    }
+    .hero-card h3 { font-size: 1.1rem; }
+    .hero-card ul {
+      list-style: none;
+      padding: 0;
+      margin: 16px 0 0;
+    }
+    .hero-card li {
+      padding: 10px 0;
+      border-bottom: 1px solid rgba(255,255,255,0.12);
+      color: rgba(255,255,255,0.92);
+    }
+    .hero-card li:last-child { border-bottom: 0; }
+    section { padding: 72px 0; }
+    .subtle {
+      max-width: 760px;
+      margin: 14px auto 0;
+      text-align: center;
+      color: var(--muted);
+    }
+    .grid-3 {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+      gap: 18px;
+      margin-top: 34px;
+    }
+    .card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 18px;
+      padding: 24px;
+      box-shadow: 0 10px 30px rgba(15,23,42,.05);
+    }
+    .card p { margin: 0; color: var(--muted); }
+    .steps {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 18px;
+      margin-top: 34px;
+    }
+    .step-num {
+      width: 36px; height: 36px; border-radius: 999px;
+      display: inline-flex; align-items: center; justify-content: center;
+      font-weight: 800; background: #dbeafe; color: var(--primary-dark);
+      margin-bottom: 14px;
+    }
+    .proof-strip {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 18px;
+      margin-top: 34px;
+    }
+    .metric {
+      background: #eff6ff;
+      border: 1px solid #bfdbfe;
+      border-radius: 18px;
+      padding: 22px;
+    }
+    .metric strong {
+      display: block;
+      font-size: 1.65rem;
+      margin-bottom: 8px;
+      color: var(--primary-dark);
+    }
+    .trust-row {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 12px;
+      margin-top: 24px;
+    }
+    .trust-link {
+      text-decoration: none;
+      color: var(--primary-dark);
+      font-weight: 700;
+      background: #eff6ff;
+      border: 1px solid #bfdbfe;
+      border-radius: 999px;
+      padding: 10px 14px;
+    }
+    .pricing-wrap { max-width: 520px; margin: 34px auto 0; }
+    .price-box {
+      background: white;
+      border: 1px solid var(--border);
+      border-radius: 20px;
+      padding: 30px;
+      box-shadow: 0 12px 32px rgba(15,23,42,.06);
+    }
+    .price { text-align: center; font-size: 3rem; font-weight: 850; color: var(--primary-dark); }
+    .price span { font-size: 1rem; color: var(--muted); font-weight: 600; }
+    .clean-list { list-style: none; padding: 0; margin: 20px 0 26px; }
+    .clean-list li { padding: 10px 0; border-bottom: 1px solid var(--border); color: var(--muted); }
+    .faq-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 18px;
+      margin-top: 34px;
+    }
+    .notice {
+      background: #f8fffb;
+      border-left: 4px solid var(--success);
+      border-radius: 14px;
+      padding: 22px;
+      margin-top: 28px;
+      color: var(--text);
+    }
+    footer {
+      padding: 36px 0 50px;
+      text-align: center;
+      color: var(--muted);
+      font-size: 0.95rem;
+    }
+    @media (max-width: 860px) {
+      .hero-grid { grid-template-columns: 1fr; }
+    }
+    @media (max-width: 640px) {
+      .hero { padding: 72px 0 56px; }
+      .button { width: 100%; text-align: center; }
+    }
+  </style>
 </head>
 <body>
-  <header class="hero hero-modern">
+  <header class="hero">
     <div class="container">
       <div class="hero-grid">
         <div>
-          <div class="eyebrow">Local caching proxy for OpenAI API workflows</div>
-          <h1>Reduce repeated OpenAI API waste with one local proxy</h1>
-          <p class="lead">AI Optimizer sits between your workflow and OpenAI so repeated requests can hit cache instead of being paid for again. It is a strong fit for command-line OpenAI API usage and for OpenClaw routed through the OpenAI API.</p>
+          <div class="eyebrow">AI Optimizer</div>
+          <h1>Cut your OpenAI API costs</h1>
+          <p class="lead">Local caching for developers, agents, and automations.</p>
           <div class="hero-actions">
-            <a href="https://saas-optimizer.fly.dev/v1/api/create-trial" class="button button-primary">Start 14-Day Trial</a>
-            <a href="/how-it-works" class="button button-secondary">See how it works</a>
+            <a href="#how-it-works" class="button button-primary">See How It Works</a>
+            <a href="https://saas-optimizer.fly.dev/v1/api/create-trial" class="button button-secondary">Start Free Trial</a>
           </div>
-          <div class="hero-meta">Windows, macOS, and Linux builds available. Local proxy. 14-day trial.</div>
+          <div class="hero-meta">$4.99/month · 14-day trial<br>Works on Mac, Windows, and Linux.</div>
         </div>
         <div class="hero-card">
-          <h3>Best current use cases</h3>
+          <h3>Why use AI Optimizer</h3>
           <ul>
-            <li>OpenAI API usage from the command line</li>
-            <li>OpenClaw through the OpenAI API</li>
-            <li>Repeat-heavy local workflows that benefit from caching</li>
+            <li>Save money on repeated API calls</li>
+            <li>Works with OpenClaw</li>
+            <li>Runs on Mac, Windows, and Linux</li>
           </ul>
         </div>
       </div>
@@ -70,20 +243,30 @@
 
   <section>
     <div class="container">
-      <h2>Why teams use AI Optimizer</h2>
-      <p class="subtle">Repeated requests show up naturally during testing, automation, prompt refinement, memory workflows, and agent loops. AI Optimizer gives you one local place to reduce that waste.</p>
+      <div class="trust-row">
+        <span class="trust-link">Cancel anytime</span>
+        <span class="trust-link">Global payments accepted</span>
+        <span class="trust-link">Local-first desktop app</span>
+        <span class="trust-link">Built for developers and AI workflows</span>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="container">
+      <h2>Why AI Optimizer matters</h2>
       <div class="grid-3">
         <div class="card">
-          <h3>Reduce duplicate spend</h3>
-          <p>Repeated requests can be served locally instead of being sent and billed again.</p>
+          <h3>Save money on repeated AI calls</h3>
+          <p>Cache duplicate or repeated OpenAI requests and reduce unnecessary API spend.</p>
         </div>
         <div class="card">
-          <h3>Keep your workflow intact</h3>
-          <p>Point your OpenAI base URL at the local proxy instead of rebuilding your stack.</p>
+          <h3>Keep your existing workflow</h3>
+          <p>Use AI Optimizer through a local proxy instead of rebuilding your stack.</p>
         </div>
         <div class="card">
-          <h3>Works with real current use cases</h3>
-          <p>A strong fit today for OpenAI API CLI workflows and OpenClaw through the OpenAI API.</p>
+          <h3>See what you’re saving</h3>
+          <p>Track requests, cache hits, and savings clearly in one desktop app.</p>
         </div>
       </div>
     </div>
@@ -95,18 +278,18 @@
       <div class="steps">
         <div class="card">
           <div class="step-num">1</div>
-          <h3>Run AI Optimizer locally</h3>
-          <p>Install the app and start the local proxy on your machine.</p>
+          <h3>Connect your tools</h3>
+          <p>Point OpenAI traffic to AI Optimizer on localhost.</p>
         </div>
         <div class="card">
           <div class="step-num">2</div>
-          <h3>Point your workflow at the proxy</h3>
-          <p>Route OpenAI API traffic through the local base URL.</p>
+          <h3>Cache repeated requests</h3>
+          <p>Repeated calls stop hitting the API at full cost.</p>
         </div>
         <div class="card">
           <div class="step-num">3</div>
-          <h3>Reduce repeated request waste</h3>
-          <p>Repeated requests can hit cache instead of being sent and paid for again.</p>
+          <h3>Track savings in real time</h3>
+          <p>See usage, cache hits, and savings as you work.</p>
         </div>
       </div>
     </div>
@@ -114,13 +297,52 @@
 
   <section>
     <div class="container">
-      <h2>Learn more</h2>
-      <p class="subtle">Use the pages below for setup details, OpenClaw notes, developer workflows, and common questions.</p>
+      <h2>Who it’s for</h2>
+      <div class="grid-3">
+        <div class="card">
+          <h3>Developers</h3>
+          <p>Reduce wasted OpenAI spend without changing how you build.</p>
+        </div>
+        <div class="card">
+          <h3>AI agents &amp; automation</h3>
+          <p>Support recurring workflows, scheduled jobs, and repeated AI operations more efficiently.</p>
+        </div>
+        <div class="card">
+          <h3>Teams watching cost</h3>
+          <p>Get better visibility into API usage before costs quietly pile up.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section style="background:white;">
+    <div class="container">
+      <h2>Built for real use</h2>
+      <div class="proof-strip">
+        <div class="metric">
+          <strong>Repeat runs hit cache</strong>
+          Early testing already shows believable repeat-request cache behavior in real workflows.
+        </div>
+        <div class="metric">
+          <strong>OpenAI compatibility</strong>
+          Supports Chat Completions, Responses, and Embeddings for modern OpenAI workflows.
+        </div>
+        <div class="metric">
+          <strong>Cross-platform release</strong>
+          Linux, macOS, and Windows builds are available for real-world testing and rollout.
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="container">
+      <h2>Explore more</h2>
       <div class="trust-row">
-        <a href="/how-it-works" class="trust-link">How it works</a>
-        <a href="/for-developers" class="trust-link">For developers / CLI</a>
-        <a href="/for-agents" class="trust-link">For agents / OpenClaw</a>
-        <a href="/faq" class="trust-link">FAQ</a>
+        <a href="how-it-works.html" class="trust-link">How it works</a>
+        <a href="for-agents.html" class="trust-link">For agents</a>
+        <a href="for-developers.html" class="trust-link">For developers</a>
+        <a href="faq.html" class="trust-link">FAQ</a>
       </div>
     </div>
   </section>
@@ -128,30 +350,66 @@
   <section style="background:white;">
     <div class="container">
       <h2>Simple pricing</h2>
-      <p class="subtle">Start with a 14-day trial, then keep using AI Optimizer for one simple monthly price.</p>
       <div class="pricing-wrap">
         <div class="price-box">
           <h3 style="text-align:center;">Starter</h3>
           <div class="price">$4.99<span>/month</span></div>
           <ul class="clean-list">
             <li>Unlimited caching requests</li>
-            <li>Local proxy for OpenAI API workflows</li>
+            <li>Local proxy for OpenAI-powered workflows</li>
+            <li>Visibility into request and cache behavior</li>
             <li>Up to 3 devices</li>
             <li>14-day trial</li>
           </ul>
+          <p style="text-align:center; margin: 0 0 1rem; color:#5b6480;">Cancel anytime. Global payments accepted.</p>
           <div style="text-align:center;">
-            <a href="https://saas-optimizer.fly.dev/v1/api/create-trial" class="button button-primary">Start 14-Day Trial</a>
+            <a href="https://saas-optimizer.fly.dev/v1/api/create-trial" class="button button-primary">Start Free Trial</a>
           </div>
         </div>
       </div>
     </div>
   </section>
 
-  <footer class="footer">
+  <section id="faq">
     <div class="container">
-      <p>© 2026 Day Place LTD. All rights reserved.</p>
-      <p>Questions? Email: <a href="mailto:DayPlaceLTD@gmail.com">DayPlaceLTD@gmail.com</a></p>
-      <p><a href="/privacy">Privacy Policy</a> | <a href="/terms">Terms of Service</a></p>
+      <h2>Frequently asked questions</h2>
+      <div class="faq-grid">
+        <div class="card">
+          <h3>What is AI Optimizer?</h3>
+          <p>A local caching and cost-control layer for OpenAI-powered apps, automations, and agents.</p>
+        </div>
+        <div class="card">
+          <h3>Does it require code changes?</h3>
+          <p>Usually no major rewrite. Most workflows just route OpenAI traffic through the local proxy.</p>
+        </div>
+        <div class="card">
+          <h3>What platforms are supported?</h3>
+          <p>AI Optimizer supports Linux, macOS, and Windows.</p>
+        </div>
+        <div class="card">
+          <h3>Can I cancel anytime?</h3>
+          <p>Yes. If you are not saving money, you can cancel at any time.</p>
+        </div>
+        <div class="card">
+          <h3>Do you accept payments outside the US?</h3>
+          <p>Yes. Global payments are supported.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="container" style="text-align:center;">
+      <h2>Stop paying full price for repeated AI calls</h2>
+      <p class="subtle">Install AI Optimizer, connect your workflow, and start reducing wasted OpenAI spend.</p>
+      <a href="https://saas-optimizer.fly.dev/v1/api/create-trial" class="button button-primary">Start Free Trial</a>
+    </div>
+  </section>
+
+  <footer>
+    <div class="container">
+      <p>We do not sell your personal information.</p>
+      <p>© 2026 Day Place LTD · <a href="mailto:DayPlaceLTD@gmail.com">DayPlaceLTD@gmail.com</a></p>
     </div>
   </footer>
 </body>
