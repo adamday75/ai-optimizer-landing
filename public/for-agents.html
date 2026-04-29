@@ -12,13 +12,13 @@
   <section class="features" style="padding-top: 64px;">
     <div class="container" style="max-width: 960px;">
       <p><a href="/">← Back to home</a></p>
-      <h1 style="font-size: 2.8rem; margin: 20px 0;">AI Optimizer for OpenClaw and OpenAI agent workflows</h1>
-      <p style="font-size: 1.2rem; color: var(--gray); margin-bottom: 30px;">One of the clearest proven use cases for AI Optimizer is OpenClaw routed through the OpenAI API. Agent workflows can generate repeated traffic across prompts, embeddings, memory calls, retries, and automation loops, and a local proxy gives you a cleaner way to manage that path.</p>
+      <h1 style="font-size: 2.8rem; margin: 20px 0;">AI Optimizer for OpenClaw, Hermes-Agent, and OpenAI agent workflows</h1>
+      <p style="font-size: 1.2rem; color: var(--gray); margin-bottom: 30px;">One of the clearest proven use cases for AI Optimizer is agent infrastructure routed through the OpenAI API. We have now verified both OpenClaw and Hermes-Agent through the local proxy. Agent workflows can generate repeated traffic across prompts, embeddings, memory calls, retries, and automation loops, and a local proxy gives you a cleaner way to manage that path.</p>
 
       <div class="feature-grid" style="grid-template-columns: 1fr; gap: 20px;">
         <div class="feature-card" style="text-align:left;">
           <h3>OpenClaw is a real, current use case</h3>
-          <p>This is not hypothetical positioning. OpenClaw already routes through the OpenAI API in a way that benefits from a stable local proxy.</p>
+          <p>This is not hypothetical positioning. OpenClaw already routes through the OpenAI API in a way that benefits from a stable local proxy at <code>http://localhost:3000/v1</code>.</p>
         </div>
         <div class="feature-card" style="text-align:left;">
           <h3>Embeddings compatibility matters</h3>
@@ -33,6 +33,10 @@
           <p>Scheduled runs, recurring prompts, memory checks, and repeat-heavy agent jobs are exactly the kind of workflows where duplicate request waste can quietly pile up. A local optimizer is a cleaner way to control that path.</p>
         </div>
         <div class="feature-card" style="text-align:left;">
+          <h3>Hermes-Agent also works through the proxy</h3>
+          <p>We verified Hermes-Agent through a custom endpoint pointed at <code>http://localhost:3000/v1</code>, with requests and cache hits confirmed in AI Optimizer.</p>
+        </div>
+        <div class="feature-card" style="text-align:left;">
           <h3>One local integration point</h3>
           <p>Instead of managing request behavior separately across each tool, script, or agent loop, you can route them through one local endpoint.</p>
         </div>
@@ -41,6 +45,30 @@
       <div class="feature-card" style="text-align:left; margin-top: 28px;">
         <h3>Why this matters for agent ops</h3>
         <p>When an agent runs every hour, every four hours, or on a fixed schedule, repeated structure becomes normal. That makes agent infrastructure one of the clearest places to reduce duplicate spend without changing the workflow people already rely on.</p>
+      </div>
+
+      <div class="feature-card" style="text-align:left; margin-top: 28px;">
+        <h3>Example for OpenClaw</h3>
+        <p>A practical OpenClaw setup can point OpenAI-compatible traffic at AI Optimizer locally through <code>http://localhost:3000/v1</code>:</p>
+        <pre style="background:#0f172a; color:#e2e8f0; padding:18px; border-radius:12px; overflow:auto;"><code>"models": {
+  "providers": {
+    "openai": {
+      "baseUrl": "http://localhost:3000/v1"
+    }
+  }
+}</code></pre>
+        <p style="margin-top: 12px;">That gives OpenClaw one local path for prompts, responses, and embedding traffic instead of sending everything directly to OpenAI.</p>
+      </div>
+
+      <div class="feature-card" style="text-align:left; margin-top: 28px;">
+        <h3>Example for Hermes-Agent</h3>
+        <p>Hermes-Agent also worked through AI Optimizer using a custom endpoint and a manually entered model:</p>
+        <pre style="background:#0f172a; color:#e2e8f0; padding:18px; border-radius:12px; overflow:auto;"><code>Select provider: Custom endpoint
+API base URL: http://localhost:3000/v1
+API key: your OpenAI API key
+Model: gpt-5.4
+Start chat: hermes --tui</code></pre>
+        <p style="margin-top: 12px;">That was enough to route Hermes-Agent through AI Optimizer and verify requests and cache hits in the local app.</p>
       </div>
 
       <div style="margin-top: 40px;">
