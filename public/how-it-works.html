@@ -15,23 +15,42 @@
       <h1 style="font-size: 2.8rem; margin: 20px 0;">How AI Optimizer works</h1>
       <p style="font-size: 1.2rem; color: var(--gray); margin-bottom: 30px;">AI Optimizer gives you one local point where OpenAI-powered traffic can be observed, cached, and routed more efficiently.</p>
 
+      <div style="margin: 36px 0 28px;">
+        <img src="images/app-setup-annotated.png" alt="Annotated AI Optimizer app screenshot showing setup steps and live cache-hit stats" style="max-width:100%; border-radius:18px; border:1px solid #e2e8f0; box-shadow: 0 12px 32px rgba(15,23,42,.08);" />
+      </div>
+
       <div class="feature-grid" style="grid-template-columns: 1fr; gap: 20px;">
         <div class="feature-card" style="text-align:left;">
-          <h3>1. Run the local app</h3>
-          <p>AI Optimizer runs on your machine and exposes a local endpoint that your workflow can use instead of talking directly to OpenAI every time.</p>
+          <h3>1. Enter your license</h3>
+          <p>Paste in the license from your welcome email and activate the app on your machine.</p>
         </div>
+
         <div class="feature-card" style="text-align:left;">
-          <h3>2. Point your workflow at the local base URL</h3>
-          <p>Instead of rewriting your entire app, you usually just update the OpenAI base URL so requests flow through the optimizer first.</p>
+          <h3>2. Add your OpenAI API key</h3>
+          <p>Save your API key so AI Optimizer can route and cache OpenAI-powered requests locally.</p>
         </div>
+
         <div class="feature-card" style="text-align:left;">
-          <h3>3. Repeated requests can hit cache</h3>
-          <p>When requests repeat, AI Optimizer can serve them locally instead of sending and paying for the same call again.</p>
+          <h3>3. Start the local proxy</h3>
+          <p>Once the proxy is running, AI Optimizer listens on <code>http://localhost:3000/v1</code>.</p>
         </div>
+
         <div class="feature-card" style="text-align:left;">
-          <h3>4. Keep visibility into behavior</h3>
-          <p>The optimizer also acts as a local control point for understanding request flow, cache behavior, and integration health.</p>
+          <h3>4. Point your workflow at the local base URL</h3>
+          <p>In many setups, the main change is updating your OpenAI base URL so traffic flows through AI Optimizer first.</p>
         </div>
+
+        <div class="feature-card" style="text-align:left;">
+          <h3>5. Watch requests and cache hits update</h3>
+          <p>The app shows request totals, cache hits, and hit rate so you can confirm the optimizer is working while you use your normal workflow.</p>
+        </div>
+      </div>
+
+      <div class="feature-card" style="text-align:left; margin-top: 28px;">
+        <h3>Typical config change</h3>
+        <p>For many OpenAI-compatible tools, the practical change is using AI Optimizer as the local base URL:</p>
+        <pre style="background:#0f172a; color:#e2e8f0; padding:18px; border-radius:12px; overflow:auto;"><code>OPENAI_BASE_URL=http://localhost:3000/v1</code></pre>
+        <p style="margin-top: 12px;">That lets your workflow hit the local optimizer first instead of going directly to OpenAI every time.</p>
       </div>
 
       <div style="margin-top: 40px;">

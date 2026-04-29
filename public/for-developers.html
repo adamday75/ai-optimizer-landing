@@ -15,6 +15,10 @@
       <h1 style="font-size: 2.8rem; margin: 20px 0;">AI Optimizer for developers and command-line workflows</h1>
       <p style="font-size: 1.2rem; color: var(--gray); margin-bottom: 30px;">One of the clearest proven use cases for AI Optimizer is OpenAI API usage from the command line. If you repeat prompts, test requests, run scripts, or iterate locally, a caching proxy can help reduce duplicate spend without forcing you into a major rewrite.</p>
 
+      <div style="margin: 36px 0 28px; text-align:center;">
+        <img src="images/extension-cache-stats.png" alt="AI Optimizer extension screenshot showing requests and cache-hit totals" style="max-width:100%; border-radius:18px; border:1px solid #e2e8f0; box-shadow: 0 12px 32px rgba(15,23,42,.08);" />
+      </div>
+
       <div class="feature-grid" style="grid-template-columns: 1fr; gap: 20px;">
         <div class="feature-card" style="text-align:left;">
           <h3>Useful for repeat-heavy CLI workflows</h3>
@@ -22,16 +26,23 @@
         </div>
         <div class="feature-card" style="text-align:left;">
           <h3>Keep your current setup</h3>
-          <p>You usually do not need to redesign your workflow. The practical change is routing your OpenAI base URL through the local optimizer endpoint.</p>
+          <p>You usually do not need to redesign your workflow. In many cases, the practical change is routing your OpenAI base URL through the local optimizer endpoint.</p>
         </div>
         <div class="feature-card" style="text-align:left;">
-          <h3>Better fit for real builder behavior</h3>
-          <p>Developers often ask the same thing slightly differently, re-run checks, and test the same logic over and over. That is exactly where repeated request waste shows up.</p>
+          <h3>Verify cache activity fast</h3>
+          <p>The extension view gives you a quick way to confirm requests and cache hits are climbing without needing the full desktop app open at all times.</p>
         </div>
         <div class="feature-card" style="text-align:left;">
-          <h3>A solid starting use case today</h3>
-          <p>This is one of the strongest current positions for the product right now, alongside OpenClaw through the OpenAI API.</p>
+          <h3>A strong use case today</h3>
+          <p>This is one of the clearest current positions for the product right now, especially for repeat-heavy local development, scripts, and OpenAI-compatible workflows like OpenClaw.</p>
         </div>
+      </div>
+
+      <div class="feature-card" style="text-align:left; margin-top: 28px;">
+        <h3>Typical config change</h3>
+        <p>For many tools and scripts, the main setup change is pointing your OpenAI base URL at AI Optimizer:</p>
+        <pre style="background:#0f172a; color:#e2e8f0; padding:18px; border-radius:12px; overflow:auto;"><code>OPENAI_BASE_URL=http://localhost:3000/v1</code></pre>
+        <p style="margin-top: 12px;">That lets your local workflow hit the optimizer first, reduce repeated spend, and keep visibility into request behavior.</p>
       </div>
 
       <div style="margin-top: 40px;">
