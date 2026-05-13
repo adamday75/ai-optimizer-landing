@@ -3,85 +3,98 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>AI Optimizer for OpenClaw and OpenAI Agent Workflows</title>
-  <meta name="description" content="How AI Optimizer supports OpenClaw through the OpenAI API, including embeddings, memory traffic, and repeat-heavy agent workflows.">
-  <link rel="canonical" href="https://ai-optimizer-landing.vercel.app/for-agents.html">
-  <link href="styles.css" rel="stylesheet">
+  <title>AI Optimizer for Agents – Local Caching for OpenAI, Anthropic, and Repeat-Heavy Agent Workflows</title>
+  <meta name="description" content="AI Optimizer helps reduce repeated AI API waste in agent workflows with a local caching and control layer for OpenAI and Anthropic.">
+  <link rel="canonical" href="https://ai-optimizer.org/for-agents.html">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link href="styles-v3-site.css" rel="stylesheet">
 </head>
 <body>
-  <section class="features" style="padding-top: 64px;">
-    <div class="container" style="max-width: 960px;">
-      <p><a href="/">← Back to home</a></p>
-      <h1 style="font-size: 2.8rem; margin: 20px 0;">AI Optimizer for OpenClaw, Hermes-Agent, and OpenAI agent workflows</h1>
-      <p style="font-size: 1.2rem; color: var(--gray); margin-bottom: 30px;">One of the clearest proven use cases for AI Optimizer is agent infrastructure routed through the OpenAI API. We have now verified both OpenClaw and Hermes-Agent through the local proxy. Agent workflows can generate repeated traffic across prompts, embeddings, memory calls, retries, and automation loops, and a local proxy gives you a cleaner way to manage that path.</p>
+  <main class="page">
+    <div class="container">
+      <header class="topbar">
+        <a class="brand" href="index.html"><span class="brand-mark"></span>AI Optimizer</a>
+        <a class="back-link" href="index.html">← Back to home</a>
+      </header>
 
-      <div class="feature-grid" style="grid-template-columns: 1fr; gap: 20px;">
-        <div class="feature-card" style="text-align:left;">
-          <h3>OpenClaw is a real, current use case</h3>
-          <p>This is not hypothetical positioning. OpenClaw already routes through the OpenAI API in a way that benefits from a stable local proxy at <code>http://localhost:3000/v1</code>.</p>
-        </div>
-        <div class="feature-card" style="text-align:left;">
-          <h3>Embeddings compatibility matters</h3>
-          <p>OpenClaw memory workflows depend on embedding calls like <code>text-embedding-3-small</code>. AI Optimizer now supports that path cleanly, and we verified live embedding traffic making it through.</p>
-        </div>
-        <div class="feature-card" style="text-align:left;">
-          <h3>Memory and recall are part of the story</h3>
-          <p>When embeddings break, memory quality breaks with them. With the repaired path, OpenClaw memory store and recall are working again through AI Optimizer.</p>
-        </div>
-        <div class="feature-card" style="text-align:left;">
-          <h3>Cron jobs and recurring agents fit naturally</h3>
-          <p>Scheduled runs, recurring prompts, memory checks, and repeat-heavy agent jobs are exactly the kind of workflows where duplicate request waste can quietly pile up. A local optimizer is a cleaner way to control that path.</p>
-        </div>
-        <div class="feature-card" style="text-align:left;">
-          <h3>Hermes-Agent also works through the proxy</h3>
-          <p>We verified Hermes-Agent through a custom endpoint pointed at <code>http://localhost:3000/v1</code>, with requests and cache hits confirmed in AI Optimizer.</p>
-        </div>
-        <div class="feature-card" style="text-align:left;">
-          <h3>One local integration point</h3>
-          <p>Instead of managing request behavior separately across each tool, script, or agent loop, you can route them through one local endpoint.</p>
-        </div>
-      </div>
+      <section class="hero-panel">
+        <div class="eyebrow">For agents</div>
+        <h1>Reduce the repeated, expensive parts of agent workflows.</h1>
+        <p class="lead">AI Optimizer is built for repeat-heavy agent workflows where retries, loops, recurring jobs, memory calls, and repeated tool paths can quietly burn API spend.</p>
+      </section>
 
-      <div class="feature-card" style="text-align:left; margin-top: 28px;">
-        <h3>Why this matters for agent ops</h3>
-        <p>When an agent runs every hour, every four hours, or on a fixed schedule, repeated structure becomes normal. That makes agent infrastructure one of the clearest places to reduce duplicate spend without changing the workflow people already rely on.</p>
-      </div>
+      <section class="section">
+        <div class="grid-1">
+          <article class="card"><h3>Where agent waste usually shows up</h3><p>Agent systems often repeat the same work more than people expect. A lot of the waste is not the “smart” step — it is retries, repeated summaries, recurring cron runs, repeated tool calls, duplicate context assembly, and loops that keep hitting the same API path.</p></article>
+          <article class="card"><h3>A local control layer for agent traffic</h3><p>AI Optimizer runs on <code>localhost:3000</code> and sits between your workflow and the selected provider API. It helps cache repeated requests, reduce duplicate spend, and make agent behavior easier to reason about locally.</p></article>
+          <article class="card"><h3>Provider support in v2.2.0</h3><p>AI Optimizer supports both OpenAI and Anthropic, with one active provider selected at a time in the desktop app. Anthropic support in this release is focused on chat completions through the same local proxy path.</p></article>
+          <article class="card"><h3>Built for practical workflows</h3><p>The strongest use cases are not flashy demos. They are the repeated, boring, expensive patterns that show up when agents, scripts, and automations keep revisiting the same API paths over time.</p></article>
+        </div>
+      </section>
 
-      <div class="feature-card" style="text-align:left; margin-top: 28px;">
-        <h3>Example for OpenClaw</h3>
-        <p>A practical OpenClaw setup can point OpenAI-compatible traffic at AI Optimizer locally through <code>http://localhost:3000/v1</code>:</p>
-        <pre style="background:#0f172a; color:#e2e8f0; padding:18px; border-radius:12px; overflow:auto;"><code>"models": {
+      <section class="section">
+        <div class="callout"><strong>Why this matters now:</strong> as more teams move from chatting with models to running persistent agent workflows, “agent orchestration” and “agent economics” start becoming separate problems. AI Optimizer is built for the economics side: caching, repeated request control, and local workflow efficiency.</div>
+      </section>
+
+      <section class="section">
+        <div class="grid-2">
+          <article class="card">
+            <h3>Adjustable cache TTL for recurring agent workflows</h3>
+            <p>Agent workflows often run on schedules or repeat in cycles. AI Optimizer includes an adjustable cache TTL so recurring jobs, cron-style tasks, and repeat-heavy automations can keep useful results long enough to help without holding them longer than you want.</p>
+          </article>
+          <article class="card">
+            <h3>Good fit for</h3>
+            <p>Local agent workflows, repeat-heavy automations, scheduled jobs, tool-driven assistants that revisit similar prompts, and developers testing agent loops locally.</p>
+          </article>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="grid-2">
+          <article class="card">
+            <div class="kicker">Example for OpenClaw</div>
+            <h3>Point OpenAI-compatible traffic at AI Optimizer locally.</h3>
+            <pre class="code-block"><code>"models": {
   "providers": {
     "openai": {
       "baseUrl": "http://localhost:3000/v1"
     }
   }
 }</code></pre>
-        <p style="margin-top: 12px;">That gives OpenClaw one local path for prompts, responses, and embedding traffic instead of sending everything directly to OpenAI.</p>
-      </div>
-
-      <div class="feature-card" style="text-align:left; margin-top: 28px;">
-        <h3>Example for Hermes-Agent</h3>
-        <p>Hermes-Agent also worked through AI Optimizer using a custom endpoint and a manually entered model:</p>
-        <pre style="background:#0f172a; color:#e2e8f0; padding:18px; border-radius:12px; overflow:auto;"><code>Select provider: Custom endpoint
+            <p class="meta">That gives OpenClaw one local path for prompts, responses, and embedding traffic instead of sending everything directly to OpenAI.</p>
+          </article>
+          <article class="card">
+            <div class="kicker">Example for Hermes-Agent</div>
+            <h3>Use a custom endpoint and route it through the same proxy.</h3>
+            <pre class="code-block"><code>Select provider: Custom endpoint
 API base URL: http://localhost:3000/v1
 API key: your OpenAI API key
 Model: gpt-5.4
 Start chat: hermes --tui</code></pre>
-        <p style="margin-top: 12px;">That was enough to route Hermes-Agent through AI Optimizer and verify requests and cache hits in the local app.</p>
-      </div>
+            <p class="meta">That is enough to route Hermes-Agent through AI Optimizer and verify requests and cache hits in the local app.</p>
+          </article>
+        </div>
+      </section>
 
-      <div style="margin-top: 40px;">
-        <a href="https://saas-optimizer.fly.dev/v1/api/create-trial" class="cta-button">Start 14-Day Trial</a>
-      </div>
-    </div>
-  </section>
+      <section class="section">
+        <div class="cta-card">
+          <div class="cta-copy">
+            <h3>Make your agent workflows cheaper to repeat.</h3>
+            <p>Route prompts, responses, and repeated agent traffic through one local optimizer path and keep the workflow you already rely on.</p>
+          </div>
+          <a href="https://saas-optimizer.fly.dev/v1/api/create-trial" class="button button-primary">Start free trial</a>
+        </div>
+      </section>
 
-  <footer class="footer">
-    <div class="container">
-      <p>We do not sell your personal information.</p>
-      <p><a href="privacy.html">Privacy Policy</a> · © 2026 Day Place LTD · <a href="mailto:DayPlaceLTD@gmail.com">DayPlaceLTD@gmail.com</a></p>
+      <footer class="footer">
+        <div class="footer-card">
+          <p>We do not sell your personal information.</p>
+          <p><a href="privacy.html">Privacy Policy</a> · © 2026 Day Place LTD · <a href="mailto:admin@ai-optimizer.org">admin@ai-optimizer.org</a></p>
+        </div>
+      </footer>
     </div>
-  </footer>
+  </main>
 </body>
 </html>

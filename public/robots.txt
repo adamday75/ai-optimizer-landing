@@ -1,3 +1,4 @@
 User-agent: *
 Allow: /
-Sitemap: https://ai-optimizer-landing.vercel.app/sitemap.xml
+
+Sitemap: https://ai-optimizer.org/sitemap.xml

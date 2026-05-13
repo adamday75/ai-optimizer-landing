@@ -3,36 +3,64 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>AI Optimizer FAQ</title>
-  <meta name="description" content="Answers about AI Optimizer, setup, pricing, local proxy behavior, and OpenAI workflow compatibility.">
-  <link rel="canonical" href="https://ai-optimizer-landing.vercel.app/faq.html">
-  <link href="styles.css" rel="stylesheet">
+  <title>AI Optimizer FAQ – OpenAI, Anthropic, Caching, Agents, and Local Proxy Questions</title>
+  <meta name="description" content="Answers to common questions about AI Optimizer, including OpenAI and Anthropic support, caching, agent workflows, local proxy setup, and compatibility.">
+  <link rel="canonical" href="https://ai-optimizer.org/faq.html">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link href="styles-v3-site.css" rel="stylesheet">
 </head>
 <body>
-  <section class="features" style="padding-top: 64px;">
-    <div class="container" style="max-width: 960px;">
-      <p><a href="/">← Back to home</a></p>
-      <h1 style="font-size: 2.8rem; margin: 20px 0;">Frequently asked questions</h1>
-      <div class="faq-grid" style="grid-template-columns: 1fr; gap: 20px;">
-        <div class="feature-card" style="text-align:left;"><h3>What is AI Optimizer?</h3><p>A local caching proxy for OpenAI-powered apps, automations, and agents.</p></div>
-        <div class="feature-card" style="text-align:left;"><h3>Does it require major code changes?</h3><p>Usually no. The main change is routing your OpenAI base URL through the local proxy.</p></div>
-        <div class="feature-card" style="text-align:left;"><h3>Is this only for OpenClaw?</h3><p>No. OpenClaw is a strong use case, but the product is broader than that.</p></div>
-        <div class="feature-card" style="text-align:left;"><h3>What platforms are supported?</h3><p>Windows, macOS, and Linux builds are available.</p></div>
-        <div class="feature-card" style="text-align:left;"><h3>How much does it cost?</h3><p>$4.99/month after a 14-day trial, with up to 3 devices on the starter plan.</p></div>
-        <div class="feature-card" style="text-align:left;"><h3>Why split information across pages?</h3><p>Because the homepage should convert quickly, while deeper pages support technical buyers and search indexing.</p></div>
-      </div>
-
-      <div style="margin-top: 40px;">
-        <a href="https://saas-optimizer.fly.dev/v1/api/create-trial" class="cta-button">Start 14-Day Trial</a>
-      </div>
-    </div>
-  </section>
-
-  <footer class="footer">
+  <main class="page">
     <div class="container">
-      <p>We do not sell your personal information.</p>
-      <p><a href="privacy.html">Privacy Policy</a> · © 2026 Day Place LTD · <a href="mailto:DayPlaceLTD@gmail.com">DayPlaceLTD@gmail.com</a></p>
+      <header class="topbar">
+        <a class="brand" href="index.html"><span class="brand-mark"></span>AI Optimizer</a>
+        <a class="back-link" href="index.html">← Back to home</a>
+      </header>
+
+      <section class="hero-panel">
+        <div class="eyebrow">FAQ</div>
+        <h1>Answers to the practical questions first.</h1>
+        <p class="lead">Answers about provider support, caching, compatibility, local setup, and how AI Optimizer fits into real developer and agent workflows.</p>
+      </section>
+
+      <section class="section">
+        <div class="faq-list">
+          <article class="card"><h3>What is AI Optimizer?</h3><p>AI Optimizer is a local desktop app and proxy that sits in front of your AI API workflow on <code>localhost:3000</code>. It helps reduce repeated API waste with caching and gives you a simple local control layer for repeat-heavy usage.</p></article>
+          <article class="card"><h3>Which providers does AI Optimizer support?</h3><p>AI Optimizer 2.2.0 supports both <strong>OpenAI</strong> and <strong>Anthropic</strong>. You can store both API keys in the app and select one active provider at a time.</p></article>
+          <article class="card"><h3>Can I use OpenAI and Anthropic at the same time?</h3><p>The app can store both API keys, but in v2.2.0 it uses <strong>one active provider at a time</strong>. That keeps the workflow simple and predictable while still supporting both providers.</p></article>
+          <article class="card"><h3>Does AI Optimizer support Anthropic fully?</h3><p>In v2.2.0, Anthropic support is focused on <strong>chat completions</strong> through the local proxy workflow. OpenAI support remains broader for workflows that use additional OpenAI-specific endpoints.</p></article>
+          <article class="card"><h3>Does caching mix OpenAI and Anthropic requests together?</h3><p>No. Cache behavior is <strong>provider-aware</strong>, so OpenAI and Anthropic requests do not collide with each other.</p></article>
+          <article class="card"><h3>What kinds of workflows is AI Optimizer best for?</h3><p>AI Optimizer is best for repeat-heavy developer workflows, scripts, automations, agents, retries, and recurring jobs where the same request patterns show up again and again.</p></article>
+          <article class="card"><h3>Is this useful for agents?</h3><p>Yes. AI Optimizer is especially useful for agent workflows that repeat the same tool paths, retries, summaries, or scheduled tasks over time without forcing you to replace your existing agent stack.</p></article>
+          <article class="card"><h3>Can I adjust how long items stay cached?</h3><p>Yes. AI Optimizer includes an adjustable cache TTL, which is especially useful for cron jobs, recurring automations, and repeat-heavy local workflows.</p></article>
+          <article class="card"><h3>Do I need to rebuild my workflow to use it?</h3><p>No. The goal is to fit into the workflow you already have by adding a local proxy layer in front of it, not by forcing you onto a completely new platform.</p></article>
+          <article class="card"><h3>Does it work with OpenClaw, local tools, and scripts?</h3><p>Yes. AI Optimizer is a strong fit for local developer tools, scripts, automations, and agent-style workflows where repeated API patterns are common.</p></article>
+          <article class="card"><h3>Does it save money on every request?</h3><p>No. AI Optimizer is most valuable when requests repeat. If every request is entirely new, caching helps less. The strongest value shows up in repeat-heavy or recurring workflows.</p></article>
+          <article class="card"><h3>Is it a hosted SaaS proxy?</h3><p>No. AI Optimizer is designed as a <strong>local desktop app and proxy</strong>, giving you a local-first control layer instead of pushing more traffic through another remote service in the middle.</p></article>
+          <article class="card"><h3>What platforms are supported?</h3><p>macOS, Windows, and Linux builds are available.</p></article>
+          <article class="card"><h3>Is there a free trial?</h3><p>Yes. AI Optimizer includes a <strong>14-day free trial</strong>.</p></article>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="cta-card">
+          <div class="cta-copy">
+            <h3>Still have questions?</h3>
+            <p>Start with the local proxy setup and test AI Optimizer against the repeat-heavy requests you already run.</p>
+          </div>
+          <a href="https://saas-optimizer.fly.dev/v1/api/create-trial" class="button button-primary">Start free trial</a>
+        </div>
+      </section>
+
+      <footer class="footer">
+        <div class="footer-card">
+          <p>We do not sell your personal information.</p>
+          <p><a href="privacy.html">Privacy Policy</a> · © 2026 Day Place LTD · <a href="mailto:admin@ai-optimizer.org">admin@ai-optimizer.org</a></p>
+        </div>
+      </footer>
     </div>
-  </footer>
+  </main>
 </body>
 </html>

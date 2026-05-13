@@ -5,445 +5,149 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="google-site-verification" content="google7547b5f4614aaa24">
   <meta name="msvalidate.01" content="FDC4CA8E9F2ADDF1252E0E151260449D">
-  <meta name="description" content="AI Optimizer cuts repeat OpenAI API waste with a local caching proxy that works with your existing tools, scripts, and agent workflows.">
-  <link rel="canonical" href="https://ai-optimizer-landing.vercel.app/">
-  <title>AI Optimizer – Cut OpenAI API Costs with Local Caching</title>
-  <style>
-    :root {
-      --primary: #2563eb;
-      --primary-dark: #1d4ed8;
-      --accent: #7c3aed;
-      --success: #10b981;
-      --text: #0f172a;
-      --muted: #475569;
-      --bg: #f8fafc;
-      --surface: #ffffff;
-      --border: #e2e8f0;
-      --gradient: linear-gradient(135deg, #0f172a 0%, #1d4ed8 55%, #7c3aed 100%);
-    }
-    * { box-sizing: border-box; }
-    body {
-      margin: 0;
-      font-family: Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-      background: var(--bg);
-      color: var(--text);
-      line-height: 1.6;
-    }
-    .container {
-      width: min(1120px, calc(100% - 32px));
-      margin: 0 auto;
-    }
-    .hero {
-      background: var(--gradient);
-      color: white;
-      padding: 84px 0 70px;
-    }
-    .hero-grid {
-      display: grid;
-      grid-template-columns: 1.2fr 0.8fr;
-      gap: 28px;
-      align-items: center;
-    }
-    .eyebrow {
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      padding: 7px 12px;
-      border: 1px solid rgba(255,255,255,0.16);
-      border-radius: 999px;
-      font-size: 0.88rem;
-      font-weight: 700;
-      background: rgba(255,255,255,0.08);
-      margin-bottom: 18px;
-    }
-    h1, h2, h3 { margin: 0 0 14px; line-height: 1.12; }
-    h1 { font-size: clamp(2.35rem, 5vw, 4.35rem); font-weight: 850; }
-    h2 { font-size: clamp(1.7rem, 3vw, 2.5rem); text-align: center; }
-    .lead {
-      max-width: 720px;
-      font-size: 1.18rem;
-      color: rgba(255,255,255,0.93);
-      margin-bottom: 24px;
-    }
-    .hero-actions {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 12px;
-      margin-bottom: 18px;
-    }
-    .button {
-      display: inline-block;
-      text-decoration: none;
-      border-radius: 12px;
-      padding: 14px 22px;
-      font-weight: 800;
-      transition: transform .15s ease, opacity .15s ease;
-    }
-    .button:hover { transform: translateY(-1px); opacity: .97; }
-    .button-primary { background: white; color: var(--primary-dark); }
-    .button-secondary {
-      color: white;
-      border: 1px solid rgba(255,255,255,0.28);
-      background: rgba(255,255,255,0.08);
-    }
-    .hero-meta {
-      color: rgba(255,255,255,0.8);
-      font-size: 0.95rem;
-    }
-    .hero-card {
-      background: rgba(255,255,255,0.08);
-      border: 1px solid rgba(255,255,255,0.15);
-      border-radius: 20px;
-      padding: 24px;
-      backdrop-filter: blur(10px);
-    }
-    .hero-card h3 { font-size: 1.1rem; }
-    .hero-card ul {
-      list-style: none;
-      padding: 0;
-      margin: 16px 0 0;
-    }
-    .hero-card li {
-      padding: 10px 0;
-      border-bottom: 1px solid rgba(255,255,255,0.12);
-      color: rgba(255,255,255,0.92);
-    }
-    .hero-card li:last-child { border-bottom: 0; }
-    section { padding: 72px 0; }
-    .subtle {
-      max-width: 760px;
-      margin: 14px auto 0;
-      text-align: center;
-      color: var(--muted);
-    }
-    .grid-3 {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
-      gap: 18px;
-      margin-top: 34px;
-    }
-    .card {
-      background: var(--surface);
-      border: 1px solid var(--border);
-      border-radius: 18px;
-      padding: 24px;
-      box-shadow: 0 10px 30px rgba(15,23,42,.05);
-    }
-    .card p { margin: 0; color: var(--muted); }
-    .steps {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-      gap: 18px;
-      margin-top: 34px;
-    }
-    .step-num {
-      width: 36px; height: 36px; border-radius: 999px;
-      display: inline-flex; align-items: center; justify-content: center;
-      font-weight: 800; background: #dbeafe; color: var(--primary-dark);
-      margin-bottom: 14px;
-    }
-    .proof-strip {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-      gap: 18px;
-      margin-top: 34px;
-    }
-    .metric {
-      background: #eff6ff;
-      border: 1px solid #bfdbfe;
-      border-radius: 18px;
-      padding: 22px;
-    }
-    .metric strong {
-      display: block;
-      font-size: 1.65rem;
-      margin-bottom: 8px;
-      color: var(--primary-dark);
-    }
-    .trust-row {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      gap: 12px;
-      margin-top: 24px;
-    }
-    .trust-link {
-      text-decoration: none;
-      color: var(--primary-dark);
-      font-weight: 700;
-      background: #eff6ff;
-      border: 1px solid #bfdbfe;
-      border-radius: 999px;
-      padding: 10px 14px;
-    }
-    .pricing-wrap { max-width: 520px; margin: 34px auto 0; }
-    .price-box {
-      background: white;
-      border: 1px solid var(--border);
-      border-radius: 20px;
-      padding: 30px;
-      box-shadow: 0 12px 32px rgba(15,23,42,.06);
-    }
-    .price { text-align: center; font-size: 3rem; font-weight: 850; color: var(--primary-dark); }
-    .price span { font-size: 1rem; color: var(--muted); font-weight: 600; }
-    .clean-list { list-style: none; padding: 0; margin: 20px 0 26px; }
-    .clean-list li { padding: 10px 0; border-bottom: 1px solid var(--border); color: var(--muted); }
-    .faq-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-      gap: 18px;
-      margin-top: 34px;
-    }
-    .notice {
-      background: #f8fffb;
-      border-left: 4px solid var(--success);
-      border-radius: 14px;
-      padding: 22px;
-      margin-top: 28px;
-      color: var(--text);
-    }
-    footer {
-      padding: 36px 0 50px;
-      text-align: center;
-      color: var(--muted);
-      font-size: 0.95rem;
-    }
-    @media (max-width: 860px) {
-      .hero-grid { grid-template-columns: 1fr; }
-    }
-    @media (max-width: 640px) {
-      .hero { padding: 72px 0 56px; }
-      .button { width: 100%; text-align: center; }
-    }
-  </style>
+  <meta name="description" content="AI Optimizer cuts repeated AI API waste with a local caching proxy for OpenAI and Anthropic workflows.">
+  <link rel="canonical" href="https://ai-optimizer.org/">
+  <title>AI Optimizer – Cut AI API Costs with Local Caching</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link href="styles-v3-site.css" rel="stylesheet">
 </head>
 <body>
-  <header class="hero">
+  <main class="page">
     <div class="container">
-      <div class="hero-grid">
-        <div>
-          <div class="eyebrow">AI Optimizer</div>
-          <h1>Cut your OpenAI API costs</h1>
-          <p class="lead">Local caching for developers, agents, and automations.</p>
-          <div class="hero-actions">
-            <a href="#how-it-works" class="button button-primary">See How It Works</a>
-            <a href="https://saas-optimizer.fly.dev/v1/api/create-trial" class="button button-secondary">Start Free Trial</a>
+      <header class="topbar">
+        <a class="brand" href="index.html"><span class="brand-mark"></span>AI Optimizer</a>
+        <div class="top-proof">
+          <span class="top-pill">Local-first desktop app</span>
+          <span class="top-pill">Mac · Windows · Linux</span>
+          <span class="top-pill">14-day free trial</span>
+        </div>
+      </header>
+
+      <section class="hero-panel" style="padding:0; overflow:hidden;">
+        <div style="display:grid; grid-template-columns:1.08fr .92fr; gap:22px; padding:42px;" class="hero-main">
+          <div>
+            <div class="eyebrow">Cut repeated AI API waste without rebuilding your stack</div>
+            <h1>Stop paying full price for repeated AI calls.</h1>
+            <p class="lead">AI Optimizer adds a local caching and control layer in front of your OpenAI or Anthropic workflow so duplicate and repeat traffic stops burning money. Same tools. Same flow. Cleaner economics.</p>
+            <div style="display:grid; gap:12px; margin:20px 0 24px;">
+              <div style="color:var(--muted); font-size:.98rem;"><strong style="color:var(--text);">Best for:</strong> repeat-heavy developer workflows, agents, scripts, and automations</div>
+              <div style="color:var(--muted); font-size:.98rem;"><strong style="color:var(--text);">Core value:</strong> reduce repeated spend without changing how your team already works</div>
+            </div>
+            <div style="display:flex; flex-wrap:wrap; gap:14px; margin:0 0 16px;">
+              <a class="button button-primary" href="https://saas-optimizer.fly.dev/v1/api/create-trial">Start free trial</a>
+              <a class="button" style="border:1px solid var(--border); background: rgba(255,255,255,.02);" href="how-it-works.html">See how it works</a>
+            </div>
+            <div class="meta">Now supports OpenAI + Anthropic with the same simple local proxy workflow.</div>
           </div>
-          <div class="hero-meta">$4.99/month · 14-day trial<br>Works on Mac, Windows, and Linux.</div>
-        </div>
-        <div class="hero-card">
-          <h3>Why use AI Optimizer</h3>
-          <ul>
-            <li>Save money on repeated API calls</li>
-            <li>Works with OpenClaw</li>
-            <li>Runs on Mac, Windows, and Linux</li>
-          </ul>
-        </div>
-      </div>
-    </div>
-  </header>
 
-  <section>
-    <div class="container">
-      <div class="trust-row">
-        <span class="trust-link">Cancel anytime</span>
-        <span class="trust-link">Global payments accepted</span>
-        <span class="trust-link">Local-first desktop app</span>
-        <span class="trust-link">Built for developers and AI workflows</span>
-      </div>
-    </div>
-  </section>
-
-  <section>
-    <div class="container">
-      <h2>Why AI Optimizer matters</h2>
-      <div class="grid-3">
-        <div class="card">
-          <h3>Save money on repeated AI calls</h3>
-          <p>Cache duplicate or repeated OpenAI requests and reduce unnecessary API spend.</p>
-        </div>
-        <div class="card">
-          <h3>Keep your existing workflow</h3>
-          <p>Use AI Optimizer through a local proxy instead of rebuilding your stack.</p>
-        </div>
-        <div class="card">
-          <h3>See what you’re saving</h3>
-          <p>Track requests, cache hits, and savings clearly in one desktop app.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section id="how-it-works" style="background:white;">
-    <div class="container">
-      <h2>How it works</h2>
-      <div class="steps">
-        <div class="card">
-          <div class="step-num">1</div>
-          <h3>Connect your tools</h3>
-          <p>Point OpenAI traffic to AI Optimizer on localhost.</p>
-        </div>
-        <div class="card">
-          <div class="step-num">2</div>
-          <h3>Cache repeated requests</h3>
-          <p>Repeated calls stop hitting the API at full cost.</p>
-        </div>
-        <div class="card">
-          <div class="step-num">3</div>
-          <h3>Track savings in real time</h3>
-          <p>See usage, cache hits, and savings as you work.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section style="background:white;">
-    <div class="container">
-      <h2>See the setup in one screen</h2>
-      <p class="subtle">AI Optimizer is simple to get running: enter your license, add your OpenAI API key, start the local proxy, and watch requests, cache hits, and hit rate update as your workflow runs.</p>
-
-      <div style="margin-top: 34px; text-align:center;">
-        <img src="images/app-setup-annotated.png" alt="Annotated AI Optimizer app screenshot showing license entry, API key setup, proxy start, and cache-hit stats" style="max-width:100%; border-radius:18px; border:1px solid var(--border); box-shadow: 0 12px 32px rgba(15,23,42,.08);" />
-      </div>
-
-      <div class="grid-3" style="margin-top: 28px;">
-        <div class="card">
-          <h3>1. Enter your license</h3>
-          <p>Use the license from your welcome email to activate the app on your device.</p>
-        </div>
-        <div class="card">
-          <h3>2. Add your OpenAI API key</h3>
-          <p>AI Optimizer uses your API key so requests can route through the local proxy first.</p>
-        </div>
-        <div class="card">
-          <h3>3. Start the proxy</h3>
-          <p>Once running, AI Optimizer listens locally so your workflow can use it instead of calling OpenAI directly every time.</p>
-        </div>
-      </div>
-
-      <div class="card" style="margin-top: 18px;">
-        <h3>4. Confirm it’s working</h3>
-        <p>Watch requests, cache hits, and hit rate update in real time so you can quickly verify that traffic is flowing through the optimizer.</p>
-      </div>
-    </div>
-  </section>
-
-  <section>
-    <div class="container">
-      <h2>Who it’s for</h2>
-      <div class="grid-3">
-        <div class="card">
-          <h3>Developers</h3>
-          <p>Reduce wasted OpenAI spend without changing how you build.</p>
-        </div>
-        <div class="card">
-          <h3>AI agents &amp; automation</h3>
-          <p>Support recurring workflows, scheduled jobs, and repeated AI operations more efficiently.</p>
-        </div>
-        <div class="card">
-          <h3>Teams watching cost</h3>
-          <p>Get better visibility into API usage before costs quietly pile up.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section style="background:white;">
-    <div class="container">
-      <h2>Built for real use</h2>
-      <div class="proof-strip">
-        <div class="metric">
-          <strong>Repeat runs hit cache</strong>
-          Early testing already shows believable repeat-request cache behavior in real workflows.
-        </div>
-        <div class="metric">
-          <strong>OpenAI compatibility</strong>
-          Supports Chat Completions, Responses, and Embeddings for modern OpenAI workflows.
-        </div>
-        <div class="metric">
-          <strong>Cross-platform release</strong>
-          Linux, macOS, and Windows builds are available for real-world testing and rollout.
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section>
-    <div class="container">
-      <h2>Explore more</h2>
-      <div class="trust-row">
-        <a href="how-it-works.html" class="trust-link">How it works</a>
-        <a href="for-agents.html" class="trust-link">For agents</a>
-        <a href="for-developers.html" class="trust-link">For developers</a>
-        <a href="faq.html" class="trust-link">FAQ</a>
-      </div>
-    </div>
-  </section>
-
-  <section style="background:white;">
-    <div class="container">
-      <h2>Simple pricing</h2>
-      <div class="pricing-wrap">
-        <div class="price-box">
-          <h3 style="text-align:center;">Starter</h3>
-          <div class="price">$4.99<span>/month</span></div>
-          <ul class="clean-list">
-            <li>Unlimited caching requests</li>
-            <li>Local proxy for OpenAI-powered workflows</li>
-            <li>Visibility into request and cache behavior</li>
-            <li>Up to 3 devices</li>
-            <li>14-day trial</li>
-          </ul>
-          <p style="text-align:center; margin: 0 0 1rem; color:#5b6480;">Cancel anytime. Global payments accepted.</p>
-          <div style="text-align:center;">
-            <a href="https://saas-optimizer.fly.dev/v1/api/create-trial" class="button button-primary">Start Free Trial</a>
+          <div style="display:grid; gap:16px;">
+            <aside class="card" style="border-radius:30px;">
+              <div class="kicker">Why use AI Optimizer</div>
+              <h3 style="font-size:1.55rem; margin-bottom:10px;">It leads with the economic pain, not the technology.</h3>
+              <div style="display:grid; gap:12px; color:var(--muted);">
+                <div>Keep your existing workflow</div>
+                <div>Cache repeated or duplicate requests</div>
+                <div>Choose OpenAI or Anthropic in the app</div>
+                <div>See request volume and cache behavior clearly</div>
+              </div>
+            </aside>
+            <aside class="card" style="border-radius:30px; border-color:var(--border-strong); background: linear-gradient(180deg, rgba(150,187,255,.09), rgba(255,255,255,.02));">
+              <div class="kicker">Starter</div>
+              <div style="font-size:3rem; font-weight:900; line-height:1; margin:8px 0 10px;">$4.99 <span style="font-size:1rem; color:var(--muted); font-weight:700;">/ month</span></div>
+              <div style="color:var(--muted); margin-bottom:16px;">Try it free for 14 days. Cancel anytime.</div>
+              <div style="display:grid; gap:8px; color:var(--muted); margin:0 0 18px;">
+                <div>Unlimited caching requests</div>
+                <div>Up to 3 devices</div>
+                <div>Works with OpenAI and Anthropic</div>
+              </div>
+              <a class="button button-primary" href="https://saas-optimizer.fly.dev/v1/api/create-trial">Start free trial</a>
+            </aside>
           </div>
         </div>
-      </div>
-    </div>
-  </section>
+      </section>
 
-  <section id="faq">
-    <div class="container">
-      <h2>Frequently asked questions</h2>
-      <div class="faq-grid">
-        <div class="card">
-          <h3>What is AI Optimizer?</h3>
-          <p>A local caching and cost-control layer for OpenAI-powered apps, automations, and agents.</p>
+      <section class="section">
+        <div class="section-head">
+          <h2>Why AI Optimizer matters</h2>
+          <p>The strongest story is still the practical one: repeated API work is expensive, and most teams want a way to control it without rewriting the workflow around a new product.</p>
         </div>
-        <div class="card">
-          <h3>Does it require code changes?</h3>
-          <p>Usually no major rewrite. Most workflows just route OpenAI traffic through the local proxy.</p>
+        <div class="grid-3">
+          <article class="card"><h3>Keep your stack</h3><p>Point existing OpenAI or Anthropic workflows at a local proxy instead of rebuilding the whole integration path.</p></article>
+          <article class="card"><h3>Cut repeat waste</h3><p>Cache duplicate and recurring requests so repeat traffic stops hitting the API at full cost.</p></article>
+          <article class="card"><h3>See the signal</h3><p>Track requests, cache hits, and usage patterns in one place instead of guessing where the waste lives.</p></article>
         </div>
-        <div class="card">
-          <h3>What platforms are supported?</h3>
-          <p>AI Optimizer supports Linux, macOS, and Windows.</p>
-        </div>
-        <div class="card">
-          <h3>Can I cancel anytime?</h3>
-          <p>Yes. If you are not saving money, you can cancel at any time.</p>
-        </div>
-        <div class="card">
-          <h3>Do you accept payments outside the US?</h3>
-          <p>Yes. Global payments are supported.</p>
-        </div>
-      </div>
-    </div>
-  </section>
+      </section>
 
-  <section>
-    <div class="container" style="text-align:center;">
-      <h2>Stop paying full price for repeated AI calls</h2>
-      <p class="subtle">Install AI Optimizer, connect your workflow, and start reducing wasted OpenAI spend.</p>
-      <a href="https://saas-optimizer.fly.dev/v1/api/create-trial" class="button button-primary">Start Free Trial</a>
-    </div>
-  </section>
+      <section class="section">
+        <div class="section-head">
+          <h2>How it works</h2>
+          <p>Keep the architecture story short and adoption-focused.</p>
+        </div>
+        <div class="grid-3">
+          <article class="card"><div class="step-num">1</div><h3>Route traffic locally</h3><p>Point your workflow at AI Optimizer on localhost.</p></article>
+          <article class="card"><div class="step-num">2</div><h3>Cache repeated requests</h3><p>Repeated work can resolve without paying full price every time.</p></article>
+          <article class="card"><div class="step-num">3</div><h3>Track behavior clearly</h3><p>See requests, cache hits, and provider usage in one local control layer.</p></article>
+        </div>
+      </section>
 
-  <footer>
-    <div class="container">
-      <p>We do not sell your personal information.</p>
-      <p><a href="privacy.html">Privacy Policy</a> · © 2026 Day Place LTD · <a href="mailto:DayPlaceLTD@gmail.com">DayPlaceLTD@gmail.com</a></p>
+      <section class="section">
+        <div class="section-head">
+          <h2>Show proof, not promises</h2>
+          <p>AI Optimizer earns trust with clear setup, visible cache behavior, and a workflow that fits into the tools you already use.</p>
+        </div>
+        <div class="grid-2">
+          <div class="card image-frame">
+            <img src="images/app-setup-annotated.png" alt="AI Optimizer setup screenshot" />
+            <div class="badge-row">
+              <span class="badge">License setup</span>
+              <span class="badge">Local proxy</span>
+              <span class="badge">Cache-hit visibility</span>
+            </div>
+          </div>
+          <div style="display:grid; gap:14px;">
+            <div class="card"><strong style="display:block; margin-bottom:6px;">Easy migration path</strong><p>Teams move faster when the product fits into existing operations instead of demanding a big rebuild.</p></div>
+            <div class="card"><strong style="display:block; margin-bottom:6px;">Local-first control</strong><p>Keep cost visibility close to the workflow rather than waiting for a billing surprise.</p></div>
+            <div class="card"><strong style="display:block; margin-bottom:6px;">Believable value</strong><p>Requests, cache hits, and compatibility proof are stronger than inflated marketing claims.</p></div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="section-head">
+          <h2>Explore more</h2>
+          <p>Keep the homepage fast, and let deeper pages support technical buyers, search, and implementation detail.</p>
+        </div>
+        <div class="badge-row">
+          <a class="badge" href="how-it-works.html">How it works</a>
+          <a class="badge" href="for-agents.html">For agents</a>
+          <a class="badge" href="for-developers.html">For developers</a>
+          <a class="badge" href="faq.html">FAQ</a>
+          <a class="badge" href="privacy.html">Privacy</a>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="cta-card">
+          <div class="cta-copy">
+            <h3>Stop paying full price for repeated AI calls.</h3>
+            <p>Install AI Optimizer, connect your workflow, and start reducing wasted OpenAI and Anthropic spend without changing how your team already works.</p>
+          </div>
+          <a href="https://saas-optimizer.fly.dev/v1/api/create-trial" class="button button-primary">Start free trial</a>
+        </div>
+      </section>
+
+      <footer class="footer">
+        <div class="footer-card">
+          <p>We do not sell your personal information.</p>
+          <p><a href="privacy.html">Privacy Policy</a> · © 2026 Day Place LTD · <a href="mailto:admin@ai-optimizer.org">admin@ai-optimizer.org</a></p>
+        </div>
+      </footer>
     </div>
-  </footer>
+  </main>
+  <style>
+    @media (max-width: 980px) { .hero-main { grid-template-columns: 1fr !important; } }
+  </style>
 </body>
 </html>

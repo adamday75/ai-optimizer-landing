@@ -3,67 +3,104 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>How AI Optimizer Works</title>
-  <meta name="description" content="See how AI Optimizer routes OpenAI-powered traffic through a local proxy, reduces repeat waste, and preserves your existing workflow.">
-  <link rel="canonical" href="https://ai-optimizer-landing.vercel.app/how-it-works.html">
-  <link href="styles.css" rel="stylesheet">
+  <title>How AI Optimizer Works – Local Caching for OpenAI and Anthropic</title>
+  <meta name="description" content="See how AI Optimizer adds a local caching and control layer in front of OpenAI and Anthropic workflows to reduce repeated API waste.">
+  <link rel="canonical" href="https://ai-optimizer.org/how-it-works.html">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link href="styles-v3-site.css" rel="stylesheet">
 </head>
 <body>
-  <section class="features" style="padding-top: 64px;">
-    <div class="container" style="max-width: 960px;">
-      <p><a href="/">← Back to home</a></p>
-      <h1 style="font-size: 2.8rem; margin: 20px 0;">How AI Optimizer works</h1>
-      <p style="font-size: 1.2rem; color: var(--gray); margin-bottom: 30px;">AI Optimizer gives you one local point where OpenAI-powered traffic can be observed, cached, and routed more efficiently.</p>
-
-      <div style="margin: 36px 0 28px;">
-        <img src="images/app-setup-annotated.png" alt="Annotated AI Optimizer app screenshot showing setup steps and live cache-hit stats" style="max-width:100%; border-radius:18px; border:1px solid #e2e8f0; box-shadow: 0 12px 32px rgba(15,23,42,.08);" />
-      </div>
-
-      <div class="feature-grid" style="grid-template-columns: 1fr; gap: 20px;">
-        <div class="feature-card" style="text-align:left;">
-          <h3>1. Enter your license</h3>
-          <p>Paste in the license from your welcome email and activate the app on your machine.</p>
-        </div>
-
-        <div class="feature-card" style="text-align:left;">
-          <h3>2. Add your OpenAI API key</h3>
-          <p>Save your API key so AI Optimizer can route and cache OpenAI-powered requests locally.</p>
-        </div>
-
-        <div class="feature-card" style="text-align:left;">
-          <h3>3. Start the local proxy</h3>
-          <p>Once the proxy is running, AI Optimizer listens on <code>http://localhost:3000/v1</code>.</p>
-        </div>
-
-        <div class="feature-card" style="text-align:left;">
-          <h3>4. Point your workflow at the local base URL</h3>
-          <p>In many setups, the main change is updating your OpenAI base URL so traffic flows through AI Optimizer first.</p>
-        </div>
-
-        <div class="feature-card" style="text-align:left;">
-          <h3>5. Watch requests and cache hits update</h3>
-          <p>The app shows request totals, cache hits, and hit rate so you can confirm the optimizer is working while you use your normal workflow.</p>
-        </div>
-      </div>
-
-      <div class="feature-card" style="text-align:left; margin-top: 28px;">
-        <h3>Typical config change</h3>
-        <p>For many OpenAI-compatible tools, the practical change is using AI Optimizer as the local base URL:</p>
-        <pre style="background:#0f172a; color:#e2e8f0; padding:18px; border-radius:12px; overflow:auto;"><code>OPENAI_BASE_URL=http://localhost:3000/v1</code></pre>
-        <p style="margin-top: 12px;">That lets your workflow hit the local optimizer first instead of going directly to OpenAI every time.</p>
-      </div>
-
-      <div style="margin-top: 40px;">
-        <a href="https://saas-optimizer.fly.dev/v1/api/create-trial" class="cta-button">Start 14-Day Trial</a>
-      </div>
-    </div>
-  </section>
-
-  <footer class="footer">
+  <main class="page">
     <div class="container">
-      <p>We do not sell your personal information.</p>
-      <p><a href="privacy.html">Privacy Policy</a> · © 2026 Day Place LTD · <a href="mailto:DayPlaceLTD@gmail.com">DayPlaceLTD@gmail.com</a></p>
+      <header class="topbar">
+        <a class="brand" href="index.html"><span class="brand-mark"></span>AI Optimizer</a>
+        <a class="back-link" href="index.html">← Back to home</a>
+      </header>
+
+      <section class="hero-panel">
+        <div class="eyebrow">How it works</div>
+        <h1>Route repeated AI work through one local path.</h1>
+        <p class="lead">AI Optimizer runs locally and sits between your workflow and the selected provider API, helping reduce repeated spend with caching and clearer request visibility.</p>
+      </section>
+
+      <section class="section">
+        <div class="grid-1">
+          <div class="image-frame">
+            <img src="images/app-setup-annotated.png" alt="Annotated AI Optimizer app screenshot showing setup steps and live cache-hit stats" />
+            <div class="image-caption">A single local setup path: activate the app, choose your provider, add your API key, start the proxy, and watch requests and cache hits update live.</div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="grid-1">
+          <article class="card"><div class="step-num">1</div><h3>Activate the app and choose your provider</h3><p>Enter your license, then select OpenAI or Anthropic in the desktop app. AI Optimizer supports one active provider at a time in v2.2.0.</p></article>
+          <article class="card"><div class="step-num">2</div><h3>Save the API key for that provider</h3><p>You can store both keys in the app, but the proxy uses the currently selected provider for local routing.</p></article>
+          <article class="card"><div class="step-num">3</div><h3>Start the local proxy</h3><p>Once the proxy is running, AI Optimizer listens on <code>http://localhost:3000/v1</code>.</p></article>
+          <article class="card"><div class="step-num">4</div><h3>Point your workflow at localhost</h3><p>Your tools, scripts, or automations send requests to AI Optimizer first instead of calling the upstream provider directly.</p></article>
+          <article class="card"><div class="step-num">5</div><h3>Cache repeated requests and track behavior</h3><p>Repeated work can be served locally while the app shows request totals, cache hits, and hit rate so you can confirm the optimizer is doing useful work.</p></article>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="card">
+          <div class="kicker">Typical config change</div>
+          <h2>Most workflows only need one practical change.</h2>
+          <p class="lead">For many OpenAI-compatible tools, the main setup step is routing traffic through AI Optimizer locally:</p>
+          <pre class="code-block"><code>OPENAI_BASE_URL=http://localhost:3000/v1</code></pre>
+          <p class="meta">That lets your workflow hit the local optimizer first instead of going directly to the provider API every time.</p>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="grid-2">
+          <article class="card">
+            <h3>Supported providers</h3>
+            <p>AI Optimizer 2.2.0 supports both <strong>OpenAI</strong> and <strong>Anthropic</strong>. You can store both API keys in the app and choose one active provider at a time through the desktop UI.</p>
+          </article>
+          <article class="card">
+            <h3>Provider-aware caching</h3>
+            <p>Cache behavior is provider-aware, so OpenAI and Anthropic requests do not collide with each other even when the local proxy workflow stays the same.</p>
+          </article>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="grid-2">
+          <article class="card">
+            <h3>How caching helps</h3>
+            <p>Many developer tools, scripts, cron jobs, and agent workflows repeat the same or nearly identical requests. Without a local control layer, every repeat call can hit the provider API at full cost.</p>
+          </article>
+          <article class="card">
+            <h3>Adjustable cache TTL</h3>
+            <p>AI Optimizer includes an adjustable cache TTL, which is especially useful for recurring jobs, cron-style workflows, and repeat-heavy automations where the same request pattern shows up on a predictable schedule.</p>
+          </article>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="callout"><strong>Anthropic support in v2.2.0:</strong> Anthropic support in this release is focused on chat completions through the same local proxy flow. OpenAI support remains broader for workflows that rely on additional OpenAI-specific endpoints.</div>
+      </section>
+
+      <section class="section">
+        <div class="cta-card">
+          <div class="cta-copy">
+            <h3>Start with the workflow you already have.</h3>
+            <p>Install AI Optimizer, choose your provider, point traffic at localhost, and start reducing repeated API waste without rebuilding the way your team already works.</p>
+          </div>
+          <a href="https://saas-optimizer.fly.dev/v1/api/create-trial" class="button button-primary">Start free trial</a>
+        </div>
+      </section>
+
+      <footer class="footer">
+        <div class="footer-card">
+          <p>We do not sell your personal information.</p>
+          <p><a href="privacy.html">Privacy Policy</a> · © 2026 Day Place LTD · <a href="mailto:admin@ai-optimizer.org">admin@ai-optimizer.org</a></p>
+        </div>
+      </footer>
     </div>
-  </footer>
+  </main>
 </body>
 </html>

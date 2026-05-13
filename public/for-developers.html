@@ -3,59 +3,115 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>AI Optimizer for Developers and Command-Line OpenAI Workflows</title>
-  <meta name="description" content="How AI Optimizer helps developers using the OpenAI API from the command line, scripts, and repeat-heavy local workflows.">
-  <link rel="canonical" href="https://ai-optimizer-landing.vercel.app/for-developers.html">
-  <link href="styles.css" rel="stylesheet">
+  <title>AI Optimizer for Developers – Local Caching for OpenAI, Anthropic, Agents, and Automations</title>
+  <meta name="description" content="AI Optimizer helps developers reduce repeated AI API waste with a local caching proxy for OpenAI and Anthropic workflows, including agents, scripts, and automations.">
+  <link rel="canonical" href="https://ai-optimizer.org/for-developers.html">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link href="styles-v3-site.css" rel="stylesheet">
 </head>
 <body>
-  <section class="features" style="padding-top: 64px;">
-    <div class="container" style="max-width: 960px;">
-      <p><a href="/">← Back to home</a></p>
-      <h1 style="font-size: 2.8rem; margin: 20px 0;">AI Optimizer for developers and command-line workflows</h1>
-      <p style="font-size: 1.2rem; color: var(--gray); margin-bottom: 30px;">One of the clearest proven use cases for AI Optimizer is OpenAI API usage from the command line. If you repeat prompts, test requests, run scripts, or iterate locally, a caching proxy can help reduce duplicate spend without forcing you into a major rewrite.</p>
-
-      <div style="margin: 36px 0 28px; text-align:center;">
-        <img src="images/extension-cache-stats.png" alt="AI Optimizer extension screenshot showing requests and cache-hit totals" style="max-width:100%; border-radius:18px; border:1px solid #e2e8f0; box-shadow: 0 12px 32px rgba(15,23,42,.08);" />
-      </div>
-
-      <div class="feature-grid" style="grid-template-columns: 1fr; gap: 20px;">
-        <div class="feature-card" style="text-align:left;">
-          <h3>Useful for repeat-heavy CLI workflows</h3>
-          <p>Command-line usage naturally creates repeated requests during testing, debugging, iteration, and prompt refinement. AI Optimizer gives those workflows one local path through a caching proxy.</p>
-        </div>
-        <div class="feature-card" style="text-align:left;">
-          <h3>Keep your current setup</h3>
-          <p>You usually do not need to redesign your workflow. In many cases, the practical change is routing your OpenAI base URL through the local optimizer endpoint.</p>
-        </div>
-        <div class="feature-card" style="text-align:left;">
-          <h3>Verify cache activity fast</h3>
-          <p>The extension view gives you a quick way to confirm requests and cache hits are climbing without needing the full desktop app open at all times.</p>
-        </div>
-        <div class="feature-card" style="text-align:left;">
-          <h3>A strong use case today</h3>
-          <p>This is one of the clearest current positions for the product right now, especially for repeat-heavy local development, scripts, and OpenAI-compatible workflows like OpenClaw.</p>
-        </div>
-      </div>
-
-      <div class="feature-card" style="text-align:left; margin-top: 28px;">
-        <h3>Typical config change</h3>
-        <p>For many tools and scripts, the main setup change is pointing your OpenAI base URL at AI Optimizer:</p>
-        <pre style="background:#0f172a; color:#e2e8f0; padding:18px; border-radius:12px; overflow:auto;"><code>OPENAI_BASE_URL=http://localhost:3000/v1</code></pre>
-        <p style="margin-top: 12px;">That lets your local workflow hit the optimizer first, reduce repeated spend, and keep visibility into request behavior.</p>
-      </div>
-
-      <div style="margin-top: 40px;">
-        <a href="https://saas-optimizer.fly.dev/v1/api/create-trial" class="cta-button">Start 14-Day Trial</a>
-      </div>
-    </div>
-  </section>
-
-  <footer class="footer">
+  <main class="page">
     <div class="container">
-      <p>We do not sell your personal information.</p>
-      <p><a href="privacy.html">Privacy Policy</a> · © 2026 Day Place LTD · <a href="mailto:DayPlaceLTD@gmail.com">DayPlaceLTD@gmail.com</a></p>
+      <header class="topbar">
+        <a class="brand" href="index.html"><span class="brand-mark"></span>AI Optimizer</a>
+        <a class="back-link" href="index.html">← Back to home</a>
+      </header>
+
+      <section class="hero-panel">
+        <div class="eyebrow">For developers</div>
+        <h1>Built for repeat-heavy tools, scripts, and local AI workflows.</h1>
+        <p class="lead">AI Optimizer is built for developers running repeat-heavy tools, scripts, automations, and agent workflows that keep hitting the same API patterns over and over.</p>
+      </section>
+
+      <section class="section">
+        <div class="grid-1">
+          <div class="image-frame">
+            <img src="images/extension-cache-stats.png" alt="AI Optimizer extension screenshot showing requests and cache-hit totals" />
+            <div class="image-caption">A quick operator view for confirming repeated requests and cache-hit behavior without needing the full desktop app open all the time.</div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="grid-1">
+          <article class="card"><h3>Why developers use it</h3><p>Many developer workflows repeat the same model calls across scripts, tools, retries, local automations, and agent loops. AI Optimizer helps by caching repeated traffic locally and making that behavior easier to control.</p></article>
+          <article class="card"><h3>Keep your current setup</h3><p>You usually do not need to redesign your workflow. In many cases, the practical change is routing your base URL through the local optimizer endpoint on <code>http://localhost:3000/v1</code>.</p></article>
+          <article class="card"><h3>Compatible with agents and automations</h3><p>AI Optimizer works well with repeat-heavy agent-style workflows, local assistants, scripts, and recurring jobs where the same API paths are revisited constantly.</p></article>
+          <article class="card"><h3>Provider support in v2.2.0</h3><p>AI Optimizer now supports both OpenAI and Anthropic with one active provider at a time. OpenAI support remains broader, while Anthropic support in this release is focused on chat completions.</p></article>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="card">
+          <div class="kicker">Typical config change</div>
+          <h2>Point your workflow at the local optimizer.</h2>
+          <p class="lead">For many tools and scripts, the main setup change is routing traffic through AI Optimizer locally:</p>
+          <pre class="code-block"><code>OPENAI_BASE_URL=http://localhost:3000/v1</code></pre>
+          <p class="meta">That lets your local workflow hit the optimizer first, reduce repeated spend, and keep visibility into request behavior.</p>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="grid-2">
+          <article class="card">
+            <h3>Adjustable cache TTL</h3>
+            <p>AI Optimizer includes an adjustable cache TTL, which is especially useful for cron jobs, recurring automations, and repeat-heavy local workflows where the same request pattern shows up on a predictable schedule.</p>
+          </article>
+          <article class="card">
+            <h3>Practical compatibility</h3>
+            <p>AI Optimizer is designed to fit into real local workflows, not just polished demos. The strongest current examples remain repeat-heavy OpenAI toolchains, while Anthropic support in v2.2.0 expands the same local proxy model.</p>
+          </article>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="grid-2">
+          <article class="card">
+            <div class="kicker">OpenClaw setup</div>
+            <h3>Keep the current OpenClaw path simple.</h3>
+            <p>AI Optimizer works well with local OpenClaw workflows where repeated API usage, memory flows, and agent-style tasks can create duplicate or recurring request patterns.</p>
+            <pre class="code-block"><code>"models": {
+  "providers": {
+    "openai": {
+      "baseUrl": "http://localhost:3000/v1"
+    }
+  }
+}</code></pre>
+            <p class="meta">Current documented examples remain strongest around OpenAI-based OpenClaw workflows, while Anthropic support now expands the same local proxy model.</p>
+          </article>
+          <article class="card">
+            <div class="kicker">Hermes setup</div>
+            <h3>Use the same local endpoint for Hermes-Agent.</h3>
+            <p>If your Hermes workflow repeatedly calls the same models through local scripts or tools, AI Optimizer can help reduce waste without forcing you to rebuild the surrounding workflow.</p>
+            <pre class="code-block"><code>Select provider: Custom endpoint
+API base URL: http://localhost:3000/v1
+API key: your OpenAI API key
+Model: gpt-5.4
+Start chat: hermes --tui</code></pre>
+            <p class="meta">That gives Hermes-Agent the same local proxy path and lets you verify requests and cache hits in one place.</p>
+          </article>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="cta-card">
+          <div class="cta-copy">
+            <h3>Keep your workflow. Cut the repeated waste.</h3>
+            <p>Use AI Optimizer as a local drop-in layer for the scripts, tools, agents, and command-line flows you already run.</p>
+          </div>
+          <a href="https://saas-optimizer.fly.dev/v1/api/create-trial" class="button button-primary">Start free trial</a>
+        </div>
+      </section>
+
+      <footer class="footer">
+        <div class="footer-card">
+          <p>We do not sell your personal information.</p>
+          <p><a href="privacy.html">Privacy Policy</a> · © 2026 Day Place LTD · <a href="mailto:admin@ai-optimizer.org">admin@ai-optimizer.org</a></p>
+        </div>
+      </footer>
     </div>
-  </footer>
+  </main>
 </body>
 </html>

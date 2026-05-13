@@ -3,62 +3,80 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="canonical" href="https://ai-optimizer-landing.vercel.app/success/">
-  <title>Trial Started - AI API Optimizer</title>
-  <link href="styles.css" rel="stylesheet">
-  <style>
-    .success-hero { background: linear-gradient(135deg, #00AA00 0%, #00cc66 100%); }
-    .checkmark { font-size: 4rem; margin-bottom: 20px; }
-  </style>
+  <meta name="robots" content="noindex, nofollow">
+  <meta name="description" content="Your AI Optimizer trial has started. Download the app, activate your license, choose your provider, and start reducing repeated AI API waste.">
+  <link rel="canonical" href="https://ai-optimizer.org/success/">
+  <title>AI Optimizer – Trial Started</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link href="../styles-v3-site.css" rel="stylesheet">
 </head>
 <body>
-  <header class="hero success-hero">
+  <main class="page">
     <div class="container">
-      <div class="checkmark">✅</div>
-      <h1>Trial Started Successfully!</h1>
-      <p>Your 14-day free trial is active. Check your email for confirmation.</p>
-      <p style="margin-top: 20px; opacity: 0.9;">
-        <strong>Next steps:</strong><br>
-        1. Watch for your API credentials via email<br>
-        2. Replace your OpenAI base URL with our proxy<br>
-        3. Start saving 20-40% on AI costs immediately
-      </p>
-      <a href="/" class="cta-button" style="background: white; color: #00AA00; margin-top: 30px;">
-        Return to Dashboard
-      </a>
-    </div>
-  </header>
+      <header class="topbar">
+        <a class="brand" href="../index.html"><span class="brand-mark"></span>AI Optimizer</a>
+        <a class="back-link" href="../index.html">← Back to home</a>
+      </header>
 
-  <section class="features">
-    <div class="container">
-      <h2>What's Included In Your Trial</h2>
-      <div class="feature-grid">
-        <div class="feature-card">
-          <h3>🚀 Smart Caching</h3>
-          <p>5-minute TTL cache for repeated queries — instant responses, zero API calls.</p>
-        </div>
-        <div class="feature-card">
-          <h3>🎯 Cost Routing</h3>
-          <p>Auto-switches to cheapest model. Simple tasks use gpt-4o-mini (97% cheaper).</p>
-        </div>
-        <div class="feature-card">
-          <h3>📊 Real Analytics</h3>
-          <p>Dashboard shows exact savings. Track usage, costs, and optimization impact.</p>
-        </div>
-        <div class="feature-card">
-          <h3>🔌 Drop-in Proxy</h3>
-          <p>Replace your OpenAI base URL. Works with existing code — zero refactoring.</p>
-        </div>
-      </div>
-    </div>
-  </section>
+      <section class="hero-panel">
+        <div class="eyebrow">Trial started</div>
+        <h1>Your AI Optimizer trial is ready.</h1>
+        <p class="lead">Install AI Optimizer, choose your provider, and start reducing repeated AI API waste without rebuilding the workflow you already use.</p>
+      </section>
 
-  <footer class="footer">
-    <div class="container">
-      <p>© 2026 Day Place LTD. All rights reserved.</p>
-      <p>Questions? Email: <a href="mailto:DayPlaceLTD@gmail.com">DayPlaceLTD@gmail.com</a></p>
-      <p>Questions? Email: <a href="mailto:DayPlaceLTD@gmail.com">DayPlaceLTD@gmail.com</a></p>
+      <section class="section">
+        <div class="grid-2">
+          <article class="card">
+            <h3>What to do next</h3>
+            <p style="color:var(--muted); margin:0 0 16px;">Check your email for your license key, download link, and setup instructions. That email will walk you through getting AI Optimizer installed and running quickly.</p>
+            <ol style="color:var(--muted); margin:0 0 0 22px;">
+              <li>Install AI Optimizer on your machine</li>
+              <li>Activate your license in the app</li>
+              <li>Choose OpenAI or Anthropic as your active provider</li>
+              <li>Start the local proxy and point your workflow at <code>http://localhost:3000</code></li>
+            </ol>
+          </article>
+          <article class="card">
+            <h3>Keep your existing workflow</h3>
+            <p>You do not need to rebuild your tools or scripts around a new platform. AI Optimizer is designed to fit in front of the workflow you already have.</p>
+          </article>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="card">
+          <div class="kicker">Download AI Optimizer</div>
+          <h2>Choose the build that matches your system.</h2>
+          <div class="badge-row">
+            <a class="badge" href="https://github.com/adamday75/ai-optimizer-app/releases/latest">macOS zip</a>
+            <a class="badge" href="https://github.com/adamday75/ai-optimizer-app/releases/latest">Windows build</a>
+            <a class="badge" href="https://github.com/adamday75/ai-optimizer-app/releases/latest">Linux AppImage</a>
+            <a class="badge" href="https://github.com/adamday75/ai-optimizer-app/releases/latest">Linux .deb</a>
+            <a class="badge" href="https://github.com/adamday75/ai-optimizer-app/releases/latest">Chrome extension</a>
+          </div>
+          <p class="meta">AI Optimizer 2.2.0 supports both OpenAI and Anthropic, with one active provider selected at a time.</p>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="cta-card">
+          <div class="cta-copy">
+            <h3>Need a quick refresher before setup?</h3>
+            <p>See how the local proxy works, which workflows fit best, and where AI Optimizer helps most.</p>
+          </div>
+          <a href="../how-it-works.html" class="button button-primary">See how it works</a>
+        </div>
+      </section>
+
+      <footer class="footer">
+        <div class="footer-card">
+          <p>We do not sell your personal information.</p>
+          <p><a href="../privacy.html">Privacy Policy</a> · © 2026 Day Place LTD · <a href="mailto:admin@ai-optimizer.org">admin@ai-optimizer.org</a></p>
+        </div>
+      </footer>
     </div>
-  </footer>
+  </main>
 </body>
 </html>
