@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>How to Cache OpenAI API Requests Locally</title>
+  <meta name="description" content="Learn how to reduce repeated OpenAI API waste with a local caching proxy on localhost, without rebuilding your existing workflow.">
+  <meta property="og:title" content="How to Cache OpenAI API Requests Locally">
+  <meta property="og:description" content="Learn how to reduce repeated OpenAI API waste with a local caching proxy on localhost, without rebuilding your existing workflow.">
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://ai-optimizer.org/cache-openai-api-locally.html">
+  <meta property="og:image" content="https://ai-optimizer.org/images/app-setup-annotated.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="How to Cache OpenAI API Requests Locally">
+  <meta name="twitter:description" content="Learn how to reduce repeated OpenAI API waste with a local caching proxy on localhost, without rebuilding your existing workflow.">
+  <meta name="twitter:image" content="https://ai-optimizer.org/images/app-setup-annotated.png">
+  <link rel="canonical" href="https://ai-optimizer.org/cache-openai-api-locally.html">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link href="styles-v3-site.css" rel="stylesheet">
+</head>
+<body>
+  <main class="page">
+    <div class="container">
+      <header class="topbar">
+        <a class="brand" href="index.html"><span class="brand-mark"></span>AI Optimizer</a>
+        <a class="back-link" href="index.html">← Back to home</a>
+      </header>
+
+      <section class="hero-panel">
+        <div class="eyebrow">OpenAI local caching</div>
+        <h1>How to cache OpenAI API requests locally without rebuilding your workflow.</h1>
+        <p class="lead">If your scripts, tools, or automations repeat the same request pattern over time, a local proxy can reduce repeated OpenAI API waste without forcing you to redesign the whole stack.</p>
+      </section>
+
+      <section class="section">
+        <div class="card" style="background:rgba(150,187,255,.06); border-color:var(--border-strong);">
+          <div class="kicker">Quick answer</div>
+          <p style="margin:0; color:var(--text); font-size:1.02rem; line-height:1.7;">You can cache repeated OpenAI API requests locally by routing your workflow through a localhost proxy. AI Optimizer does this without forcing you to rebuild your existing scripts, tools, or automations, and it works best when the same or very similar requests repeat over time.</p>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="section-head">
+          <h2>Why repeated OpenAI calls get expensive</h2>
+          <p>Most waste does not come from one dramatic request. It comes from the same kind of work happening again and again in scripts, agents, cron jobs, and local tools.</p>
+        </div>
+        <div class="grid-2">
+          <article class="card"><h3>Repeat-heavy scripts</h3><p>Scripts that check the same thing, summarize the same kind of data, or rerun on a schedule are strong candidates for local caching.</p></article>
+          <article class="card"><h3>Automation loops</h3><p>Automations often repeat the same structure with only small changes. That makes them a practical place to reduce repeated API spend.</p></article>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="grid-2">
+          <article class="card">
+            <h2>What local caching means</h2>
+            <p>Instead of sending traffic directly to the upstream OpenAI API every time, your workflow points to AI Optimizer on <code>localhost</code>. The optimizer becomes the local control layer that can serve repeated work from cache.</p>
+          </article>
+          <article class="card">
+            <h2>How AI Optimizer fits</h2>
+            <p>AI Optimizer is a local-first desktop app designed for teams and operators who want cost control without rebuilding existing tools around a new platform. Same workflow shape. Cleaner economics.</p>
+          </article>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="card">
+          <div class="kicker">Typical config change</div>
+          <h2>Many OpenAI-compatible tools only need one practical change.</h2>
+          <pre class="code-block"><code>OPENAI_BASE_URL=http://localhost:3000/v1</code></pre>
+          <p class="meta">The exact variable depends on the tool, but the pattern is simple: route the request through AI Optimizer locally instead of sending it straight upstream.</p>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="section-head">
+          <h2>Good fit vs bad fit</h2>
+          <p>Local caching is most useful when repetition is real, not theoretical.</p>
+        </div>
+        <div class="grid-2">
+          <article class="card">
+            <h3>Good fit</h3>
+            <ul>
+              <li>Repeated scripts</li>
+              <li>Automations</li>
+              <li>Cron jobs</li>
+              <li>Local tools</li>
+              <li>Agent workflows with repeated structure</li>
+            </ul>
+          </article>
+          <article class="card">
+            <h3>Less ideal fit</h3>
+            <ul>
+              <li>Totally unique prompts every time</li>
+              <li>Highly dynamic request bodies</li>
+              <li>One-off exploratory usage only</li>
+              <li>Workflows where timestamps or changing context constantly alter the request</li>
+            </ul>
+          </article>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="grid-1">
+          <div class="image-frame">
+            <img src="images/app-setup-annotated.png" alt="AI Optimizer local proxy setup example" />
+            <div class="image-caption">Local-first workflow: install AI Optimizer, choose OpenAI, point traffic to localhost, and watch requests and cache hits from one control layer.</div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="grid-2">
+          <article class="card"><h3>What savings behavior to expect</h3><p>The more stable and repeatable the request pattern is, the more useful caching becomes. TTL matters, and so does avoiding unnecessary dynamic content inside repeat requests.</p></article>
+          <article class="card"><h3>Where this helps most</h3><p>Developers, local tools, internal automations, recurring analysis, and agent workflows are often a much better fit than one-off chat-style exploration.</p></article>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="badge-row">
+          <a class="badge" href="cache-proof.html">See cache proof</a>
+          <a class="badge" href="how-it-works.html">How it works</a>
+          <a class="badge" href="for-developers.html">For developers</a>
+          <a class="badge" href="for-agents.html">For agents</a>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="cta-card">
+          <div class="cta-copy">
+            <h3>Cut repeated OpenAI waste without rebuilding the workflow.</h3>
+            <p>Install AI Optimizer, route traffic through localhost, and confirm cache-hit behavior before rolling it into the repeat-heavy parts of your stack.</p>
+          </div>
+          <a href="https://saas-optimizer.fly.dev/v1/api/create-trial" class="button button-primary">Start free trial</a>
+        </div>
+      </section>
+
+      <footer class="footer">
+        <div class="footer-card">
+          <p>We do not sell your personal information.</p>
+          <p><a href="privacy.html">Privacy Policy</a> · © 2026 Day Place LTD · <a href="mailto:admin@ai-optimizer.org">admin@ai-optimizer.org</a></p>
+        </div>
+      </footer>
+    </div>
+  </main>
+</body>
+</html>

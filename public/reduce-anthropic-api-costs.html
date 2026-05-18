@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>How to Reduce Anthropic API Costs with Local Caching</title>
+  <meta name="description" content="Learn how to reduce repeated Anthropic API waste with a local caching proxy on localhost, without rebuilding your existing workflow.">
+  <meta property="og:title" content="How to Reduce Anthropic API Costs with Local Caching">
+  <meta property="og:description" content="Learn how to reduce repeated Anthropic API waste with a local caching proxy on localhost, without rebuilding your existing workflow.">
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://ai-optimizer.org/reduce-anthropic-api-costs.html">
+  <meta property="og:image" content="https://ai-optimizer.org/images/app-setup-annotated.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="How to Reduce Anthropic API Costs with Local Caching">
+  <meta name="twitter:description" content="Learn how to reduce repeated Anthropic API waste with a local caching proxy on localhost, without rebuilding your existing workflow.">
+  <meta name="twitter:image" content="https://ai-optimizer.org/images/app-setup-annotated.png">
+  <link rel="canonical" href="https://ai-optimizer.org/reduce-anthropic-api-costs.html">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          {"@type": "ListItem", "position": 1, "name": "Home", "item": "https://ai-optimizer.org/"},
+          {"@type": "ListItem", "position": 2, "name": "Reduce Anthropic API costs", "item": "https://ai-optimizer.org/reduce-anthropic-api-costs.html"}
+        ]
+      },
+      {
+        "@type": "HowTo",
+        "name": "How to reduce Anthropic API costs with local caching",
+        "description": "Route repeat-heavy Claude requests through a local proxy on localhost so repeated calls can benefit from caching.",
+        "step": [
+          {"@type": "HowToStep", "name": "Choose Anthropic in AI Optimizer", "text": "Select Anthropic as the active provider in AI Optimizer and save the API key."},
+          {"@type": "HowToStep", "name": "Start the local proxy", "text": "Run AI Optimizer so it listens on localhost for Anthropic chat-completions traffic."},
+          {"@type": "HowToStep", "name": "Route Claude workflows through localhost", "text": "Point your repeated Claude requests at the local proxy path instead of sending each request directly upstream."},
+          {"@type": "HowToStep", "name": "Verify cache-hit behavior", "text": "Repeat stable requests inside the TTL window and confirm cache hits increase."}
+        ]
+      }
+    ]
+  }
+  </script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link href="styles-v3-site.css" rel="stylesheet">
+</head>
+<body>
+  <main class="page">
+    <div class="container">
+      <header class="topbar">
+        <a class="brand" href="index.html"><span class="brand-mark"></span>AI Optimizer</a>
+        <a class="back-link" href="index.html">← Back to home</a>
+      </header>
+
+      <section class="hero-panel">
+        <div class="eyebrow">Anthropic local caching</div>
+        <h1>How to reduce Anthropic API costs with local caching.</h1>
+        <p class="lead">If your Claude workflows repeat the same request pattern over time, a local proxy can reduce repeated Anthropic API waste without forcing you to redesign the workflow around a new platform.</p>
+      </section>
+
+      <section class="section">
+        <div class="card" style="background:rgba(150,187,255,.06); border-color:var(--border-strong);">
+          <div class="kicker">Quick answer</div>
+          <p style="margin:0; color:var(--text); font-size:1.02rem; line-height:1.7;">You can reduce repeated Anthropic API waste by routing Claude requests through a localhost caching proxy instead of sending every repeat call upstream at full cost. AI Optimizer uses the same local-first workflow pattern as its OpenAI lane, with Anthropic support in v2.2.0 focused on chat completions.</p>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="section-head">
+          <h2>Where Anthropic waste tends to show up</h2>
+          <p>The repeated-cost problem is usually not one giant request. It is the same prompt shape appearing again in scripts, automations, recurring jobs, agent loops, and local tools that keep revisiting the same work.</p>
+        </div>
+        <div class="grid-2">
+          <article class="card"><h3>Repeat-heavy Claude workflows</h3><p>Scheduled summaries, recurring checks, repeated developer prompts, and agent loops are all cleaner candidates for local caching than one-off exploration.</p></article>
+          <article class="card"><h3>Same local proxy pattern</h3><p>The value proposition stays simple: route traffic through <code>localhost</code>, keep the surrounding workflow mostly intact, and confirm the cache-hit behavior from one local control layer.</p></article>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="card">
+          <div class="kicker">What matters most</div>
+          <h2>Stable request patterns are the real opportunity.</h2>
+          <p class="lead">Caching helps most when your Anthropic requests repeat clearly enough to hit the same cache path again inside the configured TTL window.</p>
+          <p class="meta">That is why recurring jobs, repeated prompts, and predictable automation loops matter so much more than purely unique traffic.</p>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="grid-2">
+          <article class="card">
+            <h3>Good fit</h3>
+            <ul>
+              <li>Claude-based automations</li>
+              <li>Recurring jobs and cron prompts</li>
+              <li>Repeated local scripts</li>
+              <li>Agent workflows with stable prompt structure</li>
+              <li>Operator checks and repeated analyses</li>
+            </ul>
+          </article>
+          <article class="card">
+            <h3>Less ideal fit</h3>
+            <ul>
+              <li>Completely unique prompts every time</li>
+              <li>Highly dynamic request bodies</li>
+              <li>Workflows with changing timestamps or changing context in every call</li>
+              <li>One-off exploratory usage only</li>
+            </ul>
+          </article>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="grid-2">
+          <article class="card"><h3>What to expect</h3><p>The strongest value shows up when repeated Anthropic requests can stay identical or very close to identical long enough to benefit from the cache TTL. This is especially useful for repeat-heavy local workflows.</p></article>
+          <article class="card"><h3>What AI Optimizer supports here</h3><p>In v2.2.0, Anthropic support is focused on chat completions through the same local proxy workflow used elsewhere in the app. That is enough to prove the local caching lane and support many real Claude workflows cleanly.</p></article>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="badge-row">
+          <a class="badge" href="cache-proof.html">See cache proof</a>
+          <a class="badge" href="cache-openai-api-locally.html">Cache OpenAI locally</a>
+          <a class="badge" href="how-it-works.html">How it works</a>
+          <a class="badge" href="for-agents.html">For agents</a>
+          <a class="badge" href="for-developers.html">For developers</a>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="cta-card">
+          <div class="cta-copy">
+            <h3>Cut repeated Claude waste without rebuilding the workflow.</h3>
+            <p>Install AI Optimizer, choose Anthropic, route traffic through localhost, and verify repeat-request cache behavior before rolling it into the repeated parts of your stack.</p>
+          </div>
+          <a href="https://saas-optimizer.fly.dev/v1/api/create-trial" class="button button-primary">Start free trial</a>
+        </div>
+      </section>
+
+      <footer class="footer">
+        <div class="footer-card">
+          <p>We do not sell your personal information.</p>
+          <p><a href="how-it-works.html">How it works</a> · <a href="cache-proof.html">Cache proof</a> · <a href="faq.html">FAQ</a> · <a href="privacy.html">Privacy Policy</a> · © 2026 Day Place LTD · <a href="mailto:admin@ai-optimizer.org">admin@ai-optimizer.org</a></p>
+        </div>
+      </footer>
+    </div>
+  </main>
+</body>
+</html>

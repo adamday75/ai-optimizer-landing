@@ -5,7 +5,43 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>AI Optimizer FAQ – OpenAI, Anthropic, Caching, Agents, and Local Proxy Questions</title>
   <meta name="description" content="Answers to common questions about AI Optimizer, including OpenAI and Anthropic support, caching, agent workflows, local proxy setup, and compatibility.">
+  <meta property="og:title" content="AI Optimizer FAQ – OpenAI, Anthropic, Caching, Agents, and Local Proxy Questions">
+  <meta property="og:description" content="Answers to common questions about AI Optimizer, including OpenAI and Anthropic support, caching, agent workflows, local proxy setup, and compatibility.">
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://ai-optimizer.org/faq.html">
+  <meta property="og:image" content="https://ai-optimizer.org/images/app-setup-annotated.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="AI Optimizer FAQ – OpenAI, Anthropic, Caching, Agents, and Local Proxy Questions">
+  <meta name="twitter:description" content="Answers to common questions about AI Optimizer, including OpenAI and Anthropic support, caching, agent workflows, local proxy setup, and compatibility.">
+  <meta name="twitter:image" content="https://ai-optimizer.org/images/app-setup-annotated.png">
   <link rel="canonical" href="https://ai-optimizer.org/faq.html">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          {"@type": "ListItem", "position": 1, "name": "Home", "item": "https://ai-optimizer.org/"},
+          {"@type": "ListItem", "position": 2, "name": "FAQ", "item": "https://ai-optimizer.org/faq.html"}
+        ]
+      },
+      {
+        "@type": "FAQPage",
+        "mainEntity": [
+          {"@type": "Question", "name": "What is AI Optimizer?", "acceptedAnswer": {"@type": "Answer", "text": "AI Optimizer is a local desktop app and proxy that sits in front of your AI API workflow on localhost:3000. It helps reduce repeated API waste with caching and gives you a simple local control layer for repeat-heavy usage."}},
+          {"@type": "Question", "name": "Which providers does AI Optimizer support?", "acceptedAnswer": {"@type": "Answer", "text": "AI Optimizer 2.2.0 supports both OpenAI and Anthropic. You can store both API keys in the app and select one active provider at a time."}},
+          {"@type": "Question", "name": "Can I use OpenAI and Anthropic at the same time?", "acceptedAnswer": {"@type": "Answer", "text": "The app can store both API keys, but in v2.2.0 it uses one active provider at a time."}},
+          {"@type": "Question", "name": "Does AI Optimizer support Anthropic fully?", "acceptedAnswer": {"@type": "Answer", "text": "In v2.2.0, Anthropic support is focused on chat completions through the local proxy workflow. OpenAI support remains broader for workflows that use additional OpenAI-specific endpoints."}},
+          {"@type": "Question", "name": "Does caching mix OpenAI and Anthropic requests together?", "acceptedAnswer": {"@type": "Answer", "text": "No. Cache behavior is provider-aware, so OpenAI and Anthropic requests do not collide with each other."}},
+          {"@type": "Question", "name": "What kinds of workflows is AI Optimizer best for?", "acceptedAnswer": {"@type": "Answer", "text": "AI Optimizer is best for repeat-heavy developer workflows, scripts, automations, agents, retries, and recurring jobs where the same request patterns show up again and again."}},
+          {"@type": "Question", "name": "Can I adjust how long items stay cached?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. AI Optimizer includes an adjustable cache TTL, which is especially useful for cron jobs, recurring automations, and repeat-heavy local workflows."}},
+          {"@type": "Question", "name": "Do I need to rebuild my workflow to use it?", "acceptedAnswer": {"@type": "Answer", "text": "No. The goal is to fit into the workflow you already have by adding a local proxy layer in front of it, not by forcing you onto a completely new platform."}}
+        ]
+      }
+    ]
+  }
+  </script>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
@@ -23,6 +59,13 @@
         <div class="eyebrow">FAQ</div>
         <h1>Answers to the practical questions first.</h1>
         <p class="lead">Answers about provider support, caching, compatibility, local setup, and how AI Optimizer fits into real developer and agent workflows.</p>
+      </section>
+
+      <section class="section">
+        <div class="card" style="background:rgba(150,187,255,.06); border-color:var(--border-strong);">
+          <div class="kicker">Quick answer</div>
+          <p style="margin:0; color:var(--text); font-size:1.02rem; line-height:1.7;">AI Optimizer is a local-first desktop app that reduces repeated OpenAI and Anthropic API waste by adding a caching proxy on <code>localhost</code>. It is most useful in repeat-heavy scripts, automations, agents, and recurring jobs where the same request patterns show up over time.</p>
+        </div>
       </section>
 
       <section class="section">

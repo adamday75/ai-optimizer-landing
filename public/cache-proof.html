@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AI Optimizer Cache Proof | OpenAI and Anthropic Repeat Request Results</title>
+  <meta name="description" content="See real OpenAI and Anthropic cache-hit behavior from AI Optimizer, including repeated request tests, TTL behavior, and what the results actually prove.">
+  <meta property="og:title" content="AI Optimizer Cache Proof | OpenAI and Anthropic Repeat Request Results">
+  <meta property="og:description" content="See real OpenAI and Anthropic cache-hit behavior from AI Optimizer, including repeated request tests, TTL behavior, and what the results actually prove.">
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://ai-optimizer.org/cache-proof.html">
+  <meta property="og:image" content="https://ai-optimizer.org/images/extension-cache-stats.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="AI Optimizer Cache Proof | OpenAI and Anthropic Repeat Request Results">
+  <meta name="twitter:description" content="See real OpenAI and Anthropic cache-hit behavior from AI Optimizer, including repeated request tests, TTL behavior, and what the results actually prove.">
+  <meta name="twitter:image" content="https://ai-optimizer.org/images/extension-cache-stats.png">
+  <link rel="canonical" href="https://ai-optimizer.org/cache-proof.html">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link href="styles-v3-site.css" rel="stylesheet">
+</head>
+<body>
+  <main class="page">
+    <div class="container">
+      <header class="topbar">
+        <a class="brand" href="index.html"><span class="brand-mark"></span>AI Optimizer</a>
+        <a class="back-link" href="index.html">← Back to home</a>
+      </header>
+
+      <section class="hero-panel">
+        <div class="eyebrow">Cache proof</div>
+        <h1>AI Optimizer cache proof: repeated requests, real cache hits, clear results.</h1>
+        <p class="lead">This page is where AI Optimizer earns trust. The goal is simple: show repeat request behavior clearly enough that a technical buyer can see the product is doing useful work, not just making a vague promise.</p>
+      </section>
+
+      <section class="section">
+        <div class="card" style="background:rgba(150,187,255,.06); border-color:var(--border-strong);">
+          <div class="kicker">Quick answer</div>
+          <p style="margin:0; color:var(--text); font-size:1.02rem; line-height:1.7;">AI Optimizer can cache repeated OpenAI and Anthropic requests through a local proxy workflow. In repeat tests, identical requests increased <code>cacheHits</code> instead of sending the same work upstream at full cost again, which makes the product a strong fit for repeat-heavy scripts, automations, and agent workflows.</p>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="section-head">
+          <h2>What we tested</h2>
+          <p>The proof case is intentionally boring: same request shape, same provider, same local proxy path, and repeated calls checked against request totals and cache-hit counts.</p>
+        </div>
+        <div class="grid-2">
+          <article class="card"><h3>Local proxy path</h3><p>Requests are sent through <code>http://localhost:3000/v1</code> so AI Optimizer sits between the workflow and the upstream provider.</p></article>
+          <article class="card"><h3>Repeat request pattern</h3><p>Identical or near-identical requests are repeated to see whether the app increments <code>cacheHits</code> instead of paying full price for the same work again.</p></article>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="grid-2">
+          <article class="card">
+            <h2>OpenAI result</h2>
+            <p>OpenAI is a natural fit for this style of proof because many scripts, tools, and repeat-heavy automations send the same request pattern over and over. The page should show a simple before-and-after stats example with the repeated call path kept stable.</p>
+            <p class="meta">Planned asset: one clean stats screenshot plus a short request example.</p>
+          </article>
+          <article class="card">
+            <h2>Anthropic result</h2>
+            <p>Anthropic support matters because it proves the local proxy model is not only for one provider. The strongest example here is a repeated Claude request that still hit cache later inside the TTL window.</p>
+            <p class="meta">Planned asset: stats screenshot showing later repeat calls still increasing <code>cacheHits</code>.</p>
+          </article>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="grid-2">
+          <article class="card">
+            <h3>What a cache hit means</h3>
+            <p>A cache hit means the repeated request was resolved locally instead of paying for the same full upstream work again. That is most valuable when workflows repeat on a schedule or through common tool loops.</p>
+          </article>
+          <article class="card">
+            <h3>Why TTL matters</h3>
+            <p>Cache behavior only stays useful if repeated requests happen within the configured TTL window. That is why recurring jobs, cron prompts, and repeated scripts are such a clean fit for this workflow.</p>
+          </article>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="section-head">
+          <h2>What this proves and what it does not</h2>
+          <p>The value of a proof page is precision. It should show where AI Optimizer is strong without pretending every workflow will behave the same way.</p>
+        </div>
+        <div class="grid-2">
+          <article class="card"><h3>What it proves</h3><p>Local proxy caching works. OpenAI and Anthropic both fit the model. Repeat-heavy workflows can reduce repeated API waste when prompts and request bodies stay stable enough to hit cache.</p></article>
+          <article class="card"><h3>What it does not prove</h3><p>It does not mean every prompt will hit cache. Highly dynamic request bodies, changing timestamps, or constantly unique prompts reduce hit rate. The product works best where repetition is real.</p></article>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="card image-frame">
+          <img src="images/extension-cache-stats.png" alt="AI Optimizer cache stats example" />
+          <div class="image-caption">Placeholder proof asset: site-ready image slot for cache-hit visibility. Replace or supplement this later with larger-count OpenAI and Anthropic screenshots.</div>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="badge-row">
+          <a class="badge" href="how-it-works.html">How it works</a>
+          <a class="badge" href="cache-openai-api-locally.html">Cache OpenAI locally</a>
+          <a class="badge" href="for-developers.html">For developers</a>
+          <a class="badge" href="for-agents.html">For agents</a>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="cta-card">
+          <div class="cta-copy">
+            <h3>Show proof, then scale the workflow.</h3>
+            <p>Install AI Optimizer, route traffic through localhost, confirm cache-hit behavior, and then apply the same pattern to repeat-heavy tools, scripts, and automations.</p>
+          </div>
+          <a href="https://saas-optimizer.fly.dev/v1/api/create-trial" class="button button-primary">Start free trial</a>
+        </div>
+      </section>
+
+      <footer class="footer">
+        <div class="footer-card">
+          <p>We do not sell your personal information.</p>
+          <p><a href="privacy.html">Privacy Policy</a> · © 2026 Day Place LTD · <a href="mailto:admin@ai-optimizer.org">admin@ai-optimizer.org</a></p>
+        </div>
+      </footer>
+    </div>
+  </main>
+</body>
+</html>

@@ -1,0 +1,37 @@
+# AI Optimizer
+
+AI Optimizer is a local-first desktop app that reduces repeated AI API waste by adding a caching and control layer in front of OpenAI and Anthropic workflows.
+
+Best fit:
+- repeat-heavy developer workflows
+- scripts and automations
+- agent workflows
+- cron jobs and scheduled prompts
+- local tools that send repeated API requests
+
+Core idea:
+- point existing workflows at a local proxy on localhost
+- cache repeated requests
+- track requests, cache hits, and provider behavior
+- reduce repeated spend without rebuilding the whole stack
+
+Primary pages:
+- https://ai-optimizer.org/
+- https://ai-optimizer.org/how-it-works.html
+- https://ai-optimizer.org/for-developers.html
+- https://ai-optimizer.org/for-agents.html
+- https://ai-optimizer.org/faq.html
+
+Important pages:
+- https://ai-optimizer.org/cache-proof.html
+- https://ai-optimizer.org/cache-openai-api-locally.html
+- https://ai-optimizer.org/privacy.html
+
+Key facts:
+- local-first workflow
+- localhost proxy setup
+- OpenAI support
+- Anthropic support
+- repeat-request caching
+- cache-hit visibility
+- best for repeated and recurring request patterns

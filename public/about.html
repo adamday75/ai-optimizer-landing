@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>About AI Optimizer | Local-First AI Cost Control</title>
+  <meta name="description" content="Learn what AI Optimizer is, why it exists, and how Day Place is building a local-first way to reduce repeated OpenAI and Anthropic API waste.">
+  <meta property="og:title" content="About AI Optimizer | Local-First AI Cost Control">
+  <meta property="og:description" content="Learn what AI Optimizer is, why it exists, and how Day Place is building a local-first way to reduce repeated OpenAI and Anthropic API waste.">
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://ai-optimizer.org/about.html">
+  <meta property="og:image" content="https://ai-optimizer.org/images/app-setup-annotated.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="About AI Optimizer | Local-First AI Cost Control">
+  <meta name="twitter:description" content="Learn what AI Optimizer is, why it exists, and how Day Place is building a local-first way to reduce repeated OpenAI and Anthropic API waste.">
+  <meta name="twitter:image" content="https://ai-optimizer.org/images/app-setup-annotated.png">
+  <link rel="canonical" href="https://ai-optimizer.org/about.html">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          {"@type": "ListItem", "position": 1, "name": "Home", "item": "https://ai-optimizer.org/"},
+          {"@type": "ListItem", "position": 2, "name": "About", "item": "https://ai-optimizer.org/about.html"}
+        ]
+      },
+      {
+        "@type": "Organization",
+        "@id": "https://ai-optimizer.org/#organization",
+        "name": "Day Place LTD",
+        "url": "https://ai-optimizer.org/",
+        "description": "Day Place builds practical, local-first AI products with a focus on clear systems and believable value."
+      },
+      {
+        "@type": "SoftwareApplication",
+        "@id": "https://ai-optimizer.org/#software",
+        "name": "AI Optimizer",
+        "applicationCategory": "DeveloperApplication",
+        "operatingSystem": "macOS, Windows, Linux",
+        "url": "https://ai-optimizer.org/",
+        "description": "AI Optimizer is a local-first desktop app that reduces repeated OpenAI and Anthropic API waste by adding a caching proxy on localhost.",
+        "creator": {
+          "@id": "https://ai-optimizer.org/#organization"
+        },
+        "featureList": [
+          "Local proxy workflow",
+          "Repeat-request caching",
+          "OpenAI support",
+          "Anthropic support",
+          "Cache-hit visibility"
+        ]
+      },
+      {
+        "@type": "AboutPage",
+        "name": "About AI Optimizer",
+        "url": "https://ai-optimizer.org/about.html",
+        "about": {
+          "@id": "https://ai-optimizer.org/#software"
+        },
+        "isPartOf": {
+          "@id": "https://ai-optimizer.org/#organization"
+        }
+      }
+    ]
+  }
+  </script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link href="styles-v3-site.css" rel="stylesheet">
+</head>
+<body>
+  <main class="page">
+    <div class="container">
+      <header class="topbar">
+        <a class="brand" href="index.html"><span class="brand-mark"></span>AI Optimizer</a>
+        <a class="back-link" href="index.html">← Back to home</a>
+      </header>
+
+      <section class="hero-panel">
+        <div class="eyebrow">About</div>
+        <h1>Local-first AI cost control, built for repeat-heavy real workflows.</h1>
+        <p class="lead">AI Optimizer exists because repeated API work gets expensive fast, and most teams do not want to rebuild their whole stack just to control the waste.</p>
+      </section>
+
+      <section class="section">
+        <div class="card" style="background:rgba(150,187,255,.06); border-color:var(--border-strong);">
+          <div class="kicker">Quick answer</div>
+          <p style="margin:0; color:var(--text); font-size:1.02rem; line-height:1.7;">AI Optimizer is a local-first desktop app from Day Place that reduces repeated OpenAI and Anthropic API waste by adding a caching proxy on <code>localhost</code>. The goal is practical cost control for developers, agents, scripts, and automations without forcing a whole new platform migration.</p>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="grid-2">
+          <article class="card">
+            <h2>What AI Optimizer does</h2>
+            <p>AI Optimizer adds a local caching and control layer in front of your OpenAI or Anthropic workflow. It helps repeated requests resolve locally when the request pattern is stable enough to hit cache, and it gives you visibility into requests and cache hits from one local app.</p>
+          </article>
+          <article class="card">
+            <h2>Why it exists</h2>
+            <p>Repeated AI usage is often more expensive than people expect, especially in scripts, agents, automations, and recurring jobs. AI Optimizer focuses on that practical problem instead of trying to become an all-purpose AI platform.</p>
+          </article>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="grid-2">
+          <article class="card">
+            <h3>Why local-first matters</h3>
+            <p>Local-first keeps the control layer close to the workflow. That makes it easier to reason about requests, verify cache behavior, and adopt the product without routing everything through another hosted middle layer.</p>
+          </article>
+          <article class="card">
+            <h3>Who it is for</h3>
+            <p>AI Optimizer is built for developers, agent operators, and technical teams running repeat-heavy tools, scripts, automations, and local assistants where request patterns repeat over time.</p>
+          </article>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="card">
+          <div class="kicker">About Day Place</div>
+          <h2>Practical products. Clear systems. No noise.</h2>
+          <p>Day Place is the quiet parent company behind AI Optimizer. The emphasis is not on inflated platform language. It is on useful products, believable value, and systems that fit into real workflows.</p>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="badge-row">
+          <a class="badge" href="how-it-works.html">How it works</a>
+          <a class="badge" href="cache-proof.html">Cache proof</a>
+          <a class="badge" href="for-developers.html">For developers</a>
+          <a class="badge" href="for-agents.html">For agents</a>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="cta-card">
+          <div class="cta-copy">
+            <h3>Use the workflow you already have, just more efficiently.</h3>
+            <p>Install AI Optimizer, route traffic through localhost, and start measuring repeated API waste with a local-first control layer.</p>
+          </div>
+          <a href="https://saas-optimizer.fly.dev/v1/api/create-trial" class="button button-primary">Start free trial</a>
+        </div>
+      </section>
+
+      <footer class="footer">
+        <div class="footer-card">
+          <p>We do not sell your personal information.</p>
+          <p><a href="how-it-works.html">How it works</a> · <a href="cache-proof.html">Cache proof</a> · <a href="faq.html">FAQ</a> · <a href="privacy.html">Privacy Policy</a> · © 2026 Day Place LTD · <a href="mailto:admin@ai-optimizer.org">admin@ai-optimizer.org</a></p>
+        </div>
+      </footer>
+    </div>
+  </main>
+</body>
+</html>
