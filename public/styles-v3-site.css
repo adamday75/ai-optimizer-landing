@@ -36,7 +36,16 @@ code, pre { font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospac
   display:flex; justify-content:space-between; align-items:center; gap:16px;
   padding: 8px 0 26px;
 }
-.brand { display:inline-flex; gap:12px; align-items:center; font-weight:800; letter-spacing:.02em; color: var(--text); }
+.brand {
+  display: inline-flex;
+  align-items: center;
+  color: var(--text);
+}
+.brand img {
+  display: block;
+  width: min(100%, 210px);
+  height: auto;
+}
 .brand-mark { width:12px; height:12px; border-radius:999px; background: linear-gradient(135deg,var(--accent),var(--accent-2)); box-shadow: 0 0 20px rgba(150,187,255,.55); }
 .back-link {
   display:inline-flex; align-items:center; gap:10px; padding:10px 14px;
