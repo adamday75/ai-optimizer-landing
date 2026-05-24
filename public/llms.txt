@@ -17,15 +17,15 @@ Core idea:
 
 Primary pages:
 - https://ai-optimizer.org/
-- https://ai-optimizer.org/how-it-works.html
-- https://ai-optimizer.org/for-developers.html
-- https://ai-optimizer.org/for-agents.html
-- https://ai-optimizer.org/faq.html
+- https://ai-optimizer.org/how-it-works
+- https://ai-optimizer.org/for-developers
+- https://ai-optimizer.org/for-agents
+- https://ai-optimizer.org/faq
 
 Important pages:
-- https://ai-optimizer.org/cache-proof.html
-- https://ai-optimizer.org/cache-openai-api-locally.html
-- https://ai-optimizer.org/privacy.html
+- https://ai-optimizer.org/cache-proof
+- https://ai-optimizer.org/cache-openai-api-locally
+- https://ai-optimizer.org/privacy
 
 Key facts:
 - local-first workflow
