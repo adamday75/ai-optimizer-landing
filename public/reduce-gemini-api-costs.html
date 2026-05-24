@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>How to Reduce Gemini API Costs with Context Caching | AI Optimizer</title>
+  <meta name="description" content="Reduce repeated Gemini API waste with local caching and a simple localhost proxy workflow. Learn where context caching helps, where repeated requests show up, and how AI Optimizer fits.">
+  <meta property="og:title" content="How to Reduce Gemini API Costs with Context Caching | AI Optimizer">
+  <meta property="og:description" content="Reduce repeated Gemini API waste with local caching and a simple localhost proxy workflow. Learn where context caching helps, where repeated requests show up, and how AI Optimizer fits.">
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://ai-optimizer.org/reduce-gemini-api-costs">
+  <meta property="og:image" content="https://ai-optimizer.org/images/provider-google-gemini-crop.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="How to Reduce Gemini API Costs with Context Caching | AI Optimizer">
+  <meta name="twitter:description" content="Reduce repeated Gemini API waste with local caching and a simple localhost proxy workflow. Learn where context caching helps, where repeated requests show up, and how AI Optimizer fits.">
+  <meta name="twitter:image" content="https://ai-optimizer.org/images/provider-google-gemini-crop.png">
+  <link rel="canonical" href="https://ai-optimizer.org/reduce-gemini-api-costs">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          {"@type": "ListItem", "position": 1, "name": "Home", "item": "https://ai-optimizer.org/"},
+          {"@type": "ListItem", "position": 2, "name": "Reduce Gemini API costs", "item": "https://ai-optimizer.org/reduce-gemini-api-costs"}
+        ]
+      },
+      {
+        "@type": "HowTo",
+        "name": "How to reduce Gemini API costs with context caching",
+        "description": "Route repeat-heavy Gemini generateContent requests through a local proxy so repeated calls can benefit from caching and clearer request visibility.",
+        "step": [
+          {"@type": "HowToStep", "name": "Choose Google Gemini in AI Optimizer", "text": "Select Google Gemini as the active provider in AI Optimizer and save the API key."},
+          {"@type": "HowToStep", "name": "Start the local proxy", "text": "Run AI Optimizer so it listens on localhost for the supported Gemini request path."},
+          {"@type": "HowToStep", "name": "Route repeated Gemini requests through localhost", "text": "Point supported repeat-heavy Gemini generateContent traffic at the local proxy path instead of sending each request directly upstream."},
+          {"@type": "HowToStep", "name": "Verify request behavior", "text": "Watch request counts and repeat behavior from one local control layer so you can confirm the workflow is worth keeping."}
+        ]
+      }
+    ]
+  }
+  </script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link href="styles-v3-site.css?v=20260520b" rel="stylesheet">
+  <link rel="icon" href="/favicon.ico">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+  <link rel="manifest" href="/site.webmanifest">
+</head>
+<body>
+  <main class="page">
+    <div class="container">
+      <header class="topbar">
+        <a class="brand" href="/"><img src="/images/branding/exports/horizontal-lockup-inverse/ai-optimizer-logo-horizontal-lockup-inverse-1200w.png?v=20260520b" alt="AI Optimizer"></a>
+        <a class="back-link" href="/">← Back to home</a>
+      </header>
+
+      <section class="hero-panel">
+        <div class="eyebrow">Gemini local caching</div>
+        <h1>How to reduce Gemini API costs with context caching.</h1>
+        <p class="lead">If your scripts, automations, or repeat-heavy Gemini workflows keep sending similar requests over time, a local proxy can reduce repeated waste without forcing you to rebuild the whole flow around a new platform.</p>
+      </section>
+
+      <section class="section">
+        <div class="card" style="background:rgba(150,187,255,.06); border-color:var(--border-strong);">
+          <div class="kicker">Quick answer</div>
+          <p style="margin:0; color:var(--text); font-size:1.02rem; line-height:1.7;">You can reduce repeated Gemini API waste by routing supported Google Gemini traffic through a localhost proxy instead of sending every repeat call upstream at full cost. Google frames this as <strong>context caching</strong>; AI Optimizer focuses on the practical local workflow side so repeat-heavy requests are easier to control and verify.</p>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="section-head">
+          <h2>Why Gemini API costs grow</h2>
+          <p>The repeated-cost problem is usually not one giant prompt. It is the same request pattern showing up again in scripts, automations, recurring jobs, local tools, and agent loops that keep revisiting the same work.</p>
+        </div>
+        <div class="grid-2">
+          <article class="card"><h3>Repeat-heavy Gemini workflows</h3><p>Scheduled summaries, recurring content transforms, repeated local checks, and repeated generateContent requests are better candidates for caching than one-off exploratory prompting.</p></article>
+          <article class="card"><h3>Same local proxy pattern</h3><p>The value proposition stays simple: route traffic through <code>localhost</code>, keep the surrounding workflow mostly intact, and confirm request behavior from one local control layer.</p></article>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="card">
+          <div class="kicker">Gemini terminology</div>
+          <h2>Google calls this context caching.</h2>
+          <p class="lead">For Gemini, the more natural search and implementation term is <strong>context caching</strong>, not just prompt caching. That matters because people searching for Gemini cost reduction often use Google’s own wording.</p>
+          <p class="meta">The practical question is still the same: can repeated Gemini request patterns stay stable enough to benefit from caching inside the configured window?</p>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="grid-2">
+          <article class="card">
+            <h3>Current AI Optimizer Google scope</h3>
+            <ul>
+              <li>Google Gemini support is intentionally narrow and honest</li>
+              <li>Focused on <code>generateContent</code> workflows</li>
+              <li>Best fit is non-streaming repeated request traffic</li>
+              <li>No fake parity with every Google AI endpoint</li>
+            </ul>
+          </article>
+          <article class="card">
+            <h3>Why that honesty helps</h3>
+            <ul>
+              <li>Clear expectations are better than vague provider claims</li>
+              <li>Repeat-heavy automation lanes are easier to prove</li>
+              <li>The strongest current use case is boring, stable traffic</li>
+              <li>That makes the product more believable, not less</li>
+            </ul>
+          </article>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="grid-2">
+          <article class="card">
+            <h3>Good fit</h3>
+            <ul>
+              <li>Repeated scripts</li>
+              <li>Cron jobs and recurring prompts</li>
+              <li>Local automations</li>
+              <li>Repeat-heavy agent workflows</li>
+              <li>Stable <code>generateContent</code> request patterns</li>
+            </ul>
+          </article>
+          <article class="card">
+            <h3>Less ideal fit</h3>
+            <ul>
+              <li>Completely unique prompts every time</li>
+              <li>Highly dynamic request bodies</li>
+              <li>Unsupported Google endpoints</li>
+              <li>One-off exploratory usage only</li>
+            </ul>
+          </article>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="grid-2">
+          <article class="card"><h3>Where AI Optimizer fits</h3><p>AI Optimizer is a local-first desktop app that adds a proxy and control layer in front of your existing workflow. The goal is to keep your current setup mostly intact while making repeated request behavior easier to see and easier to manage.</p></article>
+          <article class="card"><h3>What to expect</h3><p>The strongest value shows up when repeated Gemini requests stay stable enough to benefit from caching. This is especially useful for repeat-heavy local workflows, recurring jobs, and boring automation lanes that keep revisiting the same request shape.</p></article>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="grid-1">
+          <div class="image-frame" style="max-width: 620px; margin: 0 auto;">
+            <img src="images/provider-google-gemini-crop.png" alt="AI Optimizer showing Google Gemini configured with proxy running and cache stats" />
+            <div class="image-caption">Gemini configured locally: choose Google Gemini as the active provider, route repeated requests through the proxy, and confirm request behavior from one control layer.</div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="badge-row">
+          <a class="badge" href="/cache-proof">See cache proof</a>
+          <a class="badge" href="/how-it-works">How it works</a>
+          <a class="badge" href="/for-developers">For developers</a>
+          <a class="badge" href="/for-agents">For agents</a>
+          <a class="badge" href="/cache-openai-api-locally">Cache OpenAI locally</a>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="cta-card">
+          <div class="cta-copy">
+            <h3>Reduce repeated Gemini API waste without rebuilding your workflow.</h3>
+            <p>Install AI Optimizer, choose Google Gemini, route supported traffic through localhost, and confirm the repeated-request lane is worth keeping before rolling it into more of your stack.</p>
+          </div>
+          <a href="https://saas-optimizer.fly.dev/v1/api/create-trial" class="button button-primary">Start free trial</a>
+        </div>
+      </section>
+
+      <footer class="footer">
+        <div class="footer-card">
+          <p>We do not sell your personal information.</p>
+          <p><a href="/how-it-works">How it works</a> · <a href="/cache-proof">Cache proof</a> · <a href="/faq">FAQ</a> · <a href="/privacy">Privacy Policy</a> · © 2026 Day Place LTD · <a href="mailto:admin@ai-optimizer.org">admin@ai-optimizer.org</a></p>
+        </div>
+      </footer>
+    </div>
+  </main>
+</body>
+</html>

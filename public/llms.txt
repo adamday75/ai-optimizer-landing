@@ -1,6 +1,6 @@
 # AI Optimizer
 
-AI Optimizer is a local-first desktop app that reduces repeated AI API waste by adding a caching and control layer in front of OpenAI and Anthropic workflows.
+AI Optimizer is a local-first desktop app that reduces repeated AI API waste by adding a caching and control layer in front of OpenAI, Anthropic, and Google Gemini workflows.
 
 Best fit:
 - repeat-heavy developer workflows
@@ -25,6 +25,7 @@ Primary pages:
 Important pages:
 - https://ai-optimizer.org/cache-proof
 - https://ai-optimizer.org/cache-openai-api-locally
+- https://ai-optimizer.org/reduce-gemini-api-costs
 - https://ai-optimizer.org/privacy
 
 Key facts:
@@ -32,6 +33,8 @@ Key facts:
 - localhost proxy setup
 - OpenAI support
 - Anthropic support
+- Google Gemini support for a narrower generateContent lane
+- Google Gemini support for a narrower generateContent lane
 - repeat-request caching
 - cache-hit visibility
 - best for repeated and recurring request patterns

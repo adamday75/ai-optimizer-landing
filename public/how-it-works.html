@@ -3,16 +3,16 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>How AI Optimizer Works – Local Caching for OpenAI and Anthropic</title>
-  <meta name="description" content="See how AI Optimizer adds a local caching and control layer in front of OpenAI and Anthropic workflows to reduce repeated API waste.">
-  <meta property="og:title" content="How AI Optimizer Works – Local Caching for OpenAI and Anthropic">
-  <meta property="og:description" content="See how AI Optimizer adds a local caching and control layer in front of OpenAI and Anthropic workflows to reduce repeated API waste.">
+  <title>How AI Optimizer Works – Local Caching for OpenAI, Anthropic, and Gemini</title>
+  <meta name="description" content="See how AI Optimizer adds a local caching and control layer in front of OpenAI, Anthropic, and Google Gemini workflows to reduce repeated API waste.">
+  <meta property="og:title" content="How AI Optimizer Works – Local Caching for OpenAI, Anthropic, and Gemini">
+  <meta property="og:description" content="See how AI Optimizer adds a local caching and control layer in front of OpenAI, Anthropic, and Google Gemini workflows to reduce repeated API waste.">
   <meta property="og:type" content="article">
   <meta property="og:url" content="https://ai-optimizer.org/how-it-works">
   <meta property="og:image" content="https://ai-optimizer.org/images/how-it-works-openai-flow-crop.png">
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="How AI Optimizer Works – Local Caching for OpenAI and Anthropic">
-  <meta name="twitter:description" content="See how AI Optimizer adds a local caching and control layer in front of OpenAI and Anthropic workflows to reduce repeated API waste.">
+  <meta name="twitter:title" content="How AI Optimizer Works – Local Caching for OpenAI, Anthropic, and Gemini">
+  <meta name="twitter:description" content="See how AI Optimizer adds a local caching and control layer in front of OpenAI, Anthropic, and Google Gemini workflows to reduce repeated API waste.">
   <meta name="twitter:image" content="https://ai-optimizer.org/images/how-it-works-openai-flow-crop.png">
   <link rel="canonical" href="https://ai-optimizer.org/how-it-works">
   <script type="application/ld+json">
@@ -41,7 +41,7 @@
         "name": "How AI Optimizer works",
         "description": "Route traffic through AI Optimizer on localhost, cache repeated requests, and monitor request and cache-hit behavior.",
         "step": [
-          {"@type": "HowToStep", "name": "Choose your provider", "text": "Select OpenAI or Anthropic in the desktop app and save the API key for the active provider."},
+          {"@type": "HowToStep", "name": "Choose your provider", "text": "Select OpenAI, Anthropic, or Google Gemini in the desktop app and save the API key for the active provider."},
           {"@type": "HowToStep", "name": "Start the local proxy", "text": "Start AI Optimizer so it listens on http://localhost:3000/v1."},
           {"@type": "HowToStep", "name": "Point your workflow to localhost", "text": "Route your scripts, tools, or automations through the local proxy path instead of sending requests directly upstream."},
           {"@type": "HowToStep", "name": "Track cache behavior", "text": "Watch requests, cache hits, and provider behavior from one local control layer."}
@@ -77,7 +77,7 @@
       <section class="section">
         <div class="card" style="background:rgba(150,187,255,.06); border-color:var(--border-strong);">
           <div class="kicker">Quick answer</div>
-          <p style="margin:0; color:var(--text); font-size:1.02rem; line-height:1.7;">AI Optimizer works by adding a local proxy on <code>localhost</code> in front of your OpenAI or Anthropic workflow. Repeated requests can then resolve from cache instead of hitting the provider at full cost every time, while the app shows request totals and cache-hit behavior in one local control layer.</p>
+          <p style="margin:0; color:var(--text); font-size:1.02rem; line-height:1.7;">AI Optimizer works by adding a local proxy on <code>localhost</code> in front of your OpenAI, Anthropic, or supported Google Gemini workflow. Repeated requests can then resolve from cache instead of hitting the provider at full cost every time, while the app shows request totals and cache-hit behavior in one local control layer.</p>
         </div>
       </section>
 
@@ -92,7 +92,7 @@
 
       <section class="section">
         <div class="grid-1">
-          <article class="card"><div class="step-num">1</div><h3>Activate the app and choose your provider</h3><p>Enter your license, then select OpenAI or Anthropic in the desktop app. AI Optimizer supports one active provider at a time in v2.2.0.</p></article>
+          <article class="card"><div class="step-num">1</div><h3>Activate the app and choose your provider</h3><p>Enter your license, then select OpenAI, Anthropic, or Google Gemini in the desktop app. AI Optimizer supports one active provider at a time.</p></article>
           <article class="card"><div class="step-num">2</div><h3>Save the API key for that provider</h3><p>You can store both keys in the app, but the proxy uses the currently selected provider for local routing.</p></article>
           <article class="card"><div class="step-num">3</div><h3>Start the local proxy</h3><p>Once the proxy is running, AI Optimizer listens on <code>http://localhost:3000/v1</code>.</p></article>
           <article class="card"><div class="step-num">4</div><h3>Point your workflow at localhost</h3><p>Your tools, scripts, or automations send requests to AI Optimizer first instead of calling the upstream provider directly.</p></article>
@@ -114,11 +114,11 @@
         <div class="grid-2">
           <article class="card">
             <h3>Supported providers</h3>
-            <p>AI Optimizer 2.2.0 supports both <strong>OpenAI</strong> and <strong>Anthropic</strong>. You can store both API keys in the app and choose one active provider at a time through the desktop UI.</p>
+            <p>AI Optimizer supports <strong>OpenAI</strong>, <strong>Anthropic</strong>, and a narrower <strong>Google Gemini</strong> lane. You can store multiple provider keys in the app and choose one active provider at a time through the desktop UI.</p>
           </article>
           <article class="card">
             <h3>Provider-aware caching</h3>
-            <p>Cache behavior is provider-aware, so OpenAI and Anthropic requests do not collide with each other even when the local proxy workflow stays the same.</p>
+            <p>Cache behavior is provider-aware, so OpenAI, Anthropic, and supported Google Gemini requests do not collide with each other even when the local proxy workflow stays the same.</p>
           </article>
         </div>
       </section>
@@ -137,7 +137,7 @@
       </section>
 
       <section class="section">
-        <div class="callout"><strong>Anthropic support in v2.2.0:</strong> Anthropic support in this release is focused on chat completions through the same local proxy flow. OpenAI support remains broader for workflows that rely on additional OpenAI-specific endpoints.</div>
+        <div class="callout"><strong>Provider scope matters:</strong> OpenAI support remains the broadest lane, Anthropic support is focused on chat completions, and Google Gemini support is intentionally narrower around repeat-heavy <code>generateContent</code> workflows.</div>
       </section>
 
       <section class="section">

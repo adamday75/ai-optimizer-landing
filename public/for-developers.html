@@ -4,15 +4,15 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>AI Optimizer for Developers – Local Caching for OpenAI, Anthropic, Agents, and Automations</title>
-  <meta name="description" content="AI Optimizer helps developers reduce repeated AI API waste with a local caching proxy for OpenAI and Anthropic workflows, including agents, scripts, and automations.">
+  <meta name="description" content="AI Optimizer helps developers reduce repeated AI API waste with a local caching proxy for OpenAI, Anthropic, and Google Gemini workflows, including agents, scripts, and automations.">
   <meta property="og:title" content="AI Optimizer for Developers – Local Caching for OpenAI, Anthropic, Agents, and Automations">
-  <meta property="og:description" content="AI Optimizer helps developers reduce repeated AI API waste with a local caching proxy for OpenAI and Anthropic workflows, including agents, scripts, and automations.">
+  <meta property="og:description" content="AI Optimizer helps developers reduce repeated AI API waste with a local caching proxy for OpenAI, Anthropic, and Google Gemini workflows, including agents, scripts, and automations.">
   <meta property="og:type" content="article">
   <meta property="og:url" content="https://ai-optimizer.org/for-developers">
   <meta property="og:image" content="https://ai-optimizer.org/images/provider-openai-crop.png">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="AI Optimizer for Developers – Local Caching for OpenAI, Anthropic, Agents, and Automations">
-  <meta name="twitter:description" content="AI Optimizer helps developers reduce repeated AI API waste with a local caching proxy for OpenAI and Anthropic workflows, including agents, scripts, and automations.">
+  <meta name="twitter:description" content="AI Optimizer helps developers reduce repeated AI API waste with a local caching proxy for OpenAI, Anthropic, and Google Gemini workflows, including agents, scripts, and automations.">
   <meta name="twitter:image" content="https://ai-optimizer.org/images/provider-openai-crop.png">
   <link rel="canonical" href="https://ai-optimizer.org/for-developers">
   <script type="application/ld+json">
@@ -32,12 +32,13 @@
         "url": "https://ai-optimizer.org/for-developers",
         "applicationCategory": "DeveloperApplication",
         "operatingSystem": "macOS, Windows, Linux",
-        "description": "AI Optimizer helps developers reduce repeated AI API waste with a local caching proxy for OpenAI and Anthropic workflows, including agents, scripts, and automations.",
+        "description": "AI Optimizer helps developers reduce repeated AI API waste with a local caching proxy for OpenAI, Anthropic, and Google Gemini workflows, including agents, scripts, and automations.",
         "featureList": [
           "Local proxy workflow",
           "Repeat-request caching",
           "OpenAI support",
           "Anthropic support",
+          "Google Gemini support",
           "Adjustable cache TTL"
         ]
       }
@@ -71,7 +72,7 @@
       <section class="section">
         <div class="card" style="background:rgba(150,187,255,.06); border-color:var(--border-strong);">
           <div class="kicker">Quick answer</div>
-          <p style="margin:0; color:var(--text); font-size:1.02rem; line-height:1.7;">AI Optimizer helps developers reduce repeated OpenAI and Anthropic API waste by routing existing workflows through a local caching proxy on <code>localhost</code>. It works best for scripts, tools, automations, and agent loops that repeat the same request patterns over time.</p>
+          <p style="margin:0; color:var(--text); font-size:1.02rem; line-height:1.7;">AI Optimizer helps developers reduce repeated OpenAI, Anthropic, and Google Gemini API waste by routing existing workflows through a local caching proxy on <code>localhost</code>. It works best for scripts, tools, automations, and agent loops that repeat the same request patterns over time.</p>
         </div>
       </section>
 
@@ -89,7 +90,7 @@
           <article class="card"><h3>Why developers use it</h3><p>Many developer workflows repeat the same model calls across scripts, tools, retries, local automations, and agent loops. AI Optimizer helps by caching repeated traffic locally and making that behavior easier to control.</p></article>
           <article class="card"><h3>Keep your current setup</h3><p>You usually do not need to redesign your workflow. In many cases, the practical change is routing your base URL through the local optimizer endpoint on <code>http://localhost:3000/v1</code>.</p></article>
           <article class="card"><h3>Compatible with agents and automations</h3><p>AI Optimizer works well with repeat-heavy agent-style workflows, local assistants, scripts, and recurring jobs where the same API paths are revisited constantly.</p></article>
-          <article class="card"><h3>Provider support in v2.2.0</h3><p>AI Optimizer now supports both OpenAI and Anthropic with one active provider at a time. OpenAI support remains broader, while Anthropic support in this release is focused on chat completions.</p></article>
+          <article class="card"><h3>Provider support</h3><p>AI Optimizer supports OpenAI, Anthropic, and a narrower Google Gemini lane with one active provider at a time. OpenAI support remains broader, Anthropic is focused on chat completions, and Gemini is intentionally scoped around repeat-heavy <code>generateContent</code> workflows.</p></article>
         </div>
       </section>
 
@@ -111,7 +112,7 @@
           </article>
           <article class="card">
             <h3>Practical compatibility</h3>
-            <p>AI Optimizer is designed to fit into real local workflows, not just polished demos. The strongest current examples remain repeat-heavy OpenAI toolchains, while Anthropic support in v2.2.0 expands the same local proxy model.</p>
+            <p>AI Optimizer is designed to fit into real local workflows, not just polished demos. The strongest current examples remain repeat-heavy OpenAI toolchains, while Anthropic and Google Gemini extend the same local proxy model with narrower supported lanes.</p>
           </article>
         </div>
       </section>
@@ -129,7 +130,7 @@
     }
   }
 }</code></pre>
-            <p class="meta">Current documented examples remain strongest around OpenAI-based OpenClaw workflows, while Anthropic support now expands the same local proxy model.</p>
+            <p class="meta">Current documented examples remain strongest around OpenAI-based OpenClaw workflows, while Anthropic and Google Gemini extend the same local proxy model with narrower scope.</p>
           </article>
           <article class="card">
             <div class="kicker">Hermes setup</div>
@@ -142,6 +143,16 @@ Model: gpt-5.4
 Start chat: hermes --tui</code></pre>
             <p class="meta">That gives Hermes-Agent the same local proxy path and lets you verify requests and cache hits in one place.</p>
           </article>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="badge-row">
+          <a class="badge" href="/cache-proof">See cache proof</a>
+          <a class="badge" href="/how-it-works">How it works</a>
+          <a class="badge" href="/reduce-gemini-api-costs">Reduce Gemini costs</a>
+          <a class="badge" href="/for-agents">For agents</a>
+          <a class="badge" href="/faq">FAQ</a>
         </div>
       </section>
 

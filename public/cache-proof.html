@@ -3,16 +3,16 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>AI Optimizer Cache Proof | OpenAI and Anthropic Repeat Request Results</title>
-  <meta name="description" content="See real OpenAI and Anthropic cache-hit behavior from AI Optimizer, including repeated request tests, TTL behavior, and what the results actually prove.">
-  <meta property="og:title" content="AI Optimizer Cache Proof | OpenAI and Anthropic Repeat Request Results">
-  <meta property="og:description" content="See real OpenAI and Anthropic cache-hit behavior from AI Optimizer, including repeated request tests, TTL behavior, and what the results actually prove.">
+  <title>AI Optimizer Cache Proof | OpenAI, Anthropic, and Gemini Repeat Request Results</title>
+  <meta name="description" content="See real OpenAI, Anthropic, and Gemini cache behavior from AI Optimizer, including repeated request tests, TTL behavior, and what the results actually prove.">
+  <meta property="og:title" content="AI Optimizer Cache Proof | OpenAI, Anthropic, and Gemini Repeat Request Results">
+  <meta property="og:description" content="See real OpenAI, Anthropic, and Gemini cache behavior from AI Optimizer, including repeated request tests, TTL behavior, and what the results actually prove.">
   <meta property="og:type" content="article">
   <meta property="og:url" content="https://ai-optimizer.org/cache-proof">
   <meta property="og:image" content="https://ai-optimizer.org/images/cache-proof-openai-stats-crop.png">
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="AI Optimizer Cache Proof | OpenAI and Anthropic Repeat Request Results">
-  <meta name="twitter:description" content="See real OpenAI and Anthropic cache-hit behavior from AI Optimizer, including repeated request tests, TTL behavior, and what the results actually prove.">
+  <meta name="twitter:title" content="AI Optimizer Cache Proof | OpenAI, Anthropic, and Gemini Repeat Request Results">
+  <meta name="twitter:description" content="See real OpenAI, Anthropic, and Gemini cache behavior from AI Optimizer, including repeated request tests, TTL behavior, and what the results actually prove.">
   <meta name="twitter:image" content="https://ai-optimizer.org/images/cache-proof-openai-stats-crop.png">
   <link rel="canonical" href="https://ai-optimizer.org/cache-proof">
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -35,25 +35,25 @@
 
       <section class="hero-panel">
         <div class="eyebrow">Cache proof</div>
-        <h1>AI Optimizer cache proof: repeated requests, real cache hits, clear results.</h1>
-        <p class="lead">This page is where AI Optimizer earns trust. The goal is simple: show repeat request behavior clearly enough that a technical buyer can see the product is doing useful work, not just making a vague promise.</p>
+        <h1>See repeated requests turn into real cache hits.</h1>
+        <p class="lead">See how AI Optimizer handles repeated requests in practice. The point is simple: show real cache behavior clearly enough that you can judge whether it fits your workflow.</p>
       </section>
 
       <section class="section">
         <div class="card" style="background:rgba(150,187,255,.06); border-color:var(--border-strong);">
           <div class="kicker">Quick answer</div>
-          <p style="margin:0; color:var(--text); font-size:1.02rem; line-height:1.7;">AI Optimizer can cache repeated OpenAI and Anthropic requests through a local proxy workflow. In repeat tests, identical requests increased <code>cacheHits</code> instead of sending the same work upstream at full cost again, which makes the product a strong fit for repeat-heavy scripts, automations, and agent workflows.</p>
+          <p style="margin:0; color:var(--text); font-size:1.02rem; line-height:1.7;">AI Optimizer can cache repeated OpenAI, Anthropic, and supported Gemini requests through a local proxy workflow. In repeat tests, identical requests increased <code>cacheHits</code> instead of sending the same work upstream at full cost again. That matters most for repeat-heavy scripts, automations, cron jobs, and agent workflows.</p>
         </div>
       </section>
 
       <section class="section">
         <div class="section-head">
           <h2>What we tested</h2>
-          <p>The proof case is intentionally boring: same request shape, same provider, same local proxy path, and repeated calls checked against request totals and cache-hit counts.</p>
+          <p>The proof case is intentionally simple: same request shape, same provider, same local proxy path, and repeated calls checked against request totals and cache-hit counts.</p>
         </div>
         <div class="grid-2">
-          <article class="card"><h3>Local proxy path</h3><p>Requests are sent through <code>http://localhost:3000/v1</code> so AI Optimizer sits between the workflow and the upstream provider.</p></article>
-          <article class="card"><h3>Repeat request pattern</h3><p>Identical or near-identical requests are repeated to see whether the app increments <code>cacheHits</code> instead of paying full price for the same work again.</p></article>
+          <article class="card"><h3>Local proxy path</h3><p>Requests go through <code>http://localhost:3000/v1</code>, so AI Optimizer sits between your workflow and the upstream provider.</p></article>
+          <article class="card"><h3>Repeat request pattern</h3><p>Identical or near-identical requests are repeated to see whether <code>cacheHits</code> increases instead of paying full price for the same work again.</p></article>
         </div>
       </section>
 
@@ -61,13 +61,13 @@
         <div class="grid-2">
           <article class="card">
             <h2>OpenAI result</h2>
-            <p>OpenAI is a natural fit for this style of proof because many scripts, tools, and repeat-heavy automations send the same request pattern over and over. The page should show a simple before-and-after stats example with the repeated call path kept stable.</p>
-            <p class="meta">Planned asset: one clean stats screenshot plus a short request example.</p>
+            <p>OpenAI is a natural fit for this style of proof because many scripts, tools, and repeat-heavy automations send the same request pattern over and over. The strongest proof is simple: keep the request path stable and watch repeated calls turn into visible cache behavior.</p>
+            <p class="meta">Best fit: repeat-heavy OpenAI workflows where the same request shape shows up on a schedule or in loops.</p>
           </article>
           <article class="card">
             <h2>Anthropic result</h2>
-            <p>Anthropic support matters because it proves the local proxy model is not only for one provider. The strongest example here is a repeated Claude request that still hit cache later inside the TTL window.</p>
-            <p class="meta">Planned asset: stats screenshot showing later repeat calls still increasing <code>cacheHits</code>.</p>
+            <p>Anthropic support matters because it proves the local proxy model is not only for one provider. The strongest Anthropic example is a repeated Claude request that still benefits from the cache inside the TTL window.</p>
+            <p class="meta">Best fit: repeat-heavy Claude workflows where prompts stay stable enough to benefit from the same cached path.</p>
           </article>
         </div>
       </section>
@@ -76,7 +76,7 @@
         <div class="grid-2">
           <article class="card">
             <h3>What a cache hit means</h3>
-            <p>A cache hit means the repeated request was resolved locally instead of paying for the same full upstream work again. That is most valuable when workflows repeat on a schedule or through common tool loops.</p>
+            <p>A cache hit means the repeated request was resolved locally instead of paying for the same upstream work again. That matters most when workflows repeat on a schedule or through common tool loops.</p>
           </article>
           <article class="card">
             <h3>Why TTL matters</h3>
@@ -91,8 +91,8 @@
           <p>The value of a proof page is precision. It should show where AI Optimizer is strong without pretending every workflow will behave the same way.</p>
         </div>
         <div class="grid-2">
-          <article class="card"><h3>What it proves</h3><p>Local proxy caching works. OpenAI and Anthropic both fit the model. Repeat-heavy workflows can reduce repeated API waste when prompts and request bodies stay stable enough to hit cache.</p></article>
-          <article class="card"><h3>What it does not prove</h3><p>It does not mean every prompt will hit cache. Highly dynamic request bodies, changing timestamps, or constantly unique prompts reduce hit rate. The product works best where repetition is real.</p></article>
+          <article class="card"><h3>What it proves</h3><p>Local proxy caching works. OpenAI, Anthropic, and supported Gemini workflows can all benefit when the request pattern is stable enough to hit cache. If your workflow repeats clearly enough, AI Optimizer can reduce repeated API waste.</p></article>
+          <article class="card"><h3>What it does not prove</h3><p>It does not mean every prompt will hit cache. Highly dynamic request bodies, changing timestamps, or constantly unique prompts will reduce hit rate. AI Optimizer works best where repetition is real.</p></article>
         </div>
       </section>
 
@@ -107,6 +107,7 @@
         <div class="badge-row">
           <a class="badge" href="/how-it-works">How it works</a>
           <a class="badge" href="/cache-openai-api-locally">Cache OpenAI locally</a>
+          <a class="badge" href="/reduce-gemini-api-costs">Reduce Gemini costs</a>
           <a class="badge" href="/for-developers">For developers</a>
           <a class="badge" href="/for-agents">For agents</a>
         </div>
@@ -115,8 +116,8 @@
       <section class="section">
         <div class="cta-card">
           <div class="cta-copy">
-            <h3>Show proof, then scale the workflow.</h3>
-            <p>Install AI Optimizer, route traffic through localhost, confirm cache-hit behavior, and then apply the same pattern to repeat-heavy tools, scripts, and automations.</p>
+            <h3>Prove it on one workflow, then expand.</h3>
+            <p>Install AI Optimizer, route traffic through localhost, confirm cache-hit behavior, and then apply the same pattern to repeat-heavy tools, scripts, cron jobs, and automations.</p>
           </div>
           <a href="https://saas-optimizer.fly.dev/v1/api/create-trial" class="button button-primary">Start free trial</a>
         </div>

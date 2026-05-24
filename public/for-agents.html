@@ -4,15 +4,15 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>AI Optimizer for Agents – Local Caching for OpenAI, Anthropic, and Repeat-Heavy Agent Workflows</title>
-  <meta name="description" content="AI Optimizer helps reduce repeated AI API waste in agent workflows with a local caching and control layer for OpenAI and Anthropic.">
+  <meta name="description" content="AI Optimizer helps reduce repeated AI API waste in agent workflows with a local caching and control layer for OpenAI, Anthropic, and Google Gemini.">
   <meta property="og:title" content="AI Optimizer for Agents – Local Caching for OpenAI, Anthropic, and Repeat-Heavy Agent Workflows">
-  <meta property="og:description" content="AI Optimizer helps reduce repeated AI API waste in agent workflows with a local caching and control layer for OpenAI and Anthropic.">
+  <meta property="og:description" content="AI Optimizer helps reduce repeated AI API waste in agent workflows with a local caching and control layer for OpenAI, Anthropic, and Google Gemini.">
   <meta property="og:type" content="article">
   <meta property="og:url" content="https://ai-optimizer.org/for-agents">
   <meta property="og:image" content="https://ai-optimizer.org/images/cache-proof-openai-stats-crop.png">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="AI Optimizer for Agents – Local Caching for OpenAI, Anthropic, and Repeat-Heavy Agent Workflows">
-  <meta name="twitter:description" content="AI Optimizer helps reduce repeated AI API waste in agent workflows with a local caching and control layer for OpenAI and Anthropic.">
+  <meta name="twitter:description" content="AI Optimizer helps reduce repeated AI API waste in agent workflows with a local caching and control layer for OpenAI, Anthropic, and Google Gemini.">
   <meta name="twitter:image" content="https://ai-optimizer.org/images/cache-proof-openai-stats-crop.png">
   <link rel="canonical" href="https://ai-optimizer.org/for-agents">
   <script type="application/ld+json">
@@ -32,7 +32,7 @@
         "url": "https://ai-optimizer.org/for-agents",
         "applicationCategory": "BusinessApplication",
         "operatingSystem": "macOS, Windows, Linux",
-        "description": "AI Optimizer helps reduce repeated AI API waste in agent workflows with a local caching and control layer for OpenAI and Anthropic.",
+        "description": "AI Optimizer helps reduce repeated AI API waste in agent workflows with a local caching and control layer for OpenAI, Anthropic, and Google Gemini.",
         "featureList": [
           "Local proxy workflow",
           "Repeat-request caching",
@@ -79,7 +79,7 @@
         <div class="grid-1">
           <article class="card"><h3>Where agent waste usually shows up</h3><p>Agent systems often repeat the same work more than people expect. A lot of the waste is not the “smart” step — it is retries, repeated summaries, recurring cron runs, repeated tool calls, duplicate context assembly, and loops that keep hitting the same API path.</p></article>
           <article class="card"><h3>A local control layer for agent traffic</h3><p>AI Optimizer runs on <code>localhost:3000</code> and sits between your workflow and the selected provider API. It helps cache repeated requests, reduce duplicate spend, and make agent behavior easier to reason about locally.</p></article>
-          <article class="card"><h3>Provider support in v2.2.0</h3><p>AI Optimizer supports both OpenAI and Anthropic, with one active provider selected at a time in the desktop app. Anthropic support in this release is focused on chat completions through the same local proxy path.</p></article>
+          <article class="card"><h3>Provider support</h3><p>AI Optimizer supports OpenAI, Anthropic, and a narrower Google Gemini lane, with one active provider selected at a time in the desktop app. Anthropic is focused on chat completions through the same local proxy path, while Gemini is intentionally scoped around repeat-heavy <code>generateContent</code> workflows.</p></article>
           <article class="card"><h3>Built for practical workflows</h3><p>The strongest use cases are not flashy demos. They are the repeated, boring, expensive patterns that show up when agents, scripts, and automations keep revisiting the same API paths over time.</p></article>
         </div>
       </section>
@@ -125,6 +125,16 @@ Model: gpt-5.4
 Start chat: hermes --tui</code></pre>
             <p class="meta">That is enough to route Hermes-Agent through AI Optimizer and verify requests and cache hits in the local app.</p>
           </article>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="badge-row">
+          <a class="badge" href="/how-it-works">How it works</a>
+          <a class="badge" href="/cache-openai-api-locally">Cache OpenAI locally</a>
+          <a class="badge" href="/reduce-gemini-api-costs">Reduce Gemini costs</a>
+          <a class="badge" href="/for-developers">For developers</a>
+          <a class="badge" href="/faq">FAQ</a>
         </div>
       </section>
 
