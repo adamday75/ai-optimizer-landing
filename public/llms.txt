@@ -17,6 +17,7 @@ Core idea:
 
 Primary pages:
 - https://ai-optimizer.org/
+- https://ai-optimizer.org/install
 - https://ai-optimizer.org/how-it-works
 - https://ai-optimizer.org/for-developers
 - https://ai-optimizer.org/for-agents
@@ -31,9 +32,9 @@ Important pages:
 Key facts:
 - local-first workflow
 - localhost proxy setup
+- installation and setup guide
 - OpenAI support
 - Anthropic support
-- Google Gemini support for a narrower generateContent lane
 - Google Gemini support for a narrower generateContent lane
 - repeat-request caching
 - cache-hit visibility

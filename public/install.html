@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Install AI Optimizer – Download, Set Up, and Test the Local Proxy</title>
+  <meta name="description" content="Install AI Optimizer on macOS, Windows, or Linux, activate your license, start the local proxy, and run a quick test against localhost:3000.">
+  <meta property="og:title" content="Install AI Optimizer – Download, Set Up, and Test the Local Proxy">
+  <meta property="og:description" content="A cleaner setup guide for installing AI Optimizer, starting the local proxy, and verifying a real request on macOS, Windows, or Linux.">
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://ai-optimizer.org/install">
+  <meta property="og:image" content="https://ai-optimizer.org/images/homepage-hero-app-crop-openai.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Install AI Optimizer – Download, Set Up, and Test the Local Proxy">
+  <meta name="twitter:description" content="A cleaner setup guide for installing AI Optimizer, starting the local proxy, and verifying a real request on macOS, Windows, or Linux.">
+  <meta name="twitter:image" content="https://ai-optimizer.org/images/homepage-hero-app-crop-openai.png">
+  <link rel="canonical" href="https://ai-optimizer.org/install">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          {"@type": "ListItem", "position": 1, "name": "Home", "item": "https://ai-optimizer.org/"},
+          {"@type": "ListItem", "position": 2, "name": "Install", "item": "https://ai-optimizer.org/install"}
+        ]
+      },
+      {
+        "@type": "HowTo",
+        "name": "Install AI Optimizer",
+        "description": "Download AI Optimizer, activate your license, start the local proxy, and test a real request on localhost:3000.",
+        "step": [
+          {"@type": "HowToStep", "name": "Download the latest release"},
+          {"@type": "HowToStep", "name": "Install the app for macOS, Windows, or Linux"},
+          {"@type": "HowToStep", "name": "Activate your license and save your provider API key"},
+          {"@type": "HowToStep", "name": "Start the local proxy on localhost:3000"},
+          {"@type": "HowToStep", "name": "Run a quick health check and real request"}
+        ]
+      }
+    ]
+  }
+  </script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link href="styles-v3-site.css?v=20260520b" rel="stylesheet">
+  <link rel="icon" href="/favicon.ico">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+  <link rel="manifest" href="/site.webmanifest">
+</head>
+<body>
+  <main class="page">
+    <div class="container">
+      <header class="topbar">
+        <a class="brand" href="/"><img src="/images/branding/exports/horizontal-lockup-inverse/ai-optimizer-logo-horizontal-lockup-inverse-1200w.png?v=20260520b" alt="AI Optimizer"></a>
+        <a class="back-link" href="/">← Back to home</a>
+      </header>
+
+      <section class="hero-panel">
+        <div class="eyebrow">Install guide</div>
+        <h1>Download it, start it, and test it in a few minutes.</h1>
+        <p class="lead">If the release email brought you straight to GitHub, this is the cleaner setup path. Download the latest build, activate your license, start the local proxy, and run one quick check against <code>localhost:3000</code>.</p>
+        <div class="badge-row">
+          <a class="badge" href="https://github.com/adamday75/ai-optimizer-app/releases/latest">Download latest release</a>
+          <a class="badge" href="https://github.com/adamday75/ai-optimizer-app">GitHub repo</a>
+          <a class="badge" href="/cache-proof">See cache proof</a>
+          <a class="badge" href="/for-developers">For developers</a>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="callout">
+          <strong>Quick answer:</strong> AI Optimizer is a local desktop app that runs a proxy on <code>http://localhost:3000</code>. Install the app, activate your license, save your provider API key, start the proxy, and point your tools at the local endpoint.
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="grid-2">
+          <article class="card">
+            <div class="step-num">1</div>
+            <h3>Download the current release</h3>
+            <p>Get the latest macOS, Windows, or Linux build from the GitHub Releases page.</p>
+            <div class="badge-row">
+              <a class="badge" href="https://github.com/adamday75/ai-optimizer-app/releases/latest">Open releases</a>
+            </div>
+          </article>
+          <article class="card">
+            <div class="step-num">2</div>
+            <h3>Install the app for your platform</h3>
+            <p>Use the macOS zip, Windows installer or packaged executable, or the Linux AppImage / deb package depending on your machine.</p>
+          </article>
+          <article class="card">
+            <div class="step-num">3</div>
+            <h3>Activate your license</h3>
+            <p>Open AI Optimizer, paste your license key, click <strong>Activate</strong>, and confirm the license is active before starting the proxy.</p>
+          </article>
+          <article class="card">
+            <div class="step-num">4</div>
+            <h3>Choose a provider and save the key</h3>
+            <p>Select OpenAI, Anthropic, or Google Gemini in the app, then save the API key for the provider you want to run.</p>
+          </article>
+          <article class="card">
+            <div class="step-num">5</div>
+            <h3>Start the local proxy</h3>
+            <p>In the Proxy Server section, click <strong>Start</strong>. The app will run locally on <code>http://localhost:3000</code>.</p>
+          </article>
+          <article class="card">
+            <div class="step-num">6</div>
+            <h3>Run one quick test</h3>
+            <p>Use the health and chat checks below to confirm the proxy is live and a real request succeeds.</p>
+          </article>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="grid-1">
+          <div class="image-frame" style="max-width: 620px; margin: 0 auto;">
+            <img src="images/homepage-hero-app-crop-openai.png" alt="AI Optimizer desktop app showing provider settings, proxy controls, and cache stats" />
+            <div class="image-caption">A good first-run state: provider selected, key saved, proxy running, and stats visible in one place.</div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="grid-2">
+          <article class="card">
+            <div class="kicker">macOS</div>
+            <h3>Install and open</h3>
+            <p>Download the macOS zip from Releases, unzip it, and move <code>AI Optimizer.app</code> into Applications.</p>
+            <pre class="code-block"><code>xattr -r -d com.apple.quarantine /Applications/AI\ Optimizer.app</code></pre>
+            <p class="meta">If macOS blocks launch on first open, removing quarantine is usually enough.</p>
+          </article>
+          <article class="card">
+            <div class="kicker">Windows</div>
+            <h3>Install and allow the local proxy</h3>
+            <p>Run the Windows installer or packaged executable from Releases, then launch AI Optimizer.</p>
+            <p class="meta">Windows Defender Firewall may ask for permission the first time you launch it. In most cases, allowing <strong>Private networks</strong> is enough because the app runs a local proxy on <code>localhost:3000</code>.</p>
+          </article>
+          <article class="card">
+            <div class="kicker">Linux AppImage</div>
+            <h3>Make it executable and run it</h3>
+            <pre class="code-block"><code>chmod +x AI\ Optimizer-2.4.0.AppImage
+./AI\ Optimizer-2.4.0.AppImage</code></pre>
+          </article>
+          <article class="card">
+            <div class="kicker">Linux deb</div>
+            <h3>Install with apt</h3>
+            <pre class="code-block"><code>sudo apt install ./ai-optimizer_2.4.0_amd64.deb</code></pre>
+          </article>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="card">
+          <div class="kicker">Point your tools at the proxy</div>
+          <h2>Use the local endpoint instead of the upstream base URL.</h2>
+          <p class="lead">For many scripts, tools, and local agent workflows, the practical setup change is just routing requests through AI Optimizer first.</p>
+          <pre class="code-block"><code>OPENAI_BASE_URL=http://localhost:3000/v1</code></pre>
+          <p class="meta">The same local-first pattern applies when you are using AI Optimizer with Anthropic or Google Gemini through the supported app lanes.</p>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="grid-2">
+          <article class="card">
+            <div class="kicker">Test 1</div>
+            <h3>Health check</h3>
+            <pre class="code-block"><code>curl -sS http://localhost:3000/health</code></pre>
+            <p class="meta">Expected response: <code>{"status":"ok","running":true}</code></p>
+          </article>
+          <article class="card">
+            <div class="kicker">Test 2</div>
+            <h3>Stats check</h3>
+            <pre class="code-block"><code>curl -sS http://localhost:3000/stats</code></pre>
+            <p class="meta">Use this to confirm requests, exact cache hits, and OpenAI partial prompt reuse stats.</p>
+          </article>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="grid-2">
+          <article class="card">
+            <div class="kicker">macOS / Linux</div>
+            <h3>Quick OpenAI chat test</h3>
+            <pre class="code-block"><code>curl -sS http://localhost:3000/v1/chat/completions \
+  -H "Content-Type: application/json" \
+  -d '{"model":"gpt-4o-mini","messages":[{"role":"user","content":"Reply with exactly: INSTALL_OK"}]}'</code></pre>
+          </article>
+          <article class="card">
+            <div class="kicker">Windows CMD</div>
+            <h3>Quick OpenAI chat test</h3>
+            <pre class="code-block"><code>curl -X POST http://localhost:3000/v1/chat/completions -H "Content-Type: application/json" -d "{\"model\":\"gpt-4o-mini\",\"messages\":[{\"role\":\"user\",\"content\":\"Reply with exactly: INSTALL_OK\"}]}"</code></pre>
+          </article>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="grid-2">
+          <article class="card">
+            <div class="kicker">What to expect</div>
+            <h3>Exact hits vs partial hits</h3>
+            <p><strong>Exact Cache Hits</strong> mean the repeated request was fully served from local cache. <strong>Partial Hits (OpenAI)</strong> only move when OpenAI reports real provider-side reused prompt tokens.</p>
+          </article>
+          <article class="card">
+            <div class="kicker">Current scope</div>
+            <h3>Provider support stays honest</h3>
+            <p>OpenAI remains the broadest lane. Anthropic support is focused on chat completions. Google Gemini support is narrower in this app lane. One active provider at a time keeps the workflow simple.</p>
+          </article>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="badge-row">
+          <a class="badge" href="https://github.com/adamday75/ai-optimizer-app/releases/latest">Download latest release</a>
+          <a class="badge" href="/cache-proof">See cache proof</a>
+          <a class="badge" href="/how-it-works">How it works</a>
+          <a class="badge" href="/for-developers">For developers</a>
+          <a class="badge" href="/faq">FAQ</a>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="cta-card">
+          <div class="cta-copy">
+            <h3>Keep the workflow. Cut the repeated waste.</h3>
+            <p>Download AI Optimizer, point your tools at the local proxy, and start verifying repeated-request savings with real proof instead of guesswork.</p>
+          </div>
+          <a href="https://github.com/adamday75/ai-optimizer-app/releases/latest" class="button button-primary">Download latest release</a>
+        </div>
+      </section>
+
+      <footer class="footer">
+        <div class="footer-card">
+          <p>We do not sell your personal information.</p>
+          <p><a href="/privacy">Privacy Policy</a> · © 2026 Day Place LTD · <a href="mailto:admin@ai-optimizer.org">admin@ai-optimizer.org</a></p>
+        </div>
+      </footer>
+    </div>
+  </main>
+</body>
+</html>
