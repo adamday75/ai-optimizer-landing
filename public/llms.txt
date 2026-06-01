@@ -26,6 +26,7 @@ Primary pages:
 Important pages:
 - https://ai-optimizer.org/cache-proof
 - https://ai-optimizer.org/cache-openai-api-locally
+- https://ai-optimizer.org/reduce-openai-api-costs-locally
 - https://ai-optimizer.org/reduce-gemini-api-costs
 - https://ai-optimizer.org/privacy
 

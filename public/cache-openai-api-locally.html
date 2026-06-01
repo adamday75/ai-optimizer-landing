@@ -47,6 +47,18 @@
       </section>
 
       <section class="section">
+        <div class="video-frame hero-panel">
+          <div class="kicker">Live demo</div>
+          <h2>Watch the setup and a real cache hit.</h2>
+          <p class="lead">This short demo shows AI Optimizer being installed, pointed at a local OpenAI-compatible workflow, and then serving a repeated request from cache with visible proof in the app.</p>
+          <div class="video-embed" style="margin-top:18px;">
+            <iframe src="https://www.youtube.com/embed/ONv0N4Z8k_E" title="AI Optimizer Setup + Cache Hit Demo" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+          </div>
+          <div class="image-caption">Live demo: install AI Optimizer, set the TTL, run the same OpenAI-compatible request twice, then confirm the cache hit in the app.</div>
+        </div>
+      </section>
+
+      <section class="section">
         <div class="section-head">
           <h2>Why repeated OpenAI calls get expensive</h2>
           <p>Most waste does not come from one dramatic request. It comes from the same kind of work happening again and again in scripts, agents, cron jobs, and local tools.</p>
@@ -66,6 +78,19 @@
           <article class="card">
             <h2>How AI Optimizer fits</h2>
             <p>AI Optimizer is a local-first desktop app designed for teams and operators who want cost control without rebuilding existing tools around a new platform. Same workflow shape. Cleaner economics.</p>
+          </article>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="grid-2">
+          <article class="card">
+            <h3>Provider-side cache rules are not the same thing</h3>
+            <p>Provider caching can be useful, but it comes with provider-specific eligibility rules and reporting constraints. You usually do not control the TTL, and smaller prompts may not qualify the way you want.</p>
+          </article>
+          <article class="card">
+            <h3>AI Optimizer gives you exact local caching control</h3>
+            <p>AI Optimizer caches exact repeated requests locally, without forcing a minimum prompt-length threshold, and lets you control the TTL directly. That makes it practical for repeat-heavy local workflows that would otherwise fall through provider-side rules.</p>
           </article>
         </div>
       </section>
@@ -127,6 +152,7 @@
         <div class="badge-row">
           <a class="badge" href="/cache-proof">See cache proof</a>
           <a class="badge" href="/how-it-works">How it works</a>
+          <a class="badge" href="/reduce-openai-api-costs-locally">Reduce OpenAI API costs locally</a>
           <a class="badge" href="/for-developers">For developers</a>
           <a class="badge" href="/for-agents">For agents</a>
         </div>
