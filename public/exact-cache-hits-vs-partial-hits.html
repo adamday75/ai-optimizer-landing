@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Exact Cache Hits vs Partial Hits: What the Difference Actually Means</title>
+  <meta name="description" content="Learn the difference between exact cache hits and partial hits, why the distinction matters, and how AI Optimizer keeps repeat-request reporting honest.">
+  <meta property="og:title" content="Exact Cache Hits vs Partial Hits: What the Difference Actually Means">
+  <meta property="og:description" content="Learn the difference between exact cache hits and partial hits, why the distinction matters, and how AI Optimizer keeps repeat-request reporting honest.">
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://ai-optimizer.org/exact-cache-hits-vs-partial-hits">
+  <meta property="og:image" content="https://ai-optimizer.org/images/cache-proof-openai-stats-crop.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Exact Cache Hits vs Partial Hits: What the Difference Actually Means">
+  <meta name="twitter:description" content="Learn the difference between exact cache hits and partial hits, why the distinction matters, and how AI Optimizer keeps repeat-request reporting honest.">
+  <meta name="twitter:image" content="https://ai-optimizer.org/images/cache-proof-openai-stats-crop.png">
+  <link rel="canonical" href="https://ai-optimizer.org/exact-cache-hits-vs-partial-hits">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link href="styles-v3-site.css?v=20260601a" rel="stylesheet">
+  <link rel="icon" href="/favicon.ico"><link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png"><link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="manifest" href="/site.webmanifest">
+</head><body><main class="page"><div class="container"><header class="topbar"><a class="brand" href="/"><img src="/images/branding/exports/horizontal-lockup-inverse/ai-optimizer-logo-horizontal-lockup-inverse-1200w.png?v=20260520b" alt="AI Optimizer"></a><a class="back-link" href="/">← Back to home</a></header>
+<section class="hero-panel"><div class="eyebrow">Reporting clarity</div><h1>Exact cache hits vs partial hits: what the difference actually means.</h1><p class="lead">Not all savings signals mean the same thing. AI Optimizer separates exact local cache hits from partial provider-side reuse so you can understand what actually happened.</p></section>
+<section class="section"><div class="card" style="background:rgba(150,187,255,.06); border-color:var(--border-strong);"><div class="kicker">Quick answer</div><p style="margin:0; color:var(--text); font-size:1.02rem; line-height:1.7;">An exact cache hit means the repeated request was fully served from the local cache. A partial hit means there was some provider-reported reuse, but not a full local cache resolution. Treating them as the same thing makes optimization harder to judge.</p></div></section>
+<section class="section"><div class="grid-2"><article class="card"><h2>Exact cache hits</h2><p>This is the cleanest signal. The work was repeated and AI Optimizer handled it locally instead of paying for the same upstream call again.</p></article><article class="card"><h2>Partial hits</h2><p>This is a narrower signal. Some reuse happened, but it was not the same as a full local exact-hit outcome.</p></article></div></section>
+<section class="section"><div class="section-head"><h2>Why the difference matters</h2><p>Reporting only helps if it supports better decisions.</p></div><div class="grid-2"><article class="card"><h3>For technical evaluators</h3><p>You want to know whether the local cache is truly doing the work or whether the provider reported some smaller reuse signal.</p></article><article class="card"><h3>For buyers and teams</h3><p>You want believable savings language, not a dashboard that hides the difference between strong proof and softer indicators.</p></article></div></section>
+<section class="section"><div class="card image-frame" style="max-width: 620px; margin: 0 auto;"><img src="images/cache-proof-openai-stats-crop.png" alt="AI Optimizer dashboard showing requests, exact cache hits, partial hits, and tokens reused" /><div class="image-caption">One dashboard, separate meanings: exact hits, partial hits, and provider-reported reused tokens.</div></div></section>
+<section class="section"><div class="grid-3"><article class="card"><h3>What to trust most</h3><p>Exact cache hits are the strongest direct signal for repeated local savings.</p></article><article class="card"><h3>What to explain carefully</h3><p>Partial hits need context because they are not identical to exact local resolution.</p></article><article class="card"><h3>What good tools should avoid</h3><p>Combining all reuse into one feel-good number that hides what actually happened.</p></article></div></section>
+<section class="section"><div class="faq-list"><article class="card"><h3>Is a partial hit still useful?</h3><p>Yes, but it should not be described like a full local cache hit.</p></article><article class="card"><h3>Why not merge the metrics?</h3><p>Because merged metrics are easier to market but worse for operational truth.</p></article><article class="card"><h3>Does AI Optimizer separate them?</h3><p>Yes. That is part of the product’s honesty positioning.</p></article></div></section>
+<section class="section"><div class="badge-row"><a class="badge" href="/see-real-reused-prompt-tokens-openai">See reused prompt tokens</a><a class="badge" href="/cache-proof">See cache proof</a><a class="badge" href="/reduce-repeated-ai-spend-scripts-cron-agents">Reduce repeated AI spend</a><a class="badge" href="/for-developers">For developers</a></div></section>
+<section class="section"><div class="cta-card"><div class="cta-copy"><h3>Use reporting you can actually trust.</h3><p>AI Optimizer keeps exact local hits and partial provider-side reuse separate so your team can make better optimization decisions.</p></div><a href="https://saas-optimizer.fly.dev/v1/api/create-trial" class="button button-primary">Start free trial</a></div></section>
+      <footer class="footer">
+        <div class="footer-card">
+          <p>We do not sell your personal information.</p>
+          <p><a href="/privacy">Privacy Policy</a> · © 2026 Day Place LTD · <a href="mailto:admin@ai-optimizer.org">admin@ai-optimizer.org</a></p>
+        </div>
+      </footer>
+    </div>
+  </main>
+</body>
+</html>

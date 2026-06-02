@@ -27,6 +27,13 @@ Important pages:
 - https://ai-optimizer.org/cache-proof
 - https://ai-optimizer.org/cache-openai-api-locally
 - https://ai-optimizer.org/reduce-openai-api-costs-locally
+- https://ai-optimizer.org/reduce-repeated-ai-spend-scripts-cron-agents
+- https://ai-optimizer.org/see-real-reused-prompt-tokens-openai
+- https://ai-optimizer.org/exact-cache-hits-vs-partial-hits
+- https://ai-optimizer.org/monitor-openai-api-usage-local-workflows
+- https://ai-optimizer.org/add-local-proxy-openai-compatible-workflow
+- https://ai-optimizer.org/reduce-openai-api-costs-cli-developer-workflows
+- https://ai-optimizer.org/reduce-ai-api-waste-prompt-testing
 - https://ai-optimizer.org/reduce-gemini-api-costs
 - https://ai-optimizer.org/privacy
 
