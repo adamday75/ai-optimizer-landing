@@ -20,11 +20,37 @@
     "@context": "https://schema.org",
     "@graph": [
       {
+        "@type": "Organization",
+        "@id": "https://ai-optimizer.org/#organization",
+        "name": "AI Optimizer",
+        "url": "https://ai-optimizer.org/",
+        "logo": "https://ai-optimizer.org/images/homepage-hero-app-crop-openai.png",
+        "description": "AI Optimizer is a local-first desktop app that reduces repeated AI API waste with a caching proxy for OpenAI, Anthropic, and Google Gemini workflows."
+      },
+      {
         "@type": "BreadcrumbList",
         "itemListElement": [
           {"@type": "ListItem", "position": 1, "name": "Home", "item": "https://ai-optimizer.org/"},
           {"@type": "ListItem", "position": 2, "name": "Reduce Anthropic API costs", "item": "https://ai-optimizer.org/reduce-anthropic-api-costs"}
         ]
+      },
+      {
+        "@type": "SoftwareApplication",
+        "@id": "https://ai-optimizer.org/#software",
+        "name": "AI Optimizer",
+        "applicationCategory": "DeveloperApplication",
+        "operatingSystem": "macOS, Windows, Linux",
+        "url": "https://ai-optimizer.org/reduce-anthropic-api-costs",
+        "description": "AI Optimizer helps reduce repeated Anthropic API waste with a local caching proxy on localhost, without forcing teams to rebuild their existing workflow.",
+        "offers": {
+          "@type": "Offer",
+          "price": "0",
+          "priceCurrency": "USD",
+          "description": "14-day free trial"
+        },
+        "publisher": {
+          "@id": "https://ai-optimizer.org/#organization"
+        }
       },
       {
         "@type": "HowTo",

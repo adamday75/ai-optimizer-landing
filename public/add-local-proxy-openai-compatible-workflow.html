@@ -5,7 +5,58 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>How to Add a Local Proxy to an OpenAI-Compatible Workflow</title>
   <meta name="description" content="Add a local proxy to an OpenAI-compatible workflow without rebuilding everything. Learn the simple localhost pattern for scripts, tools, and automations.">
-  <meta property="og:title" content="How to Add a Local Proxy to an OpenAI-Compatible Workflow"><meta property="og:description" content="Add a local proxy to an OpenAI-compatible workflow without rebuilding everything. Learn the simple localhost pattern for scripts, tools, and automations."><meta property="og:type" content="article"><meta property="og:url" content="https://ai-optimizer.org/add-local-proxy-openai-compatible-workflow"><meta property="og:image" content="https://ai-optimizer.org/images/how-it-works-openai-flow-crop.png"><meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="How to Add a Local Proxy to an OpenAI-Compatible Workflow"><meta name="twitter:description" content="Add a local proxy to an OpenAI-compatible workflow without rebuilding everything. Learn the simple localhost pattern for scripts, tools, and automations."><meta name="twitter:image" content="https://ai-optimizer.org/images/how-it-works-openai-flow-crop.png"><link rel="canonical" href="https://ai-optimizer.org/add-local-proxy-openai-compatible-workflow"><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet"><link href="styles-v3-site.css?v=20260601a" rel="stylesheet"><link rel="icon" href="/favicon.ico"><link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png"><link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="manifest" href="/site.webmanifest">
+  <meta property="og:title" content="How to Add a Local Proxy to an OpenAI-Compatible Workflow"><meta property="og:description" content="Add a local proxy to an OpenAI-compatible workflow without rebuilding everything. Learn the simple localhost pattern for scripts, tools, and automations."><meta property="og:type" content="article"><meta property="og:url" content="https://ai-optimizer.org/add-local-proxy-openai-compatible-workflow"><meta property="og:image" content="https://ai-optimizer.org/images/how-it-works-openai-flow-crop.png"><meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="How to Add a Local Proxy to an OpenAI-Compatible Workflow"><meta name="twitter:description" content="Add a local proxy to an OpenAI-compatible workflow without rebuilding everything. Learn the simple localhost pattern for scripts, tools, and automations."><meta name="twitter:image" content="https://ai-optimizer.org/images/how-it-works-openai-flow-crop.png"><link rel="canonical" href="https://ai-optimizer.org/add-local-proxy-openai-compatible-workflow"><script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "Organization",
+        "@id": "https://ai-optimizer.org/#organization",
+        "name": "AI Optimizer",
+        "url": "https://ai-optimizer.org/",
+        "logo": "https://ai-optimizer.org/images/homepage-hero-app-crop-openai.png",
+        "description": "AI Optimizer is a local-first desktop app that reduces repeated AI API waste with a caching proxy for OpenAI, Anthropic, and Google Gemini workflows."
+      },
+      {
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          {"@type": "ListItem", "position": 1, "name": "Home", "item": "https://ai-optimizer.org/"},
+          {"@type": "ListItem", "position": 2, "name": "Add local proxy", "item": "https://ai-optimizer.org/add-local-proxy-openai-compatible-workflow"}
+        ]
+      },
+      {
+        "@type": "SoftwareApplication",
+        "@id": "https://ai-optimizer.org/#software",
+        "name": "AI Optimizer",
+        "applicationCategory": "DeveloperApplication",
+        "operatingSystem": "macOS, Windows, Linux",
+        "url": "https://ai-optimizer.org/add-local-proxy-openai-compatible-workflow",
+        "description": "AI Optimizer helps add a local proxy layer to OpenAI-compatible workflows so teams can keep their tools mostly intact while adding caching and visibility.",
+        "offers": {
+          "@type": "Offer",
+          "price": "0",
+          "priceCurrency": "USD",
+          "description": "14-day free trial"
+        },
+        "publisher": {
+          "@id": "https://ai-optimizer.org/#organization"
+        }
+      },
+      {
+        "@type": "TechArticle",
+        "@id": "https://ai-optimizer.org/add-local-proxy-openai-compatible-workflow#article",
+        "headline": "How to Add a Local Proxy to an OpenAI-Compatible Workflow",
+        "description": "Add a local proxy to an OpenAI-compatible workflow without rebuilding everything. Learn the simple localhost pattern for scripts, tools, and automations.",
+        "url": "https://ai-optimizer.org/add-local-proxy-openai-compatible-workflow",
+        "image": "https://ai-optimizer.org/images/how-it-works-openai-flow-crop.png",
+        "publisher": {
+          "@id": "https://ai-optimizer.org/#organization"
+        },
+        "mainEntityOfPage": "https://ai-optimizer.org/add-local-proxy-openai-compatible-workflow"
+      }
+    ]
+  }
+  </script><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet"><link href="styles-v3-site.css?v=20260601a" rel="stylesheet"><link rel="icon" href="/favicon.ico"><link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png"><link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="manifest" href="/site.webmanifest">
 </head><body><main class="page"><div class="container"><header class="topbar"><a class="brand" href="/"><img src="/images/branding/exports/horizontal-lockup-inverse/ai-optimizer-logo-horizontal-lockup-inverse-1200w.png?v=20260520b" alt="AI Optimizer"></a><a class="back-link" href="/">← Back to home</a></header><section class="hero-panel"><div class="eyebrow">Local proxy setup</div><h1>How to add a local proxy to an OpenAI-compatible workflow.</h1><p class="lead">Many tools do not need a rebuild. They just need one local endpoint change so repeated requests can pass through a local control layer first.</p></section><section class="section"><div class="card" style="background:rgba(150,187,255,.06); border-color:var(--border-strong);"><div class="kicker">Quick answer</div><p style="margin:0; color:var(--text); font-size:1.02rem; line-height:1.7;">For many OpenAI-compatible tools, adding a local proxy is as simple as pointing the base URL to <code>http://localhost:3000/v1</code> instead of the upstream provider endpoint.</p></div></section><section class="section"><div class="grid-2"><article class="card"><h2>The core pattern</h2><p>Install AI Optimizer, start the local proxy, then route compatible requests through localhost first. The rest of the workflow can often stay mostly familiar.</p></article><article class="card"><h2>Why teams like this approach</h2><p>It is easier to adopt than a full rebuild and gives you one place to add caching, visibility, and provider-specific controls.</p></article></div></section><section class="section"><div class="card"><div class="kicker">Example</div><h2>A common config change</h2><pre class="code-block"><code>OPENAI_BASE_URL=http://localhost:3000/v1</code></pre><p class="meta">The exact variable name depends on the tool, but the setup idea stays the same.</p></div></section><section class="section"><div class="card image-frame" style="max-width: 720px; margin: 0 auto;"><img src="images/how-it-works-openai-flow-crop.png" alt="AI Optimizer showing provider selection, proxy running, TTL, and cache stats" /><div class="image-caption">A current branded setup view: choose the provider, confirm the proxy is running, and route the workflow through localhost.</div></div></section><section class="section"><div class="grid-2"><article class="card"><h2>Where this fits best</h2><p>Scripts, local tools, automations, cron jobs, and repeat-heavy developer workflows are all strong fits for this kind of low-friction routing change.</p></article><article class="card"><h2>What to watch for</h2><p>Highly custom tools may use a different variable or client config pattern, but the underlying idea is still to route requests through the local proxy path.</p></article></div></section><section class="section"><div class="badge-row"><a class="badge" href="/how-it-works">How it works</a><a class="badge" href="/cache-openai-api-locally">Cache OpenAI locally</a><a class="badge" href="/reduce-openai-api-costs-cli-developer-workflows">CLI workflows</a><a class="badge" href="/install">Install guide</a></div></section><section class="section"><div class="cta-card"><div class="cta-copy"><h3>Add the local layer without rebuilding the whole workflow.</h3><p>AI Optimizer gives OpenAI-compatible tools a practical localhost path for caching, visibility, and repeat-request control.</p></div><a href="https://saas-optimizer.fly.dev/v1/api/create-trial" class="button button-primary">Start free trial</a></div></section>
       <footer class="footer">
         <div class="footer-card">

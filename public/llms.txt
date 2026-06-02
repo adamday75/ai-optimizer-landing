@@ -17,6 +17,7 @@ Core idea:
 
 Primary pages:
 - https://ai-optimizer.org/
+- https://ai-optimizer.org/about
 - https://ai-optimizer.org/install
 - https://ai-optimizer.org/how-it-works
 - https://ai-optimizer.org/for-developers
@@ -34,6 +35,7 @@ Important pages:
 - https://ai-optimizer.org/add-local-proxy-openai-compatible-workflow
 - https://ai-optimizer.org/reduce-openai-api-costs-cli-developer-workflows
 - https://ai-optimizer.org/reduce-ai-api-waste-prompt-testing
+- https://ai-optimizer.org/reduce-anthropic-api-costs
 - https://ai-optimizer.org/reduce-gemini-api-costs
 - https://ai-optimizer.org/privacy
 

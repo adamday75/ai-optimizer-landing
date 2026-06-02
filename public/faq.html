@@ -20,11 +20,37 @@
     "@context": "https://schema.org",
     "@graph": [
       {
+        "@type": "Organization",
+        "@id": "https://ai-optimizer.org/#organization",
+        "name": "AI Optimizer",
+        "url": "https://ai-optimizer.org/",
+        "logo": "https://ai-optimizer.org/images/homepage-hero-app-crop-openai.png",
+        "description": "AI Optimizer is a local-first desktop app that reduces repeated AI API waste with a caching proxy for OpenAI, Anthropic, and Google Gemini workflows."
+      },
+      {
         "@type": "BreadcrumbList",
         "itemListElement": [
           {"@type": "ListItem", "position": 1, "name": "Home", "item": "https://ai-optimizer.org/"},
           {"@type": "ListItem", "position": 2, "name": "FAQ", "item": "https://ai-optimizer.org/faq"}
         ]
+      },
+      {
+        "@type": "SoftwareApplication",
+        "@id": "https://ai-optimizer.org/#software",
+        "name": "AI Optimizer",
+        "applicationCategory": "DeveloperApplication",
+        "operatingSystem": "macOS, Windows, Linux",
+        "url": "https://ai-optimizer.org/faq",
+        "description": "AI Optimizer is a local-first desktop app that adds caching and control in front of OpenAI, Anthropic, and Google Gemini workflows to reduce repeated API spend.",
+        "offers": {
+          "@type": "Offer",
+          "price": "0",
+          "priceCurrency": "USD",
+          "description": "14-day free trial"
+        },
+        "publisher": {
+          "@id": "https://ai-optimizer.org/#organization"
+        }
       },
       {
         "@type": "FAQPage",
@@ -89,6 +115,16 @@
           <article class="card"><h3>Is it a hosted SaaS proxy?</h3><p>No. AI Optimizer is designed as a <strong>local desktop app and proxy</strong>, giving you a local-first control layer instead of pushing more traffic through another remote service in the middle.</p></article>
           <article class="card"><h3>What platforms are supported?</h3><p>macOS, Windows, and Linux builds are available.</p></article>
           <article class="card"><h3>Is there a free trial?</h3><p>Yes. AI Optimizer includes a <strong>14-day free trial</strong>.</p></article>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="badge-row">
+          <a class="badge" href="/install">Install guide</a>
+          <a class="badge" href="/how-it-works">How it works</a>
+          <a class="badge" href="/about">About</a>
+          <a class="badge" href="/for-developers">For developers</a>
+          <a class="badge" href="/reduce-anthropic-api-costs">Reduce Anthropic costs</a>
         </div>
       </section>
 

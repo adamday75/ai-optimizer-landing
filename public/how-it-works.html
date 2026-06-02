@@ -20,6 +20,14 @@
     "@context": "https://schema.org",
     "@graph": [
       {
+        "@type": "Organization",
+        "@id": "https://ai-optimizer.org/#organization",
+        "name": "AI Optimizer",
+        "url": "https://ai-optimizer.org/",
+        "logo": "https://ai-optimizer.org/images/homepage-hero-app-crop-openai.png",
+        "description": "AI Optimizer is a local-first desktop app that reduces repeated AI API waste with a caching proxy for OpenAI, Anthropic, and Google Gemini workflows."
+      },
+      {
         "@type": "BreadcrumbList",
         "itemListElement": [
           {
@@ -35,6 +43,18 @@
             "item": "https://ai-optimizer.org/how-it-works"
           }
         ]
+      },
+      {
+        "@type": "SoftwareApplication",
+        "@id": "https://ai-optimizer.org/#software",
+        "name": "AI Optimizer",
+        "applicationCategory": "DeveloperApplication",
+        "operatingSystem": "macOS, Windows, Linux",
+        "url": "https://ai-optimizer.org/how-it-works",
+        "description": "AI Optimizer is a local-first desktop app that adds caching and control in front of OpenAI, Anthropic, and Google Gemini workflows to reduce repeated API spend.",
+        "publisher": {
+          "@id": "https://ai-optimizer.org/#organization"
+        }
       },
       {
         "@type": "HowTo",
@@ -138,6 +158,16 @@
 
       <section class="section">
         <div class="callout"><strong>Provider scope matters:</strong> OpenAI support remains the broadest lane, Anthropic support is focused on chat completions, and Google Gemini support is intentionally narrower around repeat-heavy <code>generateContent</code> workflows.</div>
+      </section>
+
+      <section class="section">
+        <div class="badge-row">
+          <a class="badge" href="/install">Install guide</a>
+          <a class="badge" href="/cache-proof">Cache proof</a>
+          <a class="badge" href="/reduce-anthropic-api-costs">Reduce Anthropic costs</a>
+          <a class="badge" href="/reduce-gemini-api-costs">Reduce Gemini costs</a>
+          <a class="badge" href="/faq">FAQ</a>
+        </div>
       </section>
 
       <section class="section">

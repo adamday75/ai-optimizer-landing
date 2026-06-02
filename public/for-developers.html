@@ -20,6 +20,14 @@
     "@context": "https://schema.org",
     "@graph": [
       {
+        "@type": "Organization",
+        "@id": "https://ai-optimizer.org/#organization",
+        "name": "AI Optimizer",
+        "url": "https://ai-optimizer.org/",
+        "logo": "https://ai-optimizer.org/images/homepage-hero-app-crop-openai.png",
+        "description": "AI Optimizer is a local-first desktop app that reduces repeated AI API waste with a caching proxy for OpenAI, Anthropic, and Google Gemini workflows."
+      },
+      {
         "@type": "BreadcrumbList",
         "itemListElement": [
           {"@type": "ListItem", "position": 1, "name": "Home", "item": "https://ai-optimizer.org/"},
@@ -28,6 +36,7 @@
       },
       {
         "@type": "SoftwareApplication",
+        "@id": "https://ai-optimizer.org/#software",
         "name": "AI Optimizer",
         "url": "https://ai-optimizer.org/for-developers",
         "applicationCategory": "DeveloperApplication",
@@ -40,7 +49,16 @@
           "Anthropic support",
           "Google Gemini support",
           "Adjustable cache TTL"
-        ]
+        ],
+        "offers": {
+          "@type": "Offer",
+          "price": "0",
+          "priceCurrency": "USD",
+          "description": "14-day free trial"
+        },
+        "publisher": {
+          "@id": "https://ai-optimizer.org/#organization"
+        }
       }
     ]
   }
@@ -150,6 +168,9 @@ Start chat: hermes --tui</code></pre>
         <div class="badge-row">
           <a class="badge" href="/cache-proof">See cache proof</a>
           <a class="badge" href="/how-it-works">How it works</a>
+          <a class="badge" href="/add-local-proxy-openai-compatible-workflow">Add local proxy</a>
+          <a class="badge" href="/monitor-openai-api-usage-local-workflows">Monitor local usage</a>
+          <a class="badge" href="/reduce-ai-api-waste-prompt-testing">Prompt testing cost reduction</a>
           <a class="badge" href="/reduce-gemini-api-costs">Reduce Gemini costs</a>
           <a class="badge" href="/for-agents">For agents</a>
           <a class="badge" href="/faq">FAQ</a>
