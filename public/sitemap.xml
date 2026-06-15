@@ -27,21 +27,16 @@
   </url>
   <url>
     <loc>https://ai-optimizer.org/cache-openai-api-locally</loc>
-    <video:video>
-      <video:thumbnail_loc>https://img.youtube.com/vi/ONv0N4Z8k_E/maxresdefault.jpg</video:thumbnail_loc>
-      <video:title>How I Cached Repeated OpenAI Requests Locally</video:title>
-      <video:description>Setup and cache-hit demo: install AI Optimizer, route a local OpenAI-compatible workflow through localhost, set the TTL, run the same request twice, then confirm the cache hit in the app.</video:description>
-      <video:player_loc>https://www.youtube.com/embed/ONv0N4Z8k_E</video:player_loc>
-      <video:duration>97</video:duration>
-      <video:publication_date>2026-06-01</video:publication_date>
-    </video:video>
   </url>
   <url>
     <loc>https://ai-optimizer.org/reduce-openai-api-costs-locally</loc>
+  </url>
+  <url>
+    <loc>https://ai-optimizer.org/videos/install-and-cache-hit-proof</loc>
     <video:video>
       <video:thumbnail_loc>https://img.youtube.com/vi/ONv0N4Z8k_E/maxresdefault.jpg</video:thumbnail_loc>
-      <video:title>How I Cached Repeated OpenAI Requests Locally</video:title>
-      <video:description>Setup and cache-hit demo: install AI Optimizer, configure it for OpenAI, point traffic to localhost, then confirm the repeated request was served from local cache with honest cost-saving proof.</video:description>
+      <video:title>AI Optimizer Install and Cache-Hit Proof Demo</video:title>
+      <video:description>Watch AI Optimizer install locally, route OpenAI traffic through localhost, and prove a repeated request is served from cache instead of billed upstream again.</video:description>
       <video:player_loc>https://www.youtube.com/embed/ONv0N4Z8k_E</video:player_loc>
       <video:duration>97</video:duration>
       <video:publication_date>2026-06-01</video:publication_date>
