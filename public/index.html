@@ -5,15 +5,15 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="google-site-verification" content="google7547b5f4614aaa24">
   <meta name="msvalidate.01" content="FDC4CA8E9F2ADDF1252E0E151260449D">
-  <meta name="description" content="AI Optimizer cuts repeated AI API waste with a local caching proxy for OpenAI, Anthropic, and Google Gemini workflows.">
+  <meta name="description" content="AI Optimizer is a local AI cost control tool that helps repeat-heavy workflows stop paying full price for repeated AI calls.">
   <meta property="og:title" content="AI Optimizer – Cut AI API Costs with Local Caching">
-  <meta property="og:description" content="AI Optimizer cuts repeated AI API waste with a local caching proxy for OpenAI, Anthropic, and Google Gemini workflows.">
+  <meta property="og:description" content="AI Optimizer is a local AI cost control tool that helps repeat-heavy workflows stop paying full price for repeated AI calls.">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://ai-optimizer.org/">
   <meta property="og:image" content="https://ai-optimizer.org/images/homepage-hero-app-crop-openai.png">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="AI Optimizer – Cut AI API Costs with Local Caching">
-  <meta name="twitter:description" content="AI Optimizer cuts repeated AI API waste with a local caching proxy for OpenAI, Anthropic, and Google Gemini workflows.">
+  <meta name="twitter:description" content="AI Optimizer is a local AI cost control tool that helps repeat-heavy workflows stop paying full price for repeated AI calls.">
   <meta name="twitter:image" content="https://ai-optimizer.org/images/homepage-hero-app-crop-openai.png">
   <link rel="canonical" href="https://ai-optimizer.org/">
   <title>AI Optimizer – Cut AI API Costs with Local Caching</title>
@@ -45,7 +45,7 @@
         "applicationCategory": "DeveloperApplication",
         "operatingSystem": "macOS, Windows, Linux",
         "url": "https://ai-optimizer.org/",
-        "description": "AI Optimizer is a local-first desktop app that adds caching and control in front of OpenAI, Anthropic, and Google Gemini workflows to reduce repeated API spend.",
+        "description": "AI Optimizer is a local-first desktop app that helps repeat-heavy workflows stop paying full price for repeated AI calls.",
         "offers": {
           "@type": "Offer",
           "price": "4.99",
@@ -55,11 +55,11 @@
         "featureList": [
           "Local proxy workflow",
           "Repeated request caching",
+          "Cache-hit visibility",
+          "Adjustable cache TTL",
           "OpenAI support",
           "Anthropic support",
-          "Google Gemini support",
-          "Cache-hit visibility",
-          "Usage tracking"
+          "Google Gemini support"
         ],
         "publisher": {
           "@id": "https://ai-optimizer.org/#organization"
@@ -91,43 +91,32 @@
       </header>
 
       <section class="hero-panel" style="padding:0; overflow:hidden;">
-        <div style="display:grid; grid-template-columns:1.08fr .92fr; gap:22px; padding:42px;" class="hero-main">
+        <div style="display:grid; grid-template-columns:1.18fr .82fr; gap:22px; padding:42px;" class="hero-main">
           <div>
-            <div class="eyebrow">Cut repeated AI API waste without rebuilding your stack</div>
+            <div class="eyebrow">Local AI cost control</div>
             <h1>Stop paying full price for repeated AI calls.</h1>
-            <p class="lead">AI Optimizer adds a local caching and control layer in front of your OpenAI, Anthropic, or Google Gemini workflow so duplicate and repeat traffic stops burning money. Same tools. Same flow. Cleaner economics.</p>
+            <p class="lead">AI Optimizer adds a local caching and control layer in front of your OpenAI, Anthropic, and scoped Google Gemini workflows so repeated requests can be served locally instead of hitting the provider at full cost every time.</p>
             <div style="display:grid; gap:12px; margin:20px 0 24px;">
-              <div style="color:#DFDEDC; font-size:.98rem;"><strong style="color:#FFFFFF;">Best for:</strong> repeat-heavy developer workflows, agents, scripts, and automations</div>
-              <div style="color:#DFDEDC; font-size:.98rem;"><strong style="color:#FFFFFF;">Core value:</strong> reduce repeated spend without changing how your team already works</div>
+              <div style="color:#DFDEDC; font-size:.98rem;"><strong style="color:#FFFFFF;">Best for:</strong> repeat-heavy scripts, agents, automations, CLI workflows, prompt testing, and scheduled jobs</div>
+              <div style="color:#DFDEDC; font-size:.98rem;"><strong style="color:#FFFFFF;">Why it lands:</strong> keep your workflow, add a local layer, verify the result</div>
             </div>
             <div style="display:flex; flex-wrap:wrap; gap:14px; margin:0 0 16px;">
               <a class="button button-primary" href="https://saas-optimizer.fly.dev/v1/api/create-trial">Start free trial</a>
-              <a class="button" style="border:1px solid var(--border); background: rgba(255,255,255,.02);" href="/how-it-works">See how it works</a>
+              <a class="button" style="border:1px solid var(--border); background: rgba(255,255,255,.02);" href="/cache-proof">See cache proof</a>
             </div>
-            <div class="meta">Now supports OpenAI, Anthropic, and a scoped Google Gemini lane for repeat-heavy <code>generateContent</code> workflows through the same simple local proxy workflow.</div>
+            <div class="meta">OpenAI is the broadest lane today. Anthropic support is focused on chat completions. Google Gemini support is narrower and best for repeat-heavy <code>generateContent</code> workflows.</div>
           </div>
 
           <div style="display:grid; gap:16px;">
             <aside class="card" style="border-radius:30px; color:var(--text);">
-              <div class="kicker">Why use AI Optimizer</div>
-              <h3 style="font-size:1.55rem; margin-bottom:10px; color:var(--text);">Reduce repeated spend without changing how your team already works.</h3>
+              <div class="kicker">What makes it credible</div>
+              <h3 style="font-size:1.55rem; margin-bottom:10px; color:var(--text);">The strongest claim here is narrow on purpose.</h3>
               <div style="display:grid; gap:12px; color:var(--muted);">
-                <div>Keep your existing workflow</div>
-                <div>Cache repeated or duplicate requests</div>
-                <div>Choose OpenAI, Anthropic, or Google Gemini in the app</div>
-                <div>See request volume and cache behavior clearly</div>
+                <div>Exact cache hits are provable</div>
+                <div>Local stats and popup make them visible</div>
+                <div>TTL is under your control</div>
+                <div>The product stays honest about where it is strongest</div>
               </div>
-            </aside>
-            <aside class="card" style="border-radius:30px; border-color:var(--border-strong); background: linear-gradient(180deg, rgba(0,172,172,.10), rgba(255,255,255,.82)); color:var(--text);">
-              <div class="kicker">Starter</div>
-              <div style="font-size:3rem; font-weight:900; line-height:1; margin:8px 0 10px; color:var(--text);">$4.99 <span style="font-size:1rem; color:var(--muted); font-weight:700;">/ month</span></div>
-              <div style="color:var(--muted); margin-bottom:16px;">Try it free for 14 days. Cancel anytime.</div>
-              <div style="display:grid; gap:8px; color:var(--muted); margin:0 0 18px;">
-                <div>Unlimited caching requests</div>
-                <div>Up to 3 devices</div>
-                <div>Works with OpenAI, Anthropic, and a scoped Google Gemini lane for repeat-heavy <code>generateContent</code> workflows</div>
-              </div>
-              <a class="button button-primary" href="https://saas-optimizer.fly.dev/v1/api/create-trial">Start free trial</a>
             </aside>
           </div>
         </div>
@@ -136,93 +125,146 @@
       <section class="section">
         <div class="card" style="background:rgba(150,187,255,.06); border-color:var(--border-strong);">
           <div class="kicker">Quick answer</div>
-          <p style="margin:0; color:var(--text); font-size:1.02rem; line-height:1.7;">AI Optimizer is a local-first desktop app that reduces repeated OpenAI, Anthropic, and Google Gemini API spend by adding a caching proxy on localhost. It works best for repeat-heavy scripts, agents, tools, and automations that send the same or very similar requests over time.</p>
+          <p style="margin:0; color:var(--text); font-size:1.02rem; line-height:1.7;">AI Optimizer is a local AI cost control tool for repeat-heavy workflows. It runs a local proxy on your machine so repeated requests can be cached, inspected, and controlled without rebuilding the workflow you already use.</p>
         </div>
       </section>
 
       <section class="section">
         <div class="section-head">
-          <h2>Why AI Optimizer matters</h2>
-          <p>Repeated API work gets expensive fast, and most teams want a way to control it without rewriting the workflow around a new product.</p>
+          <h2>Where AI Optimizer fits best</h2>
+          <p>The best fit is not every request. It is the repeated, operational AI work that quietly burns money over time.</p>
         </div>
         <div class="grid-3">
-          <article class="card"><h3>Keep your stack</h3><p>Point existing OpenAI, Anthropic, or supported Gemini workflows at a local proxy instead of rebuilding the whole integration path.</p></article>
-          <article class="card"><h3>Cut repeat waste</h3><p>Cache duplicate and recurring requests so repeat traffic stops hitting the API at full cost.</p></article>
-          <article class="card"><h3>See the signal</h3><p>Track requests, cache hits, and usage patterns in one place instead of guessing where the waste lives.</p></article>
+          <article class="card"><h3>Scripts and automations</h3><p>Recurring jobs, transforms, summaries, and local checks are the clearest place to prove the exact-hit lane quickly.</p></article>
+          <article class="card"><h3>Agents and tool loops</h3><p>Retries, recurring reasoning paths, and repeated tool-driven requests are where duplicate spend quietly accumulates.</p></article>
+          <article class="card"><h3>Developer workflows</h3><p>CLI runs, prompt testing, and repeat-heavy local workflows are strong candidates because the same request shape often comes back again.</p></article>
         </div>
       </section>
 
       <section class="section">
         <div class="section-head">
-          <h2>How it works</h2>
-          <p>The adoption path stays simple: route traffic locally, cache repeat work, and see the result clearly.</p>
+          <h2>Why teams use it</h2>
+          <p>The value is practical, not theoretical: keep the workflow you already have, intercept repeated requests locally, and make the result visible enough to trust.</p>
         </div>
         <div class="grid-3">
-          <article class="card"><div class="step-num">1</div><h3>Route traffic locally</h3><p>Point your workflow at AI Optimizer on localhost.</p></article>
-          <article class="card"><div class="step-num">2</div><h3>Cache repeated requests</h3><p>Repeated work can resolve without paying full price every time.</p></article>
-          <article class="card"><div class="step-num">3</div><h3>Track behavior clearly</h3><p>See requests, cache hits, and provider usage in one local control layer.</p></article>
+          <article class="card"><h3>Keep your existing workflow</h3><p>Point compatible traffic at a local proxy instead of rebuilding your stack around a new platform.</p></article>
+          <article class="card"><h3>Cache repeated requests locally</h3><p>When the same request appears again inside the chosen TTL, AI Optimizer can serve it locally instead of paying upstream again.</p></article>
+          <article class="card"><h3>See the proof clearly</h3><p>Requests, exact hits, partial reuse, and TTL behavior stay visible in one local control layer instead of hiding inside a later bill.</p></article>
         </div>
       </section>
 
       <section class="section">
         <div class="section-head">
           <h2>Show proof, not promises</h2>
-          <p>AI Optimizer earns trust with clear setup, visible cache behavior, and a workflow that fits into the tools you already use.</p>
+          <p>The strongest claim on this site is simple: repeated requests can turn into visible local cache hits. That matters because it is measurable, inspectable, and much easier to trust than vague savings language.</p>
         </div>
-        <div class="grid-2">
+        <div class="grid-3">
+          <article class="card">
+            <h3>Exact cache hits happen</h3>
+            <p>Repeated identical requests can be served locally instead of being sent upstream again at full cost.</p>
+          </article>
+          <article class="card">
+            <h3>You can see them locally</h3>
+            <p>The popup and local stats make repeat behavior visible while the workflow runs, which keeps the claim inspectable.</p>
+          </article>
+          <article class="card">
+            <h3>TTL is under your control</h3>
+            <p>Choose a cache window that fits the repeat pattern instead of hoping provider defaults line up with how your workflow behaves.</p>
+          </article>
+        </div>
+        <div class="grid-2" style="margin-top:18px;">
           <div class="card image-frame">
             <img src="images/homepage-hero-app-crop-openai.png" alt="AI Optimizer app showing OpenAI provider configured with proxy running and cache stats" />
-            <div class="badge-row">
-              <span class="badge">OpenAI configured</span>
-              <span class="badge">Local proxy</span>
-              <span class="badge">Cache hits visible</span>
-            </div>
+            <div class="image-caption">The product is strongest when repeated AI work can be seen clearly enough to judge whether the exact-hit lane is real.</div>
           </div>
-          <div style="display:grid; gap:14px;">
-            <div class="card"><strong style="display:block; margin-bottom:6px;">Easy migration path</strong><p>Teams move faster when the product fits into existing operations instead of demanding a big rebuild.</p></div>
-            <div class="card"><strong style="display:block; margin-bottom:6px;">Local-first control</strong><p>Keep cost visibility close to the workflow rather than waiting for a billing surprise.</p></div>
-            <div class="card"><strong style="display:block; margin-bottom:6px;">Believable value</strong><p>Requests, cache hits, and compatibility proof are stronger than inflated marketing claims.</p></div>
+          <div class="card" style="display:flex; flex-direction:column; justify-content:center;">
+            <div class="kicker">Proof first</div>
+            <h3 style="font-size:1.55rem; margin-bottom:10px;">Start with one repeat-heavy workflow.</h3>
+            <p>Prove the exact-hit lane on something real, then decide whether it deserves a permanent place in your stack. That is a better trust path than promising broad savings before the workflow is tested.</p>
+            <div class="badge-row">
+              <a class="badge" href="/cache-proof">Cache proof</a>
+              <a class="badge" href="/ai-optimizer-exact-cache-hits">Exact cache-hit proof</a>
+            </div>
           </div>
         </div>
       </section>
 
       <section class="section">
         <div class="section-head">
-          <h2>Explore more</h2>
-          <p>Use the homepage for the quick value story, then let the deeper pages carry technical proof and implementation detail.</p>
+          <h2>How it works</h2>
+          <p>The adoption path stays simple: route traffic locally, repeat the same request pattern, and watch exact hits and request behavior show up in local stats.</p>
+        </div>
+        <div class="grid-3">
+          <article class="card"><div class="step-num">1</div><h3>Route traffic through AI Optimizer locally</h3><p>For many OpenAI-compatible tools, the practical setup change is pointing the workflow at <code>http://localhost:3000/v1</code>.</p></article>
+          <article class="card"><div class="step-num">2</div><h3>Repeat the same request pattern</h3><p>The exact-hit lane only matters when repetition is real, which is why scripts, agents, and recurring jobs are such strong candidates.</p></article>
+          <article class="card"><div class="step-num">3</div><h3>Watch exact hits and request behavior locally</h3><p>The local control layer makes it easier to judge what is happening now instead of reconstructing the story later from provider billing.</p></article>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="section-head">
+          <h2>What it is strongest at</h2>
+          <p>AI Optimizer is strongest where repeated work is real. It is not a magic cost-reduction layer for every request.</p>
+        </div>
+        <div class="grid-2">
+          <article class="card">
+            <h3>Where it fits best</h3>
+            <p>The best fit is repeat-heavy workflows where identical or very similar request patterns show up over time and deserve a local, controllable caching layer.</p>
+          </article>
+          <article class="card">
+            <h3>Honest provider scope</h3>
+            <p>OpenAI is the broadest lane today. Anthropic support is focused on chat completions. Google Gemini support is narrower and best for repeat-heavy <code>generateContent</code> workflows.</p>
+          </article>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="section-head">
+          <h2>What makes this different from provider-side caching?</h2>
+          <p>Provider-side reuse can help, but it is not the same thing as a local exact cache hit you can control directly.</p>
+        </div>
+        <div class="grid-2">
+          <article class="card">
+            <h3>Provider-side reuse</h3>
+            <p>Useful, but still provider-controlled, model-dependent, and not the same thing as a local exact-hit outcome you can verify inside your own workflow.</p>
+          </article>
+          <article class="card">
+            <h3>AI Optimizer exact-hit caching</h3>
+            <p>Local, TTL-controlled, visible in your workflow, and easier to prove in repeat-heavy operational use where the same request shape keeps coming back.</p>
+          </article>
         </div>
         <div class="badge-row">
-          <a class="badge" href="/install">Install guide</a>
-          <a class="badge" href="https://github.com/adamday75/ai-optimizer-app">GitHub repo</a>
-          <a class="badge" href="/how-it-works">How it works</a>
-          <a class="badge" href="/cache-proof">Cache proof</a>
-          <a class="badge" href="/ai-optimizer-exact-cache-hits">Exact cache-hit proof</a>
-          <a class="badge" href="/cache-openai-api-locally">Cache OpenAI locally</a>
-          <a class="badge" href="/add-local-proxy-openai-compatible-workflow">Add local proxy</a>
-          <a class="badge" href="/reduce-openai-api-costs-locally">Reduce OpenAI API costs locally</a>
-          <a class="badge" href="/reduce-openai-api-costs-cli-developer-workflows">CLI workflow cost reduction</a>
-          <a class="badge" href="/reduce-ai-api-waste-prompt-testing">Prompt testing cost reduction</a>
-          <a class="badge" href="/monitor-openai-api-usage-local-workflows">Monitor local API usage</a>
-          <a class="badge" href="/reduce-repeated-ai-spend-scripts-cron-agents">Reduce repeated AI spend</a>
+          <a class="badge" href="/exact-cache-hits-vs-partial-hits">Exact cache hits vs partial hits</a>
           <a class="badge" href="/see-real-reused-prompt-tokens-openai">See reused prompt tokens</a>
-          <a class="badge" href="/exact-cache-hits-vs-partial-hits">Exact vs partial hits</a>
-          <a class="badge" href="/reduce-anthropic-api-costs">Reduce Anthropic costs</a>
-          <a class="badge" href="/reduce-gemini-api-costs">Reduce Gemini costs</a>
-          <a class="badge" href="/for-agents">For agents</a>
-          <a class="badge" href="/for-developers">For developers</a>
-          <a class="badge" href="/about">About</a>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="section-head">
+          <h2>Explore the strongest next pages</h2>
+          <p>The homepage should open the loop. The deeper pages should defend the wedge.</p>
+        </div>
+        <div class="badge-row">
+          <a class="badge" href="/cache-proof">Cache proof</a>
+          <a class="badge" href="/install">Install guide</a>
+          <a class="badge" href="/how-it-works">How it works</a>
           <a class="badge" href="/faq">FAQ</a>
-          <a class="badge" href="/privacy">Privacy</a>
+          <a class="badge" href="/ai-optimizer-exact-cache-hits">Exact cache-hit proof</a>
+          <a class="badge" href="/for-developers">For developers</a>
+          <a class="badge" href="/for-agents">For agents</a>
         </div>
       </section>
 
       <section class="section">
         <div class="cta-card">
           <div class="cta-copy">
-            <h3>Stop paying full price for repeated AI calls.</h3>
-            <p>Install AI Optimizer, connect your workflow, and start reducing wasted OpenAI, Anthropic, and Google Gemini spend without changing how your team already works.</p>
+            <h3>Keep the workflow. Stop paying full price for repeated calls.</h3>
+            <p>Start with one repeat-heavy workflow, prove the exact-hit lane, and then decide whether it deserves a permanent place in your stack.</p>
           </div>
-          <a href="https://saas-optimizer.fly.dev/v1/api/create-trial" class="button button-primary">Start free trial</a>
+          <div style="display:grid; gap:12px; width:min(100%, 260px);">
+            <a href="https://saas-optimizer.fly.dev/v1/api/create-trial" class="button button-primary">Start free trial</a>
+            <a href="/install" class="button button-secondary">Install guide</a>
+          </div>
         </div>
       </section>
 

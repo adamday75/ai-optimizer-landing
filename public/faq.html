@@ -3,17 +3,17 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>AI Optimizer FAQ – OpenAI, Anthropic, Caching, Agents, and Local Proxy Questions</title>
-  <meta name="description" content="Answers to common questions about AI Optimizer, including OpenAI and Anthropic support, caching, agent workflows, local proxy setup, and compatibility.">
-  <meta property="og:title" content="AI Optimizer FAQ – OpenAI, Anthropic, Caching, Agents, and Local Proxy Questions">
-  <meta property="og:description" content="Answers to common questions about AI Optimizer, including OpenAI and Anthropic support, caching, agent workflows, local proxy setup, and compatibility.">
+  <title>AI Optimizer FAQ – OpenAI, Anthropic, Gemini, Caching, and Local Proxy Questions</title>
+  <meta name="description" content="Answers to common questions about AI Optimizer, including OpenAI, Anthropic, and Google Gemini support, caching, agent workflows, local proxy setup, and compatibility.">
+  <meta property="og:title" content="AI Optimizer FAQ – OpenAI, Anthropic, Gemini, Caching, and Local Proxy Questions">
+  <meta property="og:description" content="Answers to common questions about AI Optimizer, including OpenAI, Anthropic, and Google Gemini support, caching, agent workflows, local proxy setup, and compatibility.">
   <meta property="og:type" content="article">
   <meta property="og:url" content="https://ai-optimizer.org/faq">
-  <meta property="og:image" content="https://ai-optimizer.org/images/app-setup-annotated.png">
+  <meta property="og:image" content="https://ai-optimizer.org/images/homepage-hero-app-crop-openai.png">
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="AI Optimizer FAQ – OpenAI, Anthropic, Caching, Agents, and Local Proxy Questions">
-  <meta name="twitter:description" content="Answers to common questions about AI Optimizer, including OpenAI and Anthropic support, caching, agent workflows, local proxy setup, and compatibility.">
-  <meta name="twitter:image" content="https://ai-optimizer.org/images/app-setup-annotated.png">
+  <meta name="twitter:title" content="AI Optimizer FAQ – OpenAI, Anthropic, Gemini, Caching, and Local Proxy Questions">
+  <meta name="twitter:description" content="Answers to common questions about AI Optimizer, including OpenAI, Anthropic, and Google Gemini support, caching, agent workflows, local proxy setup, and compatibility.">
+  <meta name="twitter:image" content="https://ai-optimizer.org/images/homepage-hero-app-crop-openai.png">
   <link rel="canonical" href="https://ai-optimizer.org/faq">
   <script type="application/ld+json">
   {
@@ -56,10 +56,10 @@
         "@type": "FAQPage",
         "mainEntity": [
           {"@type": "Question", "name": "What is AI Optimizer?", "acceptedAnswer": {"@type": "Answer", "text": "AI Optimizer is a local desktop app and proxy that sits in front of your AI API workflow on localhost:3000. It helps reduce repeated API waste with caching and gives you a simple local control layer for repeat-heavy usage."}},
-          {"@type": "Question", "name": "Which providers does AI Optimizer support?", "acceptedAnswer": {"@type": "Answer", "text": "AI Optimizer 2.2.0 supports both OpenAI and Anthropic. You can store both API keys in the app and select one active provider at a time."}},
-          {"@type": "Question", "name": "Can I use OpenAI and Anthropic at the same time?", "acceptedAnswer": {"@type": "Answer", "text": "The app can store both API keys, but in v2.2.0 it uses one active provider at a time."}},
-          {"@type": "Question", "name": "Does AI Optimizer support Anthropic fully?", "acceptedAnswer": {"@type": "Answer", "text": "In v2.2.0, Anthropic support is focused on chat completions through the local proxy workflow. OpenAI support remains broader for workflows that use additional OpenAI-specific endpoints."}},
-          {"@type": "Question", "name": "Does caching mix OpenAI and Anthropic requests together?", "acceptedAnswer": {"@type": "Answer", "text": "No. Cache behavior is provider-aware, so OpenAI and Anthropic requests do not collide with each other."}},
+          {"@type": "Question", "name": "Which providers does AI Optimizer support?", "acceptedAnswer": {"@type": "Answer", "text": "AI Optimizer supports OpenAI, Anthropic, and a scoped Google Gemini lane. You can store multiple provider keys in the app and select one active provider at a time."}},
+          {"@type": "Question", "name": "Can I use multiple providers at the same time?", "acceptedAnswer": {"@type": "Answer", "text": "You can store multiple provider keys in the app, but AI Optimizer uses one active provider at a time so the local proxy path stays simple and predictable."}},
+          {"@type": "Question", "name": "Does AI Optimizer support Anthropic fully?", "acceptedAnswer": {"@type": "Answer", "text": "Anthropic support is focused on chat completions through the local proxy workflow. OpenAI support remains broader for additional OpenAI-style endpoints, and Google Gemini support is intentionally narrower around repeat-heavy generateContent workflows."}},
+          {"@type": "Question", "name": "Does caching mix provider requests together?", "acceptedAnswer": {"@type": "Answer", "text": "No. Cache behavior is provider-aware, so OpenAI, Anthropic, and supported Google Gemini requests do not collide with each other."}},
           {"@type": "Question", "name": "What kinds of workflows is AI Optimizer best for?", "acceptedAnswer": {"@type": "Answer", "text": "AI Optimizer is best for repeat-heavy developer workflows, scripts, automations, agents, retries, and recurring jobs where the same request patterns show up again and again."}},
           {"@type": "Question", "name": "Can I adjust how long items stay cached?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. AI Optimizer includes an adjustable cache TTL, which is especially useful for cron jobs, recurring automations, and repeat-heavy local workflows."}},
           {"@type": "Question", "name": "Do I need to rebuild my workflow to use it?", "acceptedAnswer": {"@type": "Answer", "text": "No. The goal is to fit into the workflow you already have by adding a local proxy layer in front of it, not by forcing you onto a completely new platform."}}
@@ -95,17 +95,17 @@
       <section class="section">
         <div class="card" style="background:rgba(150,187,255,.06); border-color:var(--border-strong);">
           <div class="kicker">Quick answer</div>
-          <p style="margin:0; color:var(--text); font-size:1.02rem; line-height:1.7;">AI Optimizer is a local-first desktop app that reduces repeated OpenAI and Anthropic API waste by adding a caching proxy on <code>localhost</code>. It is most useful in repeat-heavy scripts, automations, agents, and recurring jobs where the same request patterns show up over time.</p>
+          <p style="margin:0; color:var(--text); font-size:1.02rem; line-height:1.7;">AI Optimizer is a local-first desktop app that reduces repeated OpenAI, Anthropic, and scoped Google Gemini API waste by adding a caching proxy on <code>localhost</code>. It is most useful in repeat-heavy scripts, automations, agents, and recurring jobs where the same request patterns show up over time.</p>
         </div>
       </section>
 
       <section class="section">
         <div class="faq-list">
           <article class="card"><h3>What is AI Optimizer?</h3><p>AI Optimizer is a local desktop app and proxy that sits in front of your AI API workflow on <code>localhost:3000</code>. It helps reduce repeated API waste with caching and gives you a simple local control layer for repeat-heavy usage.</p></article>
-          <article class="card"><h3>Which providers does AI Optimizer support?</h3><p>AI Optimizer 2.2.0 supports both <strong>OpenAI</strong> and <strong>Anthropic</strong>. You can store both API keys in the app and select one active provider at a time.</p></article>
-          <article class="card"><h3>Can I use OpenAI and Anthropic at the same time?</h3><p>The app can store both API keys, but in v2.2.0 it uses <strong>one active provider at a time</strong>. That keeps the workflow simple and predictable while still supporting both providers.</p></article>
-          <article class="card"><h3>Does AI Optimizer support Anthropic fully?</h3><p>In v2.2.0, Anthropic support is focused on <strong>chat completions</strong> through the local proxy workflow. OpenAI support remains broader for workflows that use additional OpenAI-specific endpoints.</p></article>
-          <article class="card"><h3>Does caching mix OpenAI and Anthropic requests together?</h3><p>No. Cache behavior is <strong>provider-aware</strong>, so OpenAI and Anthropic requests do not collide with each other.</p></article>
+          <article class="card"><h3>Which providers does AI Optimizer support?</h3><p>AI Optimizer supports <strong>OpenAI</strong>, <strong>Anthropic</strong>, and a scoped <strong>Google Gemini</strong> lane. You can store multiple provider keys in the app and select one active provider at a time.</p></article>
+          <article class="card"><h3>Can I use multiple providers at the same time?</h3><p>You can store multiple provider keys in the app, but AI Optimizer uses <strong>one active provider at a time</strong>. That keeps the workflow simple and predictable while still supporting all three lanes.</p></article>
+          <article class="card"><h3>Does AI Optimizer support Anthropic fully?</h3><p>Anthropic support is focused on <strong>chat completions</strong> through the local proxy workflow. OpenAI support remains broader for additional OpenAI-style endpoints, and Google Gemini support is intentionally narrower around repeat-heavy <code>generateContent</code> workflows.</p></article>
+          <article class="card"><h3>Does caching mix provider requests together?</h3><p>No. Cache behavior is <strong>provider-aware</strong>, so OpenAI, Anthropic, and supported Google Gemini requests do not collide with each other.</p></article>
           <article class="card"><h3>What kinds of workflows is AI Optimizer best for?</h3><p>AI Optimizer is best for repeat-heavy developer workflows, scripts, automations, agents, retries, and recurring jobs where the same request patterns show up again and again.</p></article>
           <article class="card"><h3>Is this useful for agents?</h3><p>Yes. AI Optimizer is especially useful for agent workflows that repeat the same tool paths, retries, summaries, or scheduled tasks over time without forcing you to replace your existing agent stack.</p></article>
           <article class="card"><h3>Can I adjust how long items stay cached?</h3><p>Yes. AI Optimizer includes an adjustable cache TTL, which is especially useful for cron jobs, recurring automations, and repeat-heavy local workflows.</p></article>

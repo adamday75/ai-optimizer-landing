@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Install AI Optimizer – Download, Set Up, and Test the Local Proxy</title>
-  <meta name="description" content="Install AI Optimizer on macOS, Windows, or Linux, activate your license, start the local proxy, and run a quick test against localhost:3000.">
+  <meta name="description" content="Install AI Optimizer on macOS, Windows, or Linux, activate your license, start the local proxy, and run a quick health check on localhost:3000 plus a real request through localhost:3000/v1.">
   <meta property="og:title" content="Install AI Optimizer – Download, Set Up, and Test the Local Proxy">
   <meta property="og:description" content="A cleaner setup guide for installing AI Optimizer, starting the local proxy, and verifying a real request on macOS, Windows, or Linux.">
   <meta property="og:type" content="article">
@@ -55,7 +55,7 @@
       {
         "@type": "HowTo",
         "name": "Install AI Optimizer",
-        "description": "Download AI Optimizer, activate your license, start the local proxy, and test a real request on localhost:3000.",
+        "description": "Download AI Optimizer, activate your license, start the local proxy, confirm the local service on localhost:3000, and test a real request through localhost:3000/v1.",
         "step": [
           {"@type": "HowToStep", "name": "Download the latest release"},
           {"@type": "HowToStep", "name": "Install the app for macOS, Windows, or Linux"},
@@ -88,7 +88,7 @@
       <section class="hero-panel">
         <div class="eyebrow">Install guide</div>
         <h1>Download it, start it, and test it in a few minutes.</h1>
-        <p class="lead">If the release email brought you straight to GitHub, this is the cleaner setup path. Download the latest build, activate your license, start the local proxy, and run one quick check against <code>localhost:3000</code>.</p>
+        <p class="lead">If the release email brought you straight to GitHub, this is the cleaner setup path. Download the latest build, activate your license, start the local proxy, confirm the service on <code>localhost:3000</code>, and run one real request through <code>localhost:3000/v1</code>.</p>
         <div class="badge-row">
           <a class="badge" href="https://saas-optimizer.fly.dev/v1/api/create-trial">Start free trial</a>
           <a class="badge" href="https://github.com/adamday75/ai-optimizer-app/releases/latest">Download latest release</a>
@@ -100,7 +100,7 @@
 
       <section class="section">
         <div class="callout">
-          <strong>Quick answer:</strong> AI Optimizer is a local desktop app that runs a proxy on <code>http://localhost:3000</code>. Start the free trial first, then download the app, activate your license, save your provider API key, and point your tools at the local endpoint.
+          <strong>Quick answer:</strong> AI Optimizer runs its local proxy service on <code>http://localhost:3000</code>. For OpenAI-compatible tools, the practical client endpoint is usually <code>http://localhost:3000/v1</code>. Start the free trial first, then download the app, activate your license, save your provider API key, and point your tools at the local path that fits your workflow.
         </div>
       </section>
 

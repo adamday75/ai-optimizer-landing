@@ -93,7 +93,7 @@
         <div class="eyebrow">Watch demo</div>
         <h1>AI Optimizer Install and Cache-Hit Proof Demo</h1>
         <p class="lead">Watch AI Optimizer install locally, connect to an OpenAI-compatible workflow, and prove that an exact repeated request can be served from cache instead of billed upstream again.</p>
-        <p class="meta">Duration: 1m 37s · Provider shown: OpenAI · Workflow: local proxy + cache proof · Last updated: June 1, 2026</p>
+        <p class="meta">Duration: 1m 37s · Provider shown: OpenAI · Workflow: local proxy + cache proof · Last updated: July 21, 2026</p>
       </section>
 
       <section class="section">
@@ -104,7 +104,7 @@
           <div class="video-embed" style="margin-top:18px;">
             <iframe src="https://www.youtube.com/embed/ONv0N4Z8k_E" title="AI Optimizer Install and Cache-Hit Proof Demo" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
           </div>
-          <div class="image-caption">Demo flow: install AI Optimizer, route a local OpenAI-compatible workflow through localhost, run the request again, and confirm the exact cache hit in the app.</div>
+          <div class="image-caption">Demo flow: install AI Optimizer, route a local OpenAI-compatible workflow through localhost, run the request again, and confirm the exact cache hit in the popup and local app stats.</div>
         </div>
       </section>
 
@@ -112,6 +112,14 @@
         <div class="card" style="background:rgba(150,187,255,.06); border-color:var(--border-strong);">
           <div class="kicker">Quick answer</div>
           <p style="margin:0; color:var(--text); font-size:1.02rem; line-height:1.7;">This video shows AI Optimizer being installed, configured for a local OpenAI-compatible workflow, and then proving that an exact repeated request can be served from cache instead of hitting the upstream API at full cost again.</p>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="card">
+          <div class="kicker">Current proof staging</div>
+          <p style="margin:0 0 12px; color:var(--text); line-height:1.7;">The honest staged proof pair right now is the browser popup plus the in-app dashboard stats view. A true terminal <code>curl /stats</code> still is optional stricter support, not something this page should imply is already captured.</p>
+          <p style="margin:0; color:var(--muted); line-height:1.7;">That keeps the watch page aligned with the actual screenshots already prepared instead of overstating the proof bundle.</p>
         </div>
       </section>
 
@@ -124,7 +132,7 @@
           <article class="card"><h3>Local install</h3><p>AI Optimizer is installed and opened locally instead of being treated like a remote SaaS middle layer.</p></article>
           <article class="card"><h3>Local proxy routing</h3><p>The workflow is pointed at localhost so AI traffic passes through AI Optimizer before reaching the upstream provider.</p></article>
           <article class="card"><h3>Repeated request test</h3><p>The same request is run again to test whether repeat behavior can be served locally from cache.</p></article>
-          <article class="card"><h3>Visible proof</h3><p>The cache hit is shown directly in the app so the result is inspectable instead of just claimed.</p></article>
+          <article class="card"><h3>Visible proof</h3><p>The cache hit is shown in the browser popup and local app stats so the result is inspectable instead of just claimed.</p></article>
         </div>
       </section>
 
@@ -139,7 +147,7 @@
           <article class="card"><div class="step-num">3</div><h3>Configure provider + cache behavior</h3><p>The OpenAI-compatible setup and local caching layer are shown inside the app.</p></article>
           <article class="card"><div class="step-num">4</div><h3>Run the request once</h3><p>The first request goes through the normal upstream path.</p></article>
           <article class="card"><div class="step-num">5</div><h3>Run the same request again</h3><p>The repeated request is run a second time to test whether it can be served locally from cache.</p></article>
-          <article class="card"><div class="step-num">6</div><h3>Verify the hit in the app</h3><p>The app shows the cache-hit proof directly so the savings behavior is visible and honest.</p></article>
+          <article class="card"><div class="step-num">6</div><h3>Verify the hit in the popup and local stats</h3><p>The staged proof today is visible in the popup and local app stats. If we later want the stricter matched pair, add a true terminal <code>curl /stats</code> still as companion proof.</p></article>
         </div>
       </section>
 

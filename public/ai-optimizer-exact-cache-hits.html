@@ -3,15 +3,15 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>AI Optimizer: Exact Cache Hits for OpenAI and Anthropic Workflows</title>
+  <title>AI Optimizer: Exact Cache Hits for Repeat-Heavy AI Workflows</title>
   <meta name="description" content="AI Optimizer helps scripts, agents, cron jobs, automations, and reusable AI workflows avoid paying full price for identical AI requests by caching exact repeats locally.">
-  <meta property="og:title" content="AI Optimizer: Exact Cache Hits for OpenAI and Anthropic Workflows">
+  <meta property="og:title" content="AI Optimizer: Exact Cache Hits for Repeat-Heavy AI Workflows">
   <meta property="og:description" content="Stop paying full price for identical AI requests in scripts, agents, cron jobs, local automations, and other repeat-heavy AI workflows.">
   <meta property="og:type" content="article">
   <meta property="og:url" content="https://ai-optimizer.org/ai-optimizer-exact-cache-hits">
   <meta property="og:image" content="https://ai-optimizer.org/images/homepage-hero-app-crop-openai.png">
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="AI Optimizer: Exact Cache Hits for OpenAI and Anthropic Workflows">
+  <meta name="twitter:title" content="AI Optimizer: Exact Cache Hits for Repeat-Heavy AI Workflows">
   <meta name="twitter:description" content="Stop paying full price for identical AI requests in scripts, agents, cron jobs, local automations, and other repeat-heavy AI workflows.">
   <meta name="twitter:image" content="https://ai-optimizer.org/images/homepage-hero-app-crop-openai.png">
   <link rel="canonical" href="https://ai-optimizer.org/ai-optimizer-exact-cache-hits">
@@ -41,7 +41,7 @@
         "applicationCategory": "DeveloperApplication",
         "operatingSystem": "macOS, Windows, Linux",
         "url": "https://ai-optimizer.org/ai-optimizer-exact-cache-hits",
-        "description": "AI Optimizer adds exact repeated-request caching for OpenAI and Anthropic workflows so repeat-heavy AI work can be reduced, verified, and controlled locally.",
+        "description": "AI Optimizer adds exact repeated-request caching for repeat-heavy AI workflows so repeated work can be reduced, verified, and controlled locally.",
         "offers": {
           "@type": "Offer",
           "price": "4.99",
@@ -55,7 +55,7 @@
       {
         "@type": "TechArticle",
         "@id": "https://ai-optimizer.org/ai-optimizer-exact-cache-hits#article",
-        "headline": "AI Optimizer: Exact Cache Hits for OpenAI and Anthropic Workflows",
+        "headline": "AI Optimizer: Exact Cache Hits for Repeat-Heavy AI Workflows",
         "description": "AI Optimizer helps scripts, agents, cron jobs, automations, and reusable AI workflows avoid paying full price for identical AI requests by caching exact repeats locally.",
         "url": "https://ai-optimizer.org/ai-optimizer-exact-cache-hits",
         "image": "https://ai-optimizer.org/images/homepage-hero-app-crop-openai.png",
@@ -89,8 +89,8 @@
 
       <section id="hero" class="hero-panel">
         <div class="eyebrow">Local exact-hit caching for repeat-heavy AI workflows</div>
-        <h1>Your cron jobs are paying full price for the same answer over and over.</h1>
-        <p class="lead">AI Optimizer is a local caching proxy for OpenAI- and Anthropic-compatible workflows. When a script, agent, or scheduled job repeats an identical request inside your chosen TTL, the response is served from your machine instead of being sent upstream again.</p>
+        <h1>Your cron jobs are paying full price for the same request over and over.</h1>
+        <p class="lead">AI Optimizer is a local caching proxy for repeat-heavy AI workflows. When a script, agent, or scheduled job repeats an identical request inside your chosen TTL, the response is served from your machine instead of being sent upstream again.</p>
         <p>Change one base URL. Set a TTL that fits the workflow. Then watch the hit counter in local stats and the browser popup so you can prove the savings instead of guessing.</p>
         <div class="cta-row" style="margin-top:22px; display:flex; gap:12px; flex-wrap:wrap;">
           <a href="/install" class="button button-primary">Start free 14-day trial</a>
@@ -125,50 +125,76 @@
 
       <section id="workflow-proof" class="section">
         <div class="section-head">
-          <h2>How the proof run works</h2>
-          <p>The proof uses a deterministic scheduled AI job that sends the same known request through AI Optimizer and expects the same known response: <code>CACHE_TEST_OK</code>.</p>
+          <h2>How the proof method works</h2>
+          <p>The proof lane uses a deterministic AI request that sends the same known input through AI Optimizer and expects the same known response: <code>CACHE_TEST_OK</code>.</p>
         </div>
         <div class="card" style="padding:18px;">
-          <div class="kicker">Current proof setup</div>
-          <h3 style="margin:10px 0 8px;">Deterministic scheduled requests, visible local stats, and a live browser hit counter</h3>
+          <div class="kicker">Repeatable proof setup</div>
+          <h3 style="margin:10px 0 8px;">Deterministic repeat requests, visible local stats, and a browser hit counter</h3>
           <ul style="margin:0; padding-left:20px; color:var(--text); line-height:1.7;">
-            <li>the request repeats every 15 minutes</li>
-            <li>the TTL is set to 1 hour to match the repeat pattern</li>
+            <li>the same exact request is replayed on purpose</li>
+            <li>the TTL is chosen to match the repeat pattern you want to test</li>
             <li>cache hits are visible in local stats</li>
             <li>the browser popup shows the same running totals for quick inspection</li>
           </ul>
-          <div class="callout" style="margin-top:18px;"><strong>Adjust TTL to fit the workflow.</strong> For scheduled jobs and automations, AI Optimizer gives you a local, controllable caching layer instead of paying full price every time.</div>
+          <div class="callout" style="margin-top:18px;"><strong>Adjust TTL to fit the workflow.</strong> For scheduled jobs and automations, AI Optimizer gives you a local, controllable caching layer that can be verified with repeatable inputs instead of guessed from a later bill.</div>
+        </div>
+      </section>
+
+      <section id="proof-checklist" class="section">
+        <div class="section-head">
+          <h2>What a clean proof pass looks like</h2>
+          <p>The goal is not to chase a vanity number. It is to make one repeatable workflow visible enough that you can tell where the first request went and where the repeated one was served.</p>
+        </div>
+        <div class="grid-2">
+          <article class="card">
+            <h3>1. Route one real workflow through localhost</h3>
+            <p>Pick one script, agent, or scheduled job you already run and point its OpenAI- or Anthropic-compatible base URL at AI Optimizer.</p>
+          </article>
+          <article class="card">
+            <h3>2. Choose a TTL that matches the repeat pattern</h3>
+            <p>Set the cache window intentionally so the workflow has a fair chance to repeat inside the period you actually care about.</p>
+          </article>
+          <article class="card">
+            <h3>3. Run the same request again on purpose</h3>
+            <p>The first request proves the upstream path works. The second identical request is the one that tests whether the result can be served locally instead.</p>
+          </article>
+          <article class="card">
+            <h3>4. Verify the hit in two places</h3>
+            <p>The stricter target is the browser popup plus a simple <code>curl /stats</code> call. The currently staged support visuals are the popup and the local dashboard, which is honest today but not the same thing as the cleaner popup-plus-terminal pair.</p>
+          </article>
         </div>
       </section>
 
       <section id="proof-not-promises" class="section">
         <div class="section-head">
           <h2>Proof, not promises</h2>
-          <p>This page is built around a deterministic scheduled AI job, a chosen TTL, visible cache-hit stats, and a browser popup that shows the running totals locally. As of July 3, 2026, 209 of 610 requests were served locally — a 34.3% hit rate.</p>
+          <p>This page is built around deterministic repeat requests, a chosen TTL, visible cache-hit stats, and a browser popup that shows the running totals locally. The point is not one magic number. The point is that repeat-heavy workflows can be tested, verified, and inspected on your machine.</p>
+          <p>The screenshots staged here today are the popup and the app dashboard. If we want the stricter matched pair later, the next capture adds a true terminal <code>curl /stats</code> still instead of pretending the dashboard image already fills that role.</p>
         </div>
         <div class="grid-3">
           <article class="card">
             <img src="/images/cache-proof-extension.png" alt="AI Optimizer browser extension popup showing proxy running, requests, cache hits, and hit rate." style="width:100%; aspect-ratio:16/10; object-fit:contain; border:1px solid var(--border-strong); border-radius:16px; display:block; background:#0f172a; padding:10px; box-sizing:border-box;">
             <h3 style="margin-top:16px;">Visible cache-hit proof</h3>
-            <p>In the current proof run, 209 of 610 requests were served locally — a 34.3% hit rate, visible as it happens instead of guessed from a bill later.</p>
+            <p>Local stats and the browser popup make cache hits visible as they happen, so you can inspect real repeat behavior instead of inferring it from billing later.</p>
           </article>
           <article class="card">
-            <img src="/images/cache-proof-cron-job.png" alt="Cron job showing the deterministic AI Optimizer proof run scheduled every 15 minutes." style="width:100%; aspect-ratio:16/10; object-fit:contain; border:1px solid var(--border-strong); border-radius:16px; display:block; background:#0f172a; padding:10px; box-sizing:border-box;">
-            <h3 style="margin-top:16px;">Real scheduled workflow</h3>
-            <p>A deterministic proof run is scheduled every 15 minutes, so the repeat behavior is automated and inspectable.</p>
+            <img src="/images/cache-proof-openai-stats-crop.png" alt="AI Optimizer dashboard showing local request totals, exact cache hits, partial hits, and reused tokens." style="width:100%; aspect-ratio:16/10; object-fit:contain; border:1px solid var(--border-strong); border-radius:16px; display:block; background:#0f172a; padding:10px; box-sizing:border-box;">
+            <h3 style="margin-top:16px;">Dashboard stats you can inspect</h3>
+            <p>The app dashboard keeps exact local hits, partial provider-side reuse, and reused tokens visible in one place, so the proof lane stays inspectable without leaning on stale scheduled-run screenshots. It is honest support for the current staged bundle, while a true terminal <code>curl /stats</code> still remains the stricter companion if we decide to capture it.</p>
           </article>
           <article class="card">
             <img src="/images/cache-proof-ttl-config.png" alt="AI Optimizer proxy settings showing adjustable cache TTL options with 1 hour selected." style="width:100%; aspect-ratio:16/10; object-fit:contain; border:1px solid var(--border-strong); border-radius:16px; display:block; background:#0f172a; padding:10px; box-sizing:border-box;">
             <h3 style="margin-top:16px;">Intentional TTL setup</h3>
-            <p>The cache window is chosen to fit the workflow instead of relying on provider defaults or vague behavior.</p>
+            <p>The cache window is chosen to fit the workflow instead of relying on provider defaults or vague behavior, which makes the proof method portable across different repeat-heavy tasks.</p>
           </article>
         </div>
       </section>
 
       <section id="provider-caching" class="section">
         <div class="section-head">
-          <h2>"Don’t OpenAI and Anthropic already cache?"</h2>
-          <p>Fair question. They do — but that solves a different problem than exact repeated-request caching for repeat-heavy local workflows.</p>
+          <h2>"Don’t providers already cache?"</h2>
+          <p>Fair question. OpenAI, Anthropic, and Google Gemini all have provider-side reuse or caching behavior in some lanes, but that solves a different problem than exact repeated-request caching for repeat-heavy local workflows.</p>
         </div>
         <div class="grid-2">
           <article class="card">
@@ -207,6 +233,53 @@
           <article class="card"><h3>Automations</h3><p>Cut repeat cost in recurring background workflows and operational pipelines.</p></article>
           <article class="card"><h3>Developer iteration</h3><p>Support repeat-heavy testing, prompt refinement, and local AI-assisted development.</p></article>
           <article class="card"><h3>Reusable workflows</h3><p>Reduce waste in standardized AI tasks like review, scaffolding, tests, and setup.</p></article>
+        </div>
+      </section>
+
+      <section id="first-proof-workflows" class="section">
+        <div class="section-head">
+          <h2>Best first workflows to test</h2>
+          <p>If you want fast proof, start with a workflow that already repeats the same structure often enough to create a clean before-and-after result.</p>
+        </div>
+        <div class="grid-3">
+          <article class="card">
+            <h3>Scheduled summaries or reports</h3>
+            <p>Recurring cron jobs, digests, and background summaries are strong first tests because the request shape is often stable and the repeat timing is easy to match with TTL.</p>
+          </article>
+          <article class="card">
+            <h3>Agent loops with fixed instructions</h3>
+            <p>Agents that revisit the same setup, evaluation, or review path can create repeatable exact requests when the prompt structure stays controlled.</p>
+          </article>
+          <article class="card">
+            <h3>Prompt and script test harnesses</h3>
+            <p>Local development runs, QA checks, and repeated prompt tests are ideal for proving cache hits quickly because you can intentionally replay the same request on demand.</p>
+          </article>
+        </div>
+      </section>
+
+      <section id="proof-discipline" class="section">
+        <div class="section-head">
+          <h2>What to keep stable during proof capture</h2>
+          <p>Clean cache proof depends on repeatability. If too many variables change between runs, you learn less from the result.</p>
+        </div>
+        <div class="grid-2">
+          <article class="card">
+            <h3>Keep these fixed</h3>
+            <ul>
+              <li>the exact request body</li>
+              <li>the provider and model path</li>
+              <li>the workflow step that sends the request</li>
+              <li>the TTL window you are trying to validate</li>
+            </ul>
+          </article>
+          <article class="card">
+            <h3>Avoid contaminating the proof</h3>
+            <ul>
+              <li>do not inject timestamps or changing metadata into the request</li>
+              <li>do not mix one clean proof pass with unrelated production traffic and call it the same thing</li>
+              <li>do not treat a changing prompt as if it were an exact-repeat cache test</li>
+            </ul>
+          </article>
         </div>
       </section>
 
