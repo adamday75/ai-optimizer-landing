@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AI Optimizer Resources | Cache Proof, Setup, and Provider Guides</title>
+  <meta name="description" content="Explore AI Optimizer resources organized by proof, setup, provider support, developer workflows, and trust pages.">
+  <meta property="og:title" content="AI Optimizer Resources | Cache Proof, Setup, and Provider Guides">
+  <meta property="og:description" content="Explore AI Optimizer resources organized by proof, setup, provider support, developer workflows, and trust pages.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://ai-optimizer.org/resources">
+  <meta property="og:image" content="https://ai-optimizer.org/images/homepage-hero-app-crop-openai.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="AI Optimizer Resources | Cache Proof, Setup, and Provider Guides">
+  <meta name="twitter:description" content="Explore AI Optimizer resources organized by proof, setup, provider support, developer workflows, and trust pages.">
+  <meta name="twitter:image" content="https://ai-optimizer.org/images/homepage-hero-app-crop-openai.png">
+  <link rel="canonical" href="https://ai-optimizer.org/resources">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "Organization",
+        "@id": "https://ai-optimizer.org/#organization",
+        "name": "AI Optimizer",
+        "url": "https://ai-optimizer.org/",
+        "logo": "https://ai-optimizer.org/images/homepage-hero-app-crop-openai.png",
+        "description": "AI Optimizer is a local-first desktop app that reduces repeated AI API waste with a caching proxy for OpenAI, Anthropic, and Google Gemini workflows."
+      },
+      {
+        "@type": "CollectionPage",
+        "@id": "https://ai-optimizer.org/resources#page",
+        "name": "AI Optimizer Resources",
+        "url": "https://ai-optimizer.org/resources",
+        "description": "A curated map of AI Optimizer proof pages, setup guides, provider cost pages, developer workflow pages, and trust pages.",
+        "publisher": {
+          "@id": "https://ai-optimizer.org/#organization"
+        },
+        "mainEntity": {
+          "@type": "ItemList",
+          "name": "AI Optimizer resource pages",
+          "itemListElement": [
+            {"@type": "ListItem", "position": 1, "name": "Cache proof", "url": "https://ai-optimizer.org/cache-proof"},
+            {"@type": "ListItem", "position": 2, "name": "Exact cache-hit proof", "url": "https://ai-optimizer.org/ai-optimizer-exact-cache-hits"},
+            {"@type": "ListItem", "position": 3, "name": "Install guide", "url": "https://ai-optimizer.org/install"},
+            {"@type": "ListItem", "position": 4, "name": "How it works", "url": "https://ai-optimizer.org/how-it-works"},
+            {"@type": "ListItem", "position": 5, "name": "FAQ", "url": "https://ai-optimizer.org/faq"}
+          ]
+        }
+      },
+      {
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          {"@type": "ListItem", "position": 1, "name": "Home", "item": "https://ai-optimizer.org/"},
+          {"@type": "ListItem", "position": 2, "name": "Resources", "item": "https://ai-optimizer.org/resources"}
+        ]
+      }
+    ]
+  }
+  </script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link href="styles-v3-site.css?v=20260520b" rel="stylesheet">
+  <link rel="icon" href="/favicon.ico">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+  <link rel="manifest" href="/site.webmanifest">
+</head>
+<body>
+  <main class="page">
+    <div class="container">
+      <header class="topbar">
+        <a class="brand" href="/"><img src="/images/branding/exports/horizontal-lockup/ai-optimizer-logo-horizontal-lockup-1200w-v2.png?v=20260703a" alt="AI Optimizer"></a>
+        <a class="back-link" href="/">← Back to home</a>
+      </header>
+
+      <section class="hero-panel">
+        <div class="eyebrow">Resource library</div>
+        <h1>Explore the proof, setup, and support pages.</h1>
+        <p class="lead">Use this page as the organized map for AI Optimizer. Start with cache proof, move into setup, then go deeper on provider support, developer workflows, and trust questions.</p>
+      </section>
+
+      <section class="section">
+        <div class="card" style="background:rgba(150,187,255,.06); border-color:var(--border-strong);">
+          <div class="kicker">Quick answer</div>
+          <p style="margin:0; color:var(--text); font-size:1.02rem; line-height:1.7;">AI Optimizer is easiest to evaluate in this order: understand the repeated-request claim, inspect the cache proof, review the local setup path, then check whether your provider and workflow fit the product's strongest lane.</p>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="section-head">
+          <h2>Start here</h2>
+          <p>These pages explain the product, the setup path, and the trust questions most visitors should answer first.</p>
+        </div>
+        <div class="grid-3">
+          <article class="card"><h3><a href="/how-it-works">How it works</a></h3><p>Understand the local proxy pattern, request flow, provider routing, caching behavior, and where TTL fits.</p></article>
+          <article class="card"><h3><a href="/install">Install guide</a></h3><p>Set up the desktop app, start the local proxy, and route compatible traffic through <code>http://localhost:3000/v1</code>.</p></article>
+          <article class="card"><h3><a href="/faq">FAQ</a></h3><p>Review support scope, provider fit, privacy, caching behavior, and the most common adoption questions.</p></article>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="section-head">
+          <h2>Proof and cache behavior</h2>
+          <p>The strongest pages for judging whether the repeated-request caching claim is credible.</p>
+        </div>
+        <div class="grid-3">
+          <article class="card"><h3><a href="/cache-proof">Cache proof</a></h3><p>See the practical proof path for repeated requests, cache hits, TTL behavior, and provider support.</p></article>
+          <article class="card"><h3><a href="/ai-optimizer-exact-cache-hits">Exact cache-hit proof</a></h3><p>Go deeper on exact local cache hits and why visible repeat behavior matters for trust.</p></article>
+          <article class="card"><h3><a href="/exact-cache-hits-vs-partial-hits">Exact hits vs partial hits</a></h3><p>Understand the difference between local exact-hit caching and provider-side prompt reuse signals.</p></article>
+          <article class="card"><h3><a href="/see-real-reused-prompt-tokens-openai">Reused prompt tokens</a></h3><p>See how provider-side token reuse differs from the local exact-hit lane AI Optimizer makes visible.</p></article>
+          <article class="card"><h3><a href="/cache-openai-api-locally">Cache OpenAI locally</a></h3><p>Review the OpenAI-focused local caching path for repeat-heavy scripts and workflows.</p></article>
+          <article class="card"><h3><a href="/videos/install-and-cache-hit-proof">Install and proof video</a></h3><p>Watch the install path and a repeated request proof flow in one short walkthrough.</p></article>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="section-head">
+          <h2>Provider cost pages</h2>
+          <p>Provider-specific pages for OpenAI, Anthropic, and Google Gemini support.</p>
+        </div>
+        <div class="grid-3">
+          <article class="card"><h3><a href="/reduce-openai-api-costs-locally">Reduce OpenAI costs locally</a></h3><p>Use a local-first cache and control layer for repeat-heavy OpenAI workflows.</p></article>
+          <article class="card"><h3><a href="/reduce-openai-api-costs-cli-developer-workflows">OpenAI CLI workflows</a></h3><p>Route compatible command-line workflows through localhost while keeping the terminal workflow familiar.</p></article>
+          <article class="card"><h3><a href="/reduce-anthropic-api-costs">Reduce Anthropic costs</a></h3><p>Review the focused Anthropic chat-completions lane for repeated Claude workflows.</p></article>
+          <article class="card"><h3><a href="/reduce-gemini-api-costs">Reduce Gemini costs</a></h3><p>Understand the narrower Gemini <code>generateContent</code> support lane and where it fits best.</p></article>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="section-head">
+          <h2>Developer and workflow guides</h2>
+          <p>Use these when you already understand the wedge and want practical workflow examples.</p>
+        </div>
+        <div class="grid-3">
+          <article class="card"><h3><a href="/for-developers">For developers</a></h3><p>Developer-focused setup patterns, base URL changes, and repeat-heavy local workflow examples.</p></article>
+          <article class="card"><h3><a href="/for-agents">For agents</a></h3><p>Agent workflow examples where retries, loops, and repeated tool calls can create quiet duplicate spend.</p></article>
+          <article class="card"><h3><a href="/reduce-repeated-ai-spend-scripts-cron-agents">Scripts, cron, and agents</a></h3><p>See why scheduled prompts, scripts, and recurring automations are a clean fit for local caching.</p></article>
+          <article class="card"><h3><a href="/monitor-openai-api-usage-local-workflows">Monitor local API usage</a></h3><p>Track local request behavior, cache-hit patterns, and repeat-heavy OpenAI workflows.</p></article>
+          <article class="card"><h3><a href="/add-local-proxy-openai-compatible-workflow">Add a local proxy</a></h3><p>Use the common localhost base URL pattern without rebuilding the whole workflow.</p></article>
+          <article class="card"><h3><a href="/reduce-ai-api-waste-prompt-testing">Prompt testing</a></h3><p>Reduce waste during repeated prompt testing, reruns, and iteration-heavy local workflows.</p></article>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="section-head">
+          <h2>Trust and company pages</h2>
+          <p>Use these pages to verify product scope, privacy posture, and the local-first philosophy behind AI Optimizer.</p>
+        </div>
+        <div class="grid-3">
+          <article class="card"><h3><a href="/about">About AI Optimizer</a></h3><p>Read the product philosophy: local-first, proof-led, and strongest where repeated AI work is real.</p></article>
+          <article class="card"><h3><a href="/privacy">Privacy policy</a></h3><p>Review how the site and product present privacy, personal information, and data handling.</p></article>
+          <article class="card"><h3><a href="/faq">FAQ</a></h3><p>Check the practical trust questions before trying the product in a real workflow.</p></article>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="cta-card">
+          <div class="cta-copy">
+            <h3>Start with proof, then choose your path.</h3>
+            <p>If the repeated-request cache proof makes sense, install AI Optimizer and test it on one workflow before expanding further.</p>
+          </div>
+          <div style="display:grid; gap:12px; width:min(100%, 260px);">
+            <a href="/cache-proof" class="button button-primary">See cache proof</a>
+            <a href="/install" class="button button-secondary">Install guide</a>
+          </div>
+        </div>
+      </section>
+
+      <footer class="footer">
+        <div class="footer-card">
+          <p>We do not sell your personal information.</p>
+          <p><a href="/privacy">Privacy Policy</a> · © 2026 Day Place LTD · <a href="mailto:admin@ai-optimizer.org">admin@ai-optimizer.org</a></p>
+        </div>
+      </footer>
+    </div>
+  </main>
+</body>
+</html>

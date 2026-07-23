@@ -23,6 +23,7 @@ Primary pages:
 - https://ai-optimizer.org/for-developers
 - https://ai-optimizer.org/for-agents
 - https://ai-optimizer.org/faq
+- https://ai-optimizer.org/resources
 
 Important pages:
 - https://ai-optimizer.org/cache-proof
@@ -38,6 +39,11 @@ Important pages:
 - https://ai-optimizer.org/reduce-anthropic-api-costs
 - https://ai-optimizer.org/reduce-gemini-api-costs
 - https://ai-optimizer.org/privacy
+
+Resource map:
+- https://ai-optimizer.org/resources
+- Organizes the site by proof pages, setup guides, provider cost pages, developer workflows, and trust pages.
+- Best page for discovering the full public AI Optimizer content library without overloading the homepage.
 
 Key facts:
 - local-first workflow
