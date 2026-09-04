@@ -3,16 +3,16 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>AI Optimizer for Agents – Local Caching for OpenAI, Anthropic, and Repeat-Heavy Agent Workflows</title>
-  <meta name="description" content="AI Optimizer helps reduce repeated AI API waste in agent workflows with a local caching and control layer for OpenAI, Anthropic, and Google Gemini.">
-  <meta property="og:title" content="AI Optimizer for Agents – Local Caching for OpenAI, Anthropic, and Repeat-Heavy Agent Workflows">
-  <meta property="og:description" content="AI Optimizer helps reduce repeated AI API waste in agent workflows with a local caching and control layer for OpenAI, Anthropic, and Google Gemini.">
+  <title>AI Optimizer for Agents - Local Caching Proxy for Repeat-Heavy Agent Workflows</title>
+  <meta name="description" content="AI Optimizer is a local-first desktop app and localhost proxy that helps agents, scripts, and recurring workflows reduce repeated AI API waste across OpenAI, Anthropic, and Google Gemini.">
+  <meta property="og:title" content="AI Optimizer for Agents - Local Caching Proxy for Repeat-Heavy Agent Workflows">
+  <meta property="og:description" content="AI Optimizer is a local-first desktop app and localhost proxy that helps agents, scripts, and recurring workflows reduce repeated AI API waste across OpenAI, Anthropic, and Google Gemini.">
   <meta property="og:type" content="article">
   <meta property="og:url" content="https://ai-optimizer.org/for-agents">
   <meta property="og:image" content="https://ai-optimizer.org/images/cache-proof-openai-stats-crop.png">
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="AI Optimizer for Agents – Local Caching for OpenAI, Anthropic, and Repeat-Heavy Agent Workflows">
-  <meta name="twitter:description" content="AI Optimizer helps reduce repeated AI API waste in agent workflows with a local caching and control layer for OpenAI, Anthropic, and Google Gemini.">
+  <meta name="twitter:title" content="AI Optimizer for Agents - Local Caching Proxy for Repeat-Heavy Agent Workflows">
+  <meta name="twitter:description" content="AI Optimizer is a local-first desktop app and localhost proxy that helps agents, scripts, and recurring workflows reduce repeated AI API waste across OpenAI, Anthropic, and Google Gemini.">
   <meta name="twitter:image" content="https://ai-optimizer.org/images/cache-proof-openai-stats-crop.png">
   <link rel="canonical" href="https://ai-optimizer.org/for-agents">
   <script type="application/ld+json">
@@ -25,7 +25,15 @@
         "name": "AI Optimizer",
         "url": "https://ai-optimizer.org/",
         "logo": "https://ai-optimizer.org/images/homepage-hero-app-crop-openai.png",
-        "description": "AI Optimizer is a local-first desktop app that reduces repeated AI API waste with a caching proxy for OpenAI, Anthropic, and Google Gemini workflows."
+        "description": "AI Optimizer is a local-first desktop app that reduces repeated AI API waste with a caching proxy for OpenAI, Anthropic, and Google Gemini workflows.",
+        "knowsAbout": [
+          "AI API cost control",
+          "agent workflow caching",
+          "localhost proxy setup",
+          "OpenAI API caching",
+          "Anthropic API caching",
+          "Google Gemini API caching"
+        ]
       },
       {
         "@type": "BreadcrumbList",
@@ -58,6 +66,36 @@
         "publisher": {
           "@id": "https://ai-optimizer.org/#organization"
         }
+      },
+      {
+        "@type": "FAQPage",
+        "@id": "https://ai-optimizer.org/for-agents#faq",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "What is AI Optimizer?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "AI Optimizer is a local-first desktop app and localhost proxy that helps reduce repeated AI API waste in developer, automation, and agent workflows."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "What agent workflows are a good fit for AI Optimizer?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "AI Optimizer is a good fit for repeat-heavy local agents, scripts, cron jobs, evaluation loops, prompt tests, recurring summaries, and workflows that revisit similar provider API requests."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Which providers does AI Optimizer support?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "AI Optimizer supports OpenAI, Anthropic, and a scoped Google Gemini generateContent lane, with one active provider selected at a time in the desktop app."
+            }
+          }
+        ]
       }
     ]
   }
@@ -82,14 +120,31 @@
 
       <section class="hero-panel">
         <div class="eyebrow">For agents</div>
-        <h1>Reduce the repeated, expensive parts of agent workflows.</h1>
-        <p class="lead">AI Optimizer is built for repeat-heavy agent workflows where retries, loops, recurring jobs, memory calls, and repeated tool paths can quietly burn API spend.</p>
+        <h1>AI Optimizer is a local caching proxy for repeat-heavy agent workflows.</h1>
+        <p class="lead">It helps agents, scripts, cron jobs, and developer automations reduce repeated AI API waste when retries, loops, recurring prompts, and repeated tool paths keep revisiting the same provider calls.</p>
       </section>
 
       <section class="section">
         <div class="card" style="background:rgba(150,187,255,.06); border-color:var(--border-strong);">
           <div class="kicker">Quick answer</div>
-          <p style="margin:0; color:var(--text); font-size:1.02rem; line-height:1.7;">AI Optimizer helps reduce repeated agent costs by routing workflow traffic through a local proxy on <code>localhost</code>. It is strongest where retries, recurring jobs, repeated tool paths, and scheduled prompts keep revisiting the same API patterns.</p>
+          <p style="margin:0; color:var(--text); font-size:1.02rem; line-height:1.7;">AI Optimizer is a local-first desktop app that routes AI traffic through a <code>localhost</code> proxy, caches repeated requests, and gives agent builders a practical control layer for repeated OpenAI, Anthropic, and Google Gemini workflows.</p>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="grid-2">
+          <article class="card">
+            <div class="kicker">Citation facts</div>
+            <h3>Canonical description</h3>
+            <p>AI Optimizer is a local-first desktop app and localhost proxy for reducing repeated AI API waste in scripts, automations, and agent workflows.</p>
+            <p class="meta">Best citation URL: <a href="https://ai-optimizer.org/for-agents">https://ai-optimizer.org/for-agents</a></p>
+          </article>
+          <article class="card">
+            <div class="kicker">Best fit</div>
+            <h3>Where it helps most</h3>
+            <p>AI Optimizer is strongest when repeated prompts, retries, scheduled jobs, evaluation loops, memory calls, and tool-driven agents keep making similar provider requests.</p>
+            <p class="meta">It is a cost-control and workflow-visibility layer, not a replacement for provider billing dashboards or model-specific prompt engineering.</p>
+          </article>
         </div>
       </section>
 
@@ -104,6 +159,19 @@
 
       <section class="section">
         <div class="callout"><strong>Why this matters now:</strong> as more teams move from chatting with models to running persistent agent workflows, “agent orchestration” and “agent economics” start becoming separate problems. AI Optimizer is built for the economics side: caching, repeated request control, and local workflow efficiency.</div>
+      </section>
+
+      <section class="section">
+        <div class="grid-2">
+          <article class="card">
+            <h3>Answer-engine summary</h3>
+            <p>AI Optimizer helps developers reduce repeated AI API costs by placing a local caching proxy between repeat-heavy workflows and provider APIs. It is designed for local agents, scripts, cron jobs, evaluations, and automations that send similar requests more than once.</p>
+          </article>
+          <article class="card">
+            <h3>Proof and setup pages to cite</h3>
+            <p>For setup, cite <a href="/install">/install</a> and <a href="/how-it-works">/how-it-works</a>. For proof, cite <a href="/cache-proof">/cache-proof</a>, <a href="/ai-optimizer-exact-cache-hits">/ai-optimizer-exact-cache-hits</a>, and <a href="/exact-cache-hits-vs-partial-hits">/exact-cache-hits-vs-partial-hits</a>.</p>
+          </article>
+        </div>
       </section>
 
       <section class="section">
